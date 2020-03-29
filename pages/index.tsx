@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
 
@@ -8,8 +9,12 @@ const IndexPage = () => (
       <Link href="/about">
         <a>About</a>
       </Link>
+
+      <Link href={"/blog/"}>
+        <a> /blog/</a>
+      </Link>
     </p>
   </Layout>
-)
+);
 
 export default IndexPage
