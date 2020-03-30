@@ -12,7 +12,7 @@ export const getPostsBySlug = (slug: string, fields: any[] = []): any => {
   const fileContents = readFileSync(fullPath, "utf8");
 
   const { data, content } = matter(fileContents);
-  console.log(data);
+  // console.log(data);
 
   const items: any = {};
 
