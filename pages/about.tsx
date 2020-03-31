@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import Navbar from '../components/nav'
 
 const AboutPage: React.FunctionComponent = () => (
   <Layout title="About | Next.js + TypeScript Example">
+    <Navbar pathname="/about"/>
     <h1>About</h1>
     <p>This is the about page</p>
     <p>

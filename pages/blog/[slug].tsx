@@ -3,11 +3,18 @@ import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 
 
 import { getPostsBySlug, getAllPosts } from '../../utils/api';
+import Navbar from '../../components/nav';
 
 // @ts-ignore
 // eslint-disable-next-line react/prop-types
 const Blog: NextPage = ({ slug }) => {
-  return <div>The slug for this page is: {slug}</div>;
+  return (
+  <>
+    <Navbar pathname="/blog/faq" />
+
+    <div>The slug for this page is: {slug}</div>;
+  </>
+  )
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
