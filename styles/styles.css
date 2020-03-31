@@ -89,10 +89,10 @@
   --primary2: var(--gray50);
   --primary3: var(--gray25);
 
-  --accent0: var(--gray100);
+  --accent0: var(--gray50);
   --accent1: var(--gray75);
-  --accent2: var(--gray50);
-  --accent3: var(--gray25);
+  --accent2: var(--gray25);
+  --accent3: var(--gray10);
 
   --shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
   --shadow-primary: 0px 20px 40px rgba(0, 0, 0, 0.15);
@@ -264,4 +264,25 @@ a {
   border-radius: 50%;
   left: 45vw;
   top: -50vh;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .card-bg {
+    height: 158px;
+  }
+}
+@media (min-width: 640px), (max-width: 640px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

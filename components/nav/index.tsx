@@ -43,7 +43,7 @@ const Navbar: NextPage<Props> = ({ pathname }) => {
   const val = pathname?.split("/")[1];
   console.log(val && val);
   return (
-    <div className="py-4 flex justify-center z-10">
+    <div className="py-4 flex justify-center z-20 fixed top-0 left-0 w-full">
       <nav className="flex content-center ">
         <img src="/images/logo.svg" alt="Logo" className="mr-10"/>
 

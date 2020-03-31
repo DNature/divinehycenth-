@@ -13,7 +13,7 @@ module.exports = {
       center: true
     },
     fontSize: {
-      xs: "10px",
+      xs: "12px",
       sm: "14px",
       base: "16px",
       md: "18px",
