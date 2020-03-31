@@ -38,9 +38,37 @@ const IndexPage: NextPage = () => (
           >
             Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui.
           </LargeCard>
+        </div>
+        <div className="lg:w-3/6 lg:pl-6">
+          <div className="card-bg rounded-md px-5 py-5 shadow">
+            <h2 className="g100 text-xl font-bold">
+              Build a progressive web app with Nextjs
+            </h2>
+            <div className="g75">
+              Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui
+              cillum consequat deserunt exercitation. Fugiat duis anim duis
+              deserunt non ex consequat.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<div className="container my-20 flex justify-center">
+  <div className="flex items-center justify-between w-full h-20">
+    <div className="w-2/5 bg-g10 h-1"></div>
+    <div className="w-1/5 border border-color h-full rounded border-1"></div>
+    <div className="w-2/5 bg-g10 h-1"></div>
+  </div>
+
+</div>
+
+    <section className="container">
+      <div className="lg:flex justify-between">
+        <div className="lg:w-4/6 lg:mr-12">
           <LargeCard
             title="Build a progressive web app with Nextjs"
-            image="/images/blog/apple.jpg"
+            image="/images/blog/main.jpg"
           >
             Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui.
           </LargeCard>
