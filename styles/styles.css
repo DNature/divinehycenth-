@@ -31,7 +31,7 @@
   --gradient-dark-inverse: linear-gradient(
     276.09deg,
     #242127 -17.09%,
-    #5c595f 116.04%
+    #3d3a41 116.04%
   );
 }
 
@@ -271,9 +271,6 @@ a {
   border-width: 4px;
 }
 
-.border-color {
-  border-color: var(--gray4);
-}
 /* Responsive */
 
 @media (max-width: 640px) {

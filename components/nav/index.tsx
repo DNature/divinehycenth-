@@ -40,12 +40,15 @@ const routes = [
 ];
 
 const Navbar: NextPage<Props> = ({ pathname }) => {
-  const val = pathname?.split("/")[1];
-  console.log(val && val);
+  // document ? console.log(document.body.scrollTop) : null
+
   return (
-    <div className="py-4 flex justify-center z-20 fixed top-0 left-0 w-full">
+    <div
+      className={`py-4 flex justify-center z-20 fixed top-0 left-0 w-full ${typeof window !== 'undefined' && document
+        .body.scrollTop > 80 && "gradient"}`}
+    >
       <nav className="flex content-center ">
-        <img src="/images/logo.svg" alt="Logo" className="mr-10"/>
+        <img src="/images/logo.svg" alt="Logo" className="mr-10" />
 
         {routes.map(({ path, name }) => (
           <CustomLink
