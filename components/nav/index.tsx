@@ -14,38 +14,24 @@ import PropTypes from "prop-types";
 
 interface Props {
   pathname?: string;
+  routes: {
+    name: string;
+    path: string;
+  }[];
 }
 
-const routes = [
-  {
-    name: "Home",
-    path: "/"
-  },
-  {
-    name: "About",
-    path: "/about"
-  },
-  {
-    name: "Blog",
-    path: "/blog"
-  },
-  {
-    name: "Works",
-    path: "/works"
-  },
-  {
-    name: "Contact",
-    path: "/contact"
-  }
-];
-
-const Navbar: NextPage<Props> = ({ pathname }) => {
-  // document ? console.log(document.body.scrollTop) : null
-
+const Navbar: NextPage<Props> = ({ pathname, routes }) => {
+  
+  const [height,setHeight] = React.useState(0)
+  
+  React.useEffect(() => {
+    document.body.scrollTop > 80 ? setHeight(document.body.scrollTop): setHeight(0)
+    console.log(height)
+  }, [height])
+  
   return (
     <div
-      className={`py-4 flex justify-center z-20 fixed top-0 left-0 w-full ${typeof window !== 'undefined' && document
-        .body.scrollTop > 80 && "gradient"}`}
+      className={`py-4 flex justify-center z-20 fixed top-0 left-0 w-full ${height > 80 && "gradient"}`}
     >
       <nav className="flex content-center ">
         <img src="/images/logo.svg" alt="Logo" className="mr-10" />
@@ -70,13 +56,14 @@ const Navbar: NextPage<Props> = ({ pathname }) => {
   );
 };
 
-Navbar.getInitialProps = async (): Promise<Props> => {
+Navbar.getInitialProps = async (): Promise<any> => {
   const { pathname } = useRouter();
 
   return { pathname };
 };
 
 Navbar.propTypes = {
-  pathname: PropTypes.string
+  pathname: PropTypes.string,
+  routes: PropTypes.array.isRequired,
 };
 export default Navbar;

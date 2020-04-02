@@ -230,7 +230,7 @@ a {
 /* Cards */
 .card-bg {
   background: var(--card);
-  height: 255px;
+  height: 265px;
 }
 
 /* Shadows */
@@ -268,7 +268,11 @@ a {
 
 /* Border */
 .border-1 {
-  border-width: 4px;
+  border-width: 2px;
+}
+
+.h-1 {
+  height: 2px;
 }
 
 /* Responsive */
