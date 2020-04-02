@@ -233,6 +233,13 @@ a {
   height: 265px;
 }
 
+.card-contact {
+  background: var(--card);
+}
+
+.card-info {
+  background: var(--gradient);
+}
 /* Shadows */
 .shadow {
   box-shadow: var(--shadow);
@@ -254,7 +261,18 @@ a {
 .-z-10 {
   z-index: -10;
 }
-
+.-z-5 {
+  z-index: -5;
+}
+.-z-4 {
+  z-index: -4;
+}
+.-z-3 {
+  z-index: -3;
+}
+.-z-2 {
+  z-index: -2;
+}
 .circle {
   width: 1082px;
   height: 1082px;
@@ -264,6 +282,17 @@ a {
   border-radius: 50%;
   left: 45vw;
   top: -50vh;
+}
+
+.circle-2 {
+  width: 340px;
+  height: 340px;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  left: 10vw;
+  top: 30vh;
 }
 
 /* Border */

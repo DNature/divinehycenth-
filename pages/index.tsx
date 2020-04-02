@@ -10,12 +10,12 @@ const IndexPage: NextPage = () => (
   <MainLayout pathname="/">
     <div className="relative">
       <div className="w-full gradient relative -z-10">
-        <div className="w-full h-full overflow-hidden absolute top-0 left-0">
-          <div className="gradient-alt circle absolute" />
+        <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
+          <div className="gradient-alt circle absolute -z-4" />
         </div>
-        <div className="container flex justify-between pt-32 z-10  pb-32 lg:pb-0">
+        <div className="container flex justify-between pt-32 z-10 pb-32 lg:pb-0">
           <div className="lg:flex items-center lg:w-4/6 lg:mr-12">
-            <div>
+            <div className="z-auto">
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
                 Hi, I’m Divine Hycenth
               </h1>
@@ -91,7 +91,14 @@ const IndexPage: NextPage = () => (
             {/* Latest Article */}
             <div className="mb-10">
               <h3 className="text-md font-bold p100">Latest</h3>
-              <h2 className="text-4xl font-bold g100">Article</h2>
+              <div className="flex">
+                <h2 className="text-2xl sm:text-4xl font-bold g100">Article</h2>
+                <div className="ml-12 my-auto ">
+                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn ">
+                    See all
+                  </button>
+                </div>
+              </div>
             </div>
             <LargeCard
               title="Build a progressive web app with Nextjs"
@@ -104,7 +111,16 @@ const IndexPage: NextPage = () => (
             {/* Latest Project */}
             <div className="mb-10">
               <h3 className="text-md font-bold p100">Latest</h3>
-              <h2 className="text-4xl font-bold g100">Projects</h2>
+              <div className="flex">
+                <h2 className="text-2xl sm:text-4xl font-bold g100">
+                  Projects
+                </h2>
+                <div className="ml-12 my-auto ">
+                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn ">
+                    See all
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="rounded overflow-hidden grid lg:grid-rows-6 bg-transparent">
               {/* <img src="/images/blog/woman.jpg" alt="Woman" className="w-full" /> */}

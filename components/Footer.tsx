@@ -16,7 +16,7 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
 
   return (
     <footer className="bg-g25 mt-16" style={{ justifySelf: "flex-start" }}>
-      <div className="container pt-12 pb-20 grid grid-cols-8 gap-6">
+      <div className="container pt-12 pb-20 lg:grid grid-cols-8 gap-6">
         <div className="col-span-2 grid grid-cols-8">
           <img
             src="/images/logo-footer.svg"
@@ -28,7 +28,7 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
             <p className="g75">&copy; Copyright 2020</p>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-2  text-center lg:text-left mt-8 lg:mt-0">
           <h2 className="text-xl font-bold p100">Menu</h2>
           {routes.map(({ path, name }) => (
             <CustomLink
@@ -38,7 +38,7 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
               )[1] == path.split("/")[1] && "text-gray-600"}`}
               href={path}
             >
-              <>{name}</>
+              {name}
             </CustomLink>
           ))}
         </div>
