@@ -10,7 +10,7 @@ const WorksPage: NextPage = () => (
       <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
         <div className="gradient-alt -rotate-180  circle absolute" />
       </div>
-      <div className="absolute h-full w-full left-0 top-0 opacity-25 -z-4" style={{background: 'url("/images/blog/grass.jpg")', backgroundPosition: 'center', backgroundSize: 'cover'}}/>
+      <div className="absolute h-full w-full left-0 top-0 opacity-25 -z-4" style={{background: 'url("/images/blog/woman.jpg")', backgroundPosition: 'center', backgroundSize: 'cover'}}/>
       <div className="container py-32 sm:py-40 md:py-56 z-20">
         <h1 className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
           Recent projects

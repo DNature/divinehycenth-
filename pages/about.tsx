@@ -1,10 +1,245 @@
+// @ts-nocheck
 import React from "react";
+import { NextPage } from "next";
+import {
+  IoLogoGithub,
+  IoLogoTwitter,
+  IoLogoLinkedin,
+  IoLogoDribbble,
+  IoMdCheckbox
+} from "react-icons/io";
+import { DiStackoverflow } from "react-icons/di";
+
 import MainLayout from "../components/Layouts/Main";
 
-const AboutPage: React.FunctionComponent = () => (
-  <MainLayout pathname="/about">
-    <h1 className="text-5xl">About page</h1>
-  </MainLayout>
-);
+const AboutPage: NextPage = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = (): void => {
+    setOpen(!open);
+  };
+
+  return (
+    <MainLayout pathname="/about">
+      <div className="w-full gradient relative -z-10">
+        <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
+          <div className="gradient-alt -rotate-180  circle absolute" />
+          <div className="gradient-alt circle-2 absolute" />
+        </div>
+        <div
+          className="absolute h-full w-full left-0 top-0 opacity-25 -z-4"
+          style={{
+            background: 'url("/images/me.jpg")',
+            backgroundPosition: "center",
+            backgroundSize: "cover"
+          }}
+        />
+        <div className="container py-32 sm:py-40 md:py-40 z-20">
+          <h1 className="text-center text-xl sm:text-3xl lg:text-4xl font-bold text-white pb-56 ">
+            About me
+          </h1>
+        </div>
+      </div>
+
+      <div className="container -mt-64">
+        <div className="xl:px-32 lg:px-20">
+          <div className="card-contact shadow rounded-lg p-6 lg:flex">
+            <div className=" lg:w-2/5 lg:mr-6 ">
+              <div className="lg:relative rounded-full overflow-hidden lg:overflow-visible h-48 w-48 lg:h-auto lg:w-auto mx-auto">
+                <div className="btn lg:block rounded hidden  py-48 mt-16 items-center"></div>
+                <img
+                  src="/images/avatar.png"
+                  alt="Divine Hycenth"
+                  className="lg:absolute bottom-0 mx-auto right-0 left-0"
+                />
+              </div>
+
+              <div className="flex justify-between mt-6">
+                <IoLogoGithub className="text-3xl g100" />
+                <DiStackoverflow className="text-3xl a100" />
+                <IoLogoTwitter className="text-3xl text-blue-600" />
+                <IoLogoLinkedin className="text-3xl text-blue-500" />
+                <IoLogoDribbble className="text-3xl a75" />
+              </div>
+            </div>
+
+            <div className=" lg:w-3/5">
+              <h2 className="text-xl xl:text-2xl  g100">I’m Divine Hycenth.</h2>
+              <p className="text-base g75">
+                I’m a full stack software developer, technical writer, and UI/UX
+                Designer.
+              </p>
+              <br />
+              <p className="text-base g75">
+                I currently spend most of my time programming in
+                JavaScript/TypeScript for three (3) years and writing about it.
+              </p>
+              <br />
+              <p className="text-base g75">
+                I also do some python, DevOps(Docker) stuffs when the need
+                arise.
+              </p>
+              <br />
+              <br />
+
+              <p className="font-bold text-md g100">
+                Below are some skills i poses.
+              </p>
+
+              {/* Programming languages */}
+              <br />
+              <h3 className="text text-xl g100">Programming Languages</h3>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p100" />
+                <p className="ml-4 text-base g75">Javascript</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p100" />
+                <p className="ml-4 text-base g75">Typescript</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p100" />
+                <p className="ml-4 text-base g75">Python</p>
+              </div>
+
+              {/* Frontend */}
+              <br />
+              <h3 className="text text-xl g100">
+                Frontend Frameworks/Libraries
+              </h3>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">React.js</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">Next.js</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">Bootstrap</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">HTML & CSS</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">jQuery</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">Redux</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl a100" />
+                <p className="ml-4 text-base g75">Graphql</p>
+              </div>
+
+              <div open={open} className={`${!open && "hidden"}`}>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Apollo Client</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Sass</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Material Design</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">...</p>
+                </div>
+
+                {/* Backend */}
+                <br />
+                <h3 className="text text-xl g100">
+                  Backend Frameworks/Libraries
+                </h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Node.js</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Express.js</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Graphql</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">PostgreSQL</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Mongodb</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Typeorm</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p75" />
+                  <p className="ml-4 text-base g75">Django</p>
+                </div>
+
+                {/* Mobile Development */}
+                <br />
+                <h3 className="text text-xl g100">Mobile Development</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a75" />
+                  <p className="ml-4 text-base g75">React-Native</p>
+                </div>
+
+                {/* Testing */}
+                <br />
+                <h3 className="text text-xl g100">Testing</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Jest</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Enzyme</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">React Testing Library</p>
+                </div>
+
+                {/* Devops */}
+                <br />
+                <h3 className="text text-xl g100">Dev Ops</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Docker + Compose</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Nginx</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">PM2</p>
+                </div>
+              </div>
+              <button
+                onClick={handleOpen}
+                className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn mt-8 "
+              >
+                See all
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
+};
 
 export default AboutPage;

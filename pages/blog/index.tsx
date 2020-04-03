@@ -11,6 +11,7 @@ const BlogPage: NextPage = () => (
       <div className="w-full h-full overflow-hidden absolute top-0 left-0">
         <div className="gradient-alt circle absolute" />
       </div>
+      
       <div className="container py-32 sm:py-40 md:py-56">
         <h1 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
           Blog

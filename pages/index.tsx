@@ -94,7 +94,7 @@ const IndexPage: NextPage = () => (
               <div className="flex">
                 <h2 className="text-2xl sm:text-4xl font-bold g100">Article</h2>
                 <div className="ml-12 my-auto ">
-                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn ">
+                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">
                     See all
                   </button>
                 </div>
@@ -116,7 +116,7 @@ const IndexPage: NextPage = () => (
                   Projects
                 </h2>
                 <div className="ml-12 my-auto ">
-                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn ">
+                  <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">
                     See all
                   </button>
                 </div>
