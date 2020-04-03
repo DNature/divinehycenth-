@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from "react";
 import { NextPage } from "next";
 import {
@@ -13,7 +12,7 @@ import { DiStackoverflow } from "react-icons/di";
 import MainLayout from "../components/Layouts/Main";
 
 const AboutPage: NextPage = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState( false );
 
   const handleOpen = (): void => {
     setOpen(!open);
@@ -54,7 +53,7 @@ const AboutPage: NextPage = () => {
                 />
               </div>
 
-              <div className="flex justify-between mt-6">
+              <div className="flex justify-between my-6">
                 <IoLogoGithub className="text-3xl g100" />
                 <DiStackoverflow className="text-3xl a100" />
                 <IoLogoTwitter className="text-3xl text-blue-600" />
@@ -102,6 +101,41 @@ const AboutPage: NextPage = () => {
                 <p className="ml-4 text-base g75">Python</p>
               </div>
 
+
+              {/* Backend */}
+              <br />
+              <h3 className="text text-xl g100">
+                Backend Frameworks/Libraries
+                </h3>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Node.js</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Express.js</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Graphql</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">PostgreSQL</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Mongodb</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Typeorm</p>
+              </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl p75" />
+                <p className="ml-4 text-base g75">Django</p>
+              </div>
+
               {/* Frontend */}
               <br />
               <h3 className="text text-xl g100">
@@ -115,6 +149,7 @@ const AboutPage: NextPage = () => {
                 <IoMdCheckbox className="my-auto text-xl a100" />
                 <p className="ml-4 text-base g75">Next.js</p>
               </div>
+              <div data-open={open} className={`${!open && "hidden"}`}>
               <div className="flex">
                 <IoMdCheckbox className="my-auto text-xl a100" />
                 <p className="ml-4 text-base g75">Bootstrap</p>
@@ -136,7 +171,6 @@ const AboutPage: NextPage = () => {
                 <p className="ml-4 text-base g75">Graphql</p>
               </div>
 
-              <div open={open} className={`${!open && "hidden"}`}>
                 <div className="flex">
                   <IoMdCheckbox className="my-auto text-xl a100" />
                   <p className="ml-4 text-base g75">Apollo Client</p>
@@ -154,39 +188,6 @@ const AboutPage: NextPage = () => {
                   <p className="ml-4 text-base g75">...</p>
                 </div>
 
-                {/* Backend */}
-                <br />
-                <h3 className="text text-xl g100">
-                  Backend Frameworks/Libraries
-                </h3>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Node.js</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Express.js</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Graphql</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">PostgreSQL</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Mongodb</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Typeorm</p>
-                </div>
-                <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p75" />
-                  <p className="ml-4 text-base g75">Django</p>
-                </div>
 
                 {/* Mobile Development */}
                 <br />
@@ -227,12 +228,84 @@ const AboutPage: NextPage = () => {
                   <IoMdCheckbox className="my-auto text-xl p100" />
                   <p className="ml-4 text-base g75">PM2</p>
                 </div>
+
+                {/* Build tools */}
+                <br />
+                <h3 className="text text-xl g100">Build tolls</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Webpack</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Babel</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Eslint</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Gulp</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Git</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Prettier</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">TSLint</p>
+                </div>
+
+                {/* UI/UX */}
+                <br />
+                <h3 className="text text-xl g100">UI/UX Design</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Figma</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Photoshop</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Adobe Illustrator</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Coreldraw</p>
+                </div>
+
+                {/* Operating systems */}
+                <br />
+                <h3 className="text text-xl g100">Operating systems (OS)</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Linux (UBUNTU)</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Windows 10</p>
+                </div>
+
+                {/* Coding editor */}
+                <br />
+                <h3 className="text text-xl g100">Coding Editor</h3>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl p100" />
+                  <p className="ml-4 text-base g75">Visual Studio Code (VSCode)</p>
+                </div>
               </div>
               <button
                 onClick={handleOpen}
-                className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn mt-8 "
+                className={`px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 mt-8 ${open ? 'bg-g50 text-white' : 'btn'}`}
               >
-                See all
+                {!open ? "See all": "See less"}
               </button>
             </div>
           </div>

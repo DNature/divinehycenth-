@@ -84,10 +84,10 @@
   --gray3: var(--gray75);
   --gray4: var(--gray100);
 
-  --primary0: var(--gray100);
-  --primary1: var(--gray75);
+  --primary0: var(--gray10);
+  --primary1: var(--gray25);
   --primary2: var(--gray50);
-  --primary3: var(--gray25);
+  --primary3: var(--gray75);
 
   --accent0: var(--gray50);
   --accent1: var(--gray75);
