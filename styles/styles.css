@@ -18,6 +18,16 @@
   --accent50: #ef8dff;
   --accent25: #f7c6ff;
 
+  --blue100: #3825fd;
+  --blue75: #6a5cfd;
+  --blue50: #9b92fe;
+  --blue25: #cdc9ff;
+
+  --blueAccent100: #0fb1d9;
+  --blueAccent75: #4bc5e2;
+  --blueAccent50: #87d8ec;
+  --blueAccent25: #c3ecf5;
+
   --gradient-btn: linear-gradient(97.1deg, #df1bff 1.03%, #6b0ce3 98.29%);
 
   --gradient-bg: linear-gradient(147.62deg, #df1bff -5.26%, #6b0ce3 102.43%);
@@ -33,6 +43,37 @@
     #242127 -17.09%,
     #3d3a41 116.04%
   );
+}
+
+.blue {
+  --bg: var(--white);
+  --text: var(--gray100);
+  --card: var(--white);
+
+  --gradient: linear-gradient(130.49deg, #0fb1d9 1.26%, #3825fd 99.21%);
+  --gradient-inverse: linear-gradient(125.82deg, #4bc5e2 1.26%, #3825fd 99.21%);
+
+  --btn: linear-gradient(130.49deg, #0fb1d9 1.26%, #3825fd 99.21%);
+  --btn-contrast: var(--white);
+
+  --gray0: var(--gray100);
+  --gray1: var(--gray75);
+  --gray2: var(--gray50);
+  --gray3: var(--gray25);
+  --gray4: var(--gray10);
+
+  --primary0: var(--blue100);
+  --primary1: var(--blue75);
+  --primary2: var(--blue50);
+  --primary3: var(--blue25);
+
+  --accent0: var(--blueAccent100);
+  --accent1: var(--blueAccent75);
+  --accent2: var(--blueAccent50);
+  --accent3: var(--blueAccent25);
+
+  --shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-primary: 0px 20px 40px rgba(56, 37, 253, 0.3);
 }
 
 .light {
@@ -104,6 +145,10 @@ body {
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   max-width: 100vw;
   font-family: "Montserrat", sans-serif;
+}
+
+.text {
+  color: var(--white);
 }
 
 a {

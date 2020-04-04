@@ -20,8 +20,17 @@ const Colors: NextPage = () => {
       body.classList.replace(body.className, newTheme);
     }
   };
+
   const handleLight = () => {
     localStorage.setItem("theme", "light");
+    const newTheme = localStorage.getItem("theme");
+    if (newTheme) {
+      body.classList.replace(body.className, newTheme);
+    }
+  };
+
+  const handleBlue = () => {
+    localStorage.setItem("theme", "blue");
     const newTheme = localStorage.getItem("theme");
     if (newTheme) {
       body.classList.replace(body.className, newTheme);
@@ -52,7 +61,10 @@ const Colors: NextPage = () => {
         </button> */}
 
         <button onClick={handleOpen}>
-          <FiSettings className={`text-xl text-white animate-round`} />
+          <FiSettings
+            className={`text-xl animate-round text ${body.className ===
+              "dark" && "g10"}`}
+          />
         </button>
       </div>
       <div
@@ -71,7 +83,7 @@ const Colors: NextPage = () => {
         />
         <div
           className="rounded-full w-8 h-8 mr-2 color-blue cursor-pointer"
-          onClick={handleDark}
+          onClick={handleBlue}
         />
 
         {/* <button className="px-4 py-2 font-bold gradient" onClick={handleDark}>
@@ -82,7 +94,10 @@ const Colors: NextPage = () => {
         </button> */}
 
         <button onClick={handleClose}>
-          <FiSettings className="text-xl a100 cursor-pointer animate-round" />
+          <FiSettings
+            className={`text-xl p100 cursor-pointer animate-round ${body.className ===
+              "dark" && "g10"}`}
+          />
         </button>
       </div>
     </>
