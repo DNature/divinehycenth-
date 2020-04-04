@@ -6,7 +6,10 @@ import LargeCard from "../components/Cards/LargeCard";
 import SmallCard from "../components/Cards/SmallCard";
 import MainLayout from "../components/Layouts/Main";
 
-const IndexPage: NextPage = () => (
+
+const IndexPage: NextPage = () => {
+
+  return (
   <MainLayout pathname="/">
     <div className="relative">
       <div className="w-full gradient relative -z-10">
@@ -140,6 +143,6 @@ const IndexPage: NextPage = () => (
       </main>
     </div>
   </MainLayout>
-);
+)};
 
 export default IndexPage;

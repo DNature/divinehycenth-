@@ -337,3 +337,37 @@ a {
     padding-right: 0;
   }
 }
+
+.animate-round {
+  animation: round 01s infinite linear;
+}
+
+@keyframes round {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.translate {
+  transition: 0.5s ease-out;
+  transform: translateX(-200px);
+}
+
+.translate-0 {
+  transition: 0.5s ease-in;
+
+  transform: translate(0);
+}
+
+.color-primary {
+  background: var(--gradient-bg);
+  color: var(--primary100);
+}
+
+.color-gray {
+  background: var(--gradient-dark);
+}
+
+.color-blue {
+  background: blue;
+}

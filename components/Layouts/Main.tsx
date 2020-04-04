@@ -5,6 +5,9 @@ import PropTypes from "prop-types";
 import Navbar from '../nav';
 import Footer from '../Footer';
 
+import dynamic from 'next/dynamic'
+const DynamicComponent = dynamic( () => import( '../colors' ), { ssr: false } )
+
 // const links = [
 //     {
 //         name: 'home',
@@ -41,6 +44,7 @@ const routes = [
   }
 ];
 
+
 const MainLayout: NextPage<Props> = ({ pathname, children }) => {
   return (
     <div className="flex flex-col h-full" style={{height: '100vh'}} >
@@ -48,6 +52,7 @@ const MainLayout: NextPage<Props> = ({ pathname, children }) => {
       <div className="flex-1" >{children}</div>
 
       <Footer pathname={pathname} routes={routes} />
+      <DynamicComponent/>
     </div>
   );
 };
