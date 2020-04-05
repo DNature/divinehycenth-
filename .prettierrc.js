@@ -1,16 +1,16 @@
 module.exports = {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "files.autoSave": "off",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "[typescriptreact]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
   "[jsx-tags]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   },
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
 };

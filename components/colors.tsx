@@ -12,8 +12,7 @@ const Colors: NextPage = () => {
       body.classList.replace(body.className, theme);
     }
   }, []);
-
-  const handleDark = () => {
+  const handleDark = (): void => {
     localStorage.setItem("theme", "dark");
     const newTheme = localStorage.getItem("theme");
     if (newTheme) {
@@ -21,7 +20,7 @@ const Colors: NextPage = () => {
     }
   };
 
-  const handleLight = () => {
+  const handleLight = (): void => {
     localStorage.setItem("theme", "light");
     const newTheme = localStorage.getItem("theme");
     if (newTheme) {
@@ -29,7 +28,7 @@ const Colors: NextPage = () => {
     }
   };
 
-  const handleBlue = () => {
+  const handleBlue = (): void => {
     localStorage.setItem("theme", "blue");
     const newTheme = localStorage.getItem("theme");
     if (newTheme) {
@@ -62,14 +61,16 @@ const Colors: NextPage = () => {
 
         <button onClick={handleOpen}>
           <FiSettings
-            className={`text-xl animate-round text ${body.className ===
-              "dark" && "g10"}`}
+            className={`text-xl animate-round text ${
+              body.className === "dark" && "g10"
+            }`}
           />
         </button>
       </div>
       <div
-        className={`bg-white p-4 fixed flex justify-between items-center rounded-tr rounded-br shadow translate ${open &&
-          "translate-0"}`}
+        className={`bg-white p-4 fixed flex justify-between items-center rounded-tr rounded-br shadow translate ${
+          open && "translate-0"
+        }`}
         style={{ top: "45vh" }}
         data-open={open}
       >
@@ -95,8 +96,9 @@ const Colors: NextPage = () => {
 
         <button onClick={handleClose}>
           <FiSettings
-            className={`text-xl p100 cursor-pointer animate-round ${body.className ===
-              "dark" && "g10"}`}
+            className={`text-xl p100 cursor-pointer animate-round ${
+              body.className === "dark" && "g10"
+            }`}
           />
         </button>
       </div>

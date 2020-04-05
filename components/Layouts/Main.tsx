@@ -1,12 +1,13 @@
 import * as React from "react";
 import { NextPage } from "next";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";
-import Navbar from '../nav';
-import Footer from '../Footer';
+import Footer from "../Footer";
+import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi";
 
-import dynamic from 'next/dynamic'
-const DynamicComponent = dynamic( () => import( '../colors' ), { ssr: false } )
+const SideColorSwitcher = dynamic(() => import("../colors"), { ssr: false });
+const Navbar = dynamic(() => import("../nav"), { ssr: false });
 
 // const links = [
 //     {
@@ -23,36 +24,35 @@ interface Props {
 
 const routes = [
   {
-    name: "Home",
-    path: "/"
-  },
-  {
     name: "About",
-    path: "/about"
+    path: "/about",
+    icon: <FiBookOpen className="mr-2 inline-block text-xl text-white" />,
   },
   {
     name: "Blog",
-    path: "/blog"
+    path: "/blog",
+    icon: <FiFeather className="mr-2 inline-block text-xl text-white" />,
   },
   {
     name: "Works",
-    path: "/works"
+    path: "/works",
+    icon: <FiMonitor className="mr-2 inline-block text-xl text-white" />,
   },
   {
     name: "Contact",
-    path: "/contact"
-  }
+    path: "/contact",
+    icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
+  },
 ];
-
 
 const MainLayout: NextPage<Props> = ({ pathname, children }) => {
   return (
-    <div className="flex flex-col h-full" style={{height: '100vh'}} >
+    <div className="flex flex-col h-full" style={{ height: "100vh" }}>
       <Navbar pathname={pathname} routes={routes} />
-      <div className="flex-1" >{children}</div>
+      <div className="flex-1">{children}</div>
 
       <Footer pathname={pathname} routes={routes} />
-      <DynamicComponent/>
+      <SideColorSwitcher />
     </div>
   );
 };
@@ -65,6 +65,6 @@ MainLayout.getInitialProps = async (): Promise<any> => {
 
 MainLayout.propTypes = {
   pathname: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 export default MainLayout;
