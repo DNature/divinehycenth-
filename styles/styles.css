@@ -144,7 +144,7 @@ body {
   color: var(--text);
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   max-width: 100vw;
-  font-family: "Montserrat", sans-serif;
+  font-family: system-ui, "Montserrat", sans-serif;
 }
 
 .text {
@@ -214,20 +214,20 @@ a {
   color: var(--accent3);
 }
 
-.bg-p100 {
-  background: var(--primary0);
+.bg-a100 {
+  background: var(--accent0);
 }
 
-.bg-p75 {
-  background: var(--primary1);
+.bg-a75 {
+  background: var(--accent1);
 }
 
-.bg-p50 {
-  background: var(--primary2);
+.bg-a50 {
+  background: var(--accent2);
 }
 
-.bg-p25 {
-  background: var(--primary3);
+.bg-a25 {
+  background: var(--accent3);
 }
 
 /* Gray Colors */
@@ -415,4 +415,14 @@ a {
 
 .color-blue {
   background: blue;
+}
+
+button,
+button:focus {
+  outline: none;
+}
+
+pre::-webkit-scrollbar,
+code::-webkit-scrollbar {
+  display: none;
 }

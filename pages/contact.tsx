@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import { IoIosMail, IoMdCall, IoMdPin } from "react-icons/io";
 
-import MainLayout from "../components/Layouts/Main";
+import MainLayout from "../layouts/Main";
 
 const ContactPage: NextPage = () => (
   <MainLayout pathname="/contact">
@@ -73,7 +73,9 @@ const ContactPage: NextPage = () => (
             </div>
             <div className="text-white flex">
               <IoMdPin className="text-white text-xl lg:text-2xl lg:mr-7" />
-              <span className="ml-6 lg:text-lg">Gwagwalada, Abuja - Nigeria</span>
+              <span className="ml-6 lg:text-lg">
+                Gwagwalada, Abuja - Nigeria
+              </span>
             </div>
           </div>
         </div>

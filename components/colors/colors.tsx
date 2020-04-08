@@ -47,7 +47,7 @@ const Colors: NextPage = () => {
   return (
     <>
       <div
-        className={`bg-p100 p-4 fixed flex justify-center items-center rounded-tr rounded-br shadow cursor-pointer ${
+        className={`bg-p100 p-4 z-50 fixed flex justify-center items-center rounded-tr rounded-br shadow cursor-pointer ${
           open ? "translate" : "translate-0"
         }`}
         style={{ top: "45vh" }}
@@ -68,7 +68,7 @@ const Colors: NextPage = () => {
         </button>
       </div>
       <div
-        className={`bg-white p-4 fixed flex justify-between items-center rounded-tr rounded-br shadow translate ${
+        className={`bg-white p-4 z-50 fixed flex justify-between items-center rounded-tr rounded-br shadow translate ${
           open && "translate-0"
         }`}
         style={{ top: "45vh" }}

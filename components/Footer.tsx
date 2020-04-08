@@ -1,7 +1,8 @@
 import * as React from "react";
 import { NextPage } from "next";
-import CustomLink from "./CustomLink";
 import PropTypes from "prop-types";
+
+import CustomLink from "./CustomLink";
 
 interface Props {
   pathname?: string;
@@ -12,8 +13,6 @@ interface Props {
 }
 
 const Footer: NextPage<Props> = ({ pathname, routes }) => {
-  console.log(pathname);
-
   return (
     <footer className="bg-g25 mt-16" style={{ justifySelf: "flex-start" }}>
       <div className="container pt-12 pb-20 lg:grid grid-cols-8 gap-6">
@@ -30,12 +29,20 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
         </div>
         <div className="col-span-2  text-center lg:text-left mt-8 lg:mt-0">
           <h2 className="text-xl font-bold p100">Menu</h2>
+          <CustomLink
+            className={`font-bold block hover:text-gray-600 ${
+              pathname ==  "/" && "text-gray-600"
+              }`}
+            href={'/'}
+          >
+            Home
+          </CustomLink>
           {routes.map(({ path, name }) => (
             <CustomLink
               key={name}
-              className={`font-bold block hover:text-gray-600 ${pathname?.split(
-                "/"
-              )[1] == path.split("/")[1] && "text-gray-600"}`}
+              className={`font-bold block hover:text-gray-600 ${
+                pathname?.split("/")[1] == path.split("/")[1] && "text-gray-600"
+              }`}
               href={path}
             >
               {name}
@@ -49,6 +56,6 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
 
 Footer.propTypes = {
   pathname: PropTypes.string,
-  routes: PropTypes.array.isRequired
+  routes: PropTypes.array.isRequired,
 };
 export default Footer;

@@ -3,11 +3,13 @@ import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";
-import Footer from "../Footer";
+import Footer from "../components/Footer";
 import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi";
 
-const SideColorSwitcher = dynamic(() => import("../colors"), { ssr: false });
-const Navbar = dynamic(() => import("../nav"), { ssr: false });
+const SideColorSwitcher = dynamic(() => import("../components/colors/colors"), {
+  ssr: false,
+});
+const Navbar = dynamic(() => import("../components/nav"), { ssr: false });
 
 // const links = [
 //     {
@@ -49,7 +51,7 @@ const MainLayout: NextPage<Props> = ({ pathname, children }) => {
   return (
     <div className="flex flex-col h-full" style={{ height: "100vh" }}>
       <Navbar pathname={pathname} routes={routes} />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 z-10">{children}</div>
 
       <Footer pathname={pathname} routes={routes} />
       <SideColorSwitcher />

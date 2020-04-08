@@ -4,4 +4,21 @@
 //
 // import User from 'path/to/interfaces';
 
-export {};
+export interface ILinkProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+  target?: string;
+}
+
+export interface Social {
+  icon: JSX.Element;
+  link: string;
+}
+
+export interface LargeCardProps {
+  image: string;
+  title: string;
+  children: React.ReactNode;
+  path: string;
+}

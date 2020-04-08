@@ -5,14 +5,14 @@ import {
   IoLogoTwitter,
   IoLogoLinkedin,
   IoLogoDribbble,
-  IoMdCheckbox
+  IoMdCheckbox,
 } from "react-icons/io";
 import { DiStackoverflow } from "react-icons/di";
 
-import MainLayout from "../components/Layouts/Main";
+import MainLayout from "../layouts/Main";
 
 const AboutPage: NextPage = () => {
-  const [open, setOpen] = React.useState( false );
+  const [open, setOpen] = React.useState(false);
 
   const handleOpen = (): void => {
     setOpen(!open);
@@ -30,7 +30,7 @@ const AboutPage: NextPage = () => {
           style={{
             background: 'url("/images/me.jpg")',
             backgroundPosition: "center",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         />
         <div className="container py-32 sm:py-40 md:py-40 z-20">
@@ -101,12 +101,11 @@ const AboutPage: NextPage = () => {
                 <p className="ml-4 text-base g75">Python</p>
               </div>
 
-
               {/* Backend */}
               <br />
               <h3 className="text text-xl g100">
                 Backend Frameworks/Libraries
-                </h3>
+              </h3>
               <div className="flex">
                 <IoMdCheckbox className="my-auto text-xl p75" />
                 <p className="ml-4 text-base g75">Node.js</p>
@@ -150,26 +149,26 @@ const AboutPage: NextPage = () => {
                 <p className="ml-4 text-base g75">Next.js</p>
               </div>
               <div data-open={open} className={`${!open && "hidden"}`}>
-              <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">Bootstrap</p>
-              </div>
-              <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">HTML & CSS</p>
-              </div>
-              <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">jQuery</p>
-              </div>
-              <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">Redux</p>
-              </div>
-              <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">Graphql</p>
-              </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Bootstrap</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">HTML & CSS</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">jQuery</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Redux</p>
+                </div>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl a100" />
+                  <p className="ml-4 text-base g75">Graphql</p>
+                </div>
 
                 <div className="flex">
                   <IoMdCheckbox className="my-auto text-xl a100" />
@@ -187,7 +186,6 @@ const AboutPage: NextPage = () => {
                   <IoMdCheckbox className="my-auto text-xl a100" />
                   <p className="ml-4 text-base g75">...</p>
                 </div>
-
 
                 {/* Mobile Development */}
                 <br />
@@ -298,14 +296,18 @@ const AboutPage: NextPage = () => {
                 <h3 className="text text-xl g100">Coding Editor</h3>
                 <div className="flex">
                   <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Visual Studio Code (VSCode)</p>
+                  <p className="ml-4 text-base g75">
+                    Visual Studio Code (VSCode)
+                  </p>
                 </div>
               </div>
               <button
                 onClick={handleOpen}
-                className={`px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 mt-8 ${open ? 'bg-g50 text-white' : 'btn'}`}
+                className={`px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 mt-8 ${
+                  open ? "bg-g50 text-white" : "btn"
+                }`}
               >
-                {!open ? "See all": "See less"}
+                {!open ? "See all" : "See less"}
               </button>
             </div>
           </div>
