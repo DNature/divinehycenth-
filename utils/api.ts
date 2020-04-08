@@ -4,7 +4,8 @@ import matter from "gray-matter";
 
 const postDirectory = join(process.cwd(), "pages", "blog");
 
-export const getPostSlugs = (): string[] => readdirSync(postDirectory);
+export const getPostSlugs = (): string[] =>
+  readdirSync(postDirectory).filter((val) => val.includes(".md"));
 
 export const getPostsBySlug = (slug: string, fields: any[] = []): any => {
   const realSlug = slug.replace(/\.md$/, "");

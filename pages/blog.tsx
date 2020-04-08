@@ -8,7 +8,6 @@ import LargeCard from "../components/Cards/LargeCard";
 import { getAllPosts } from "../utils/api";
 
 const BlogPage: NextPage<{ allPosts?: any }> = ({ allPosts }) => {
-  console.log(allPosts);
   return (
     <MainLayout pathname="/blog">
       <div className="w-full gradient relative -z-10">
@@ -64,4 +63,5 @@ export const getStaticProps: GetStaticProps = async () => {
 BlogPage.propTypes = {
   allPosts: PropTypes.any,
 };
+
 export default BlogPage;
