@@ -1,16 +1,35 @@
 import React from "react";
 import { NextPage } from "next";
 import PropTypes from "prop-types";
+import { ThemeProvider } from "theme-ui";
+import Prism from "@theme-ui/prism";
 
 import MainLayout from "./Main";
+import FormatDate from "../components/date";
+
+import theme from "../theme";
+
+// This default export is required in a new `pages/_app.js` file.
+const components = {
+  pre: ({ children }: any): JSX.Element => (<>{children}</>) as JSX.Element,
+  code: Prism,
+};
 
 interface Props {
   children: React.ReactNode;
   imageUrl: string;
   title: string;
+  date: string;
+  tags?: string[];
 }
 
-const BlogLayout: NextPage<Props> = ({ children, imageUrl, title }) => {
+const BlogLayout: NextPage<Props> = ({
+  children,
+  imageUrl,
+  title,
+  date,
+  tags,
+}) => {
   return (
     <MainLayout pathname="/blog">
       <div className="w-full gradient relative -z-10">
@@ -26,23 +45,28 @@ const BlogLayout: NextPage<Props> = ({ children, imageUrl, title }) => {
           }}
         />
 
-        <div className="container md:pt-56">
+        <div className="container md:pt-56 pt-32">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white lg:w-3/5">
             {title}
           </h1>
-          <p className="text-white text-sm ">Feb. 20th, 2020</p>
+          <FormatDate dateString={date} />
           <div className="mt-4 flex pb-64 z-auto">
-            <button className="bg-p100 text-white rounded-full px-3 shadow hover:opacity cursor-pointer">
-              Javascript
-            </button>
-            <button className="bg-p100 text-white rounded-full px-3 shadow hover:opacity cursor-pointer ml-4">
-              Graphql
-            </button>
+            {tags &&
+              tags.map((tag, i) => (
+                <button
+                  key={tag + i}
+                  className="btn-tag rounded-full px-3 shadow hover:opacity cursor-pointer mr-2"
+                >
+                  #{tag}
+                </button>
+              ))}
           </div>
         </div>
       </div>
-      <article className="container -mt-48 card-contact shadow rounded-lg ">
-        <div>{children}</div>
+      <article className="container -mt-48 card-contact rounded-lg ">
+        <ThemeProvider components={components} theme={theme}>
+          <div className="max-w-2xl mx-auto py-8">{children}</div>
+        </ThemeProvider>
       </article>
     </MainLayout>
   );
@@ -52,6 +76,8 @@ BlogLayout.propTypes = {
   children: PropTypes.node,
   imageUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  tags: PropTypes.array,
 };
 
 export default BlogLayout;

@@ -1,12 +1,18 @@
 import * as React from "react";
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import { IoIosPlay, IoIosSearch } from "react-icons/io";
+import PropTypes from "prop-types";
 
 import LargeCard from "../components/Cards/LargeCard";
 import SmallCard from "../components/Cards/SmallCard";
 import MainLayout from "../layouts/Main";
+import { getAllPosts } from "../utils/api";
+import { IPosts } from "../interfaces";
 
-const IndexPage: NextPage = () => {
+const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
+  const heroPost = allPosts && allPosts[0];
+  const morePosts = allPosts?.slice(1);
+
   return (
     <MainLayout pathname="/">
       <div className="relative">
@@ -17,13 +23,9 @@ const IndexPage: NextPage = () => {
           <div className="container flex justify-between pt-32 z-10 pb-32 lg:pb-0">
             <div className="lg:flex items-center lg:w-4/6 lg:mr-12">
               <div className="z-auto">
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-                  Hi, I’m Divine Hycenth
-                </h1>
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">Hi, I’m Divine Hycenth</h1>
                 <p className="text-xl lg:mr-40 text-gray-200">
-                  I'm a full stack software developer creating open source
-                  projects and writing about modern JavaScript, Typescript,
-                  Graphql, and development.
+                  I'm a full stack software developer creating open source projects and writing about modern JavaScript, Typescript, Graphql, and development.
                 </p>
               </div>
             </div>
@@ -36,13 +38,7 @@ const IndexPage: NextPage = () => {
         <section className="container">
           <div className="-mt-16 lg:grid gap-8 grid-cols-7">
             <div className="sm:col-span-4">
-              <LargeCard
-                title="Build a progressive web app with Nextjs"
-                image="/images/blog/woman.jpg"
-              >
-                Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla
-                qui.
-              </LargeCard>
+              {heroPost && <LargeCard slug={heroPost.slug} tags={heroPost.tags} title={heroPost.title} imageUrl={heroPost.imageUrl} description={heroPost.description} />}
             </div>
             <div className="sm:col-span-3 sm:px-8 hidden lg:block">
               <div className="card-bg rounded-md px-5 py-5 shadow grid grid-cols-6 grid-rows-3 gap-3">
@@ -78,11 +74,7 @@ const IndexPage: NextPage = () => {
         <div className="container mb-16 lg:grid grid-cols-8 mx-auto">
           <div className="border border-1 border-gray-400 px-4 rounded-full py-4 col-span-2 flex">
             <IoIosSearch className="text-xl text-gray-400 mr-2" />
-            <input
-              type="text"
-              placeholder="Search"
-              className="outline-none bg-transparent text-gray-500"
-            />
+            <input type="text" placeholder="Search" className="outline-none bg-transparent text-gray-500" />
           </div>
           <div className="col-span-2 w-4/6 my-auto ml-4  bg-gray-400 h-1 rounded hidden lg:block" />
         </div>
@@ -94,36 +86,25 @@ const IndexPage: NextPage = () => {
               <div className="mb-10">
                 <h3 className="text-md font-bold p100">Latest</h3>
                 <div className="flex">
-                  <h2 className="text-2xl sm:text-4xl font-bold g100">
-                    Article
-                  </h2>
+                  <h2 className="text-2xl sm:text-4xl font-bold g100">Article</h2>
                   <div className="ml-12 my-auto ">
-                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">
-                      See all
-                    </button>
+                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">See all</button>
                   </div>
                 </div>
               </div>
-              <LargeCard
-                title="Build a progressive web app with Nextjs"
-                image="/images/blog/grass.jpg"
-              >
-                Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla
-                qui.
-              </LargeCard>
+              {morePosts &&
+                morePosts.map(({ title, description, imageUrl, slug, tags }, i) => (
+                  <LargeCard key={title + i} tags={tags} slug={slug} title={title} imageUrl={imageUrl} description={description} />
+                ))}
             </div>
             <div className="sm:col-span-3 lg:px-8">
               {/* Latest Project */}
               <div className="mb-10">
                 <h3 className="text-md font-bold p100">Latest</h3>
                 <div className="flex">
-                  <h2 className="text-2xl sm:text-4xl font-bold g100">
-                    Projects
-                  </h2>
+                  <h2 className="text-2xl sm:text-4xl font-bold g100">Projects</h2>
                   <div className="ml-12 my-auto ">
-                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">
-                      See all
-                    </button>
+                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">See all</button>
                   </div>
                 </div>
               </div>
@@ -138,9 +119,7 @@ const IndexPage: NextPage = () => {
                     // height: "85%"
                   }}
                 />
-                <h3 className="g100 font-bold text-xl mt-2">
-                  Cillum ea cillum
-                </h3>
+                <h3 className="g100 font-bold text-xl mt-2">Cillum ea cillum</h3>
               </div>
             </div>
           </div>
@@ -148,6 +127,18 @@ const IndexPage: NextPage = () => {
       </div>
     </MainLayout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPosts = getAllPosts(["slug", "title", "description", "imageUrl", "date", "tags"]);
+
+  return {
+    props: { allPosts },
+  };
+};
+
+IndexPage.propTypes = {
+  allPosts: PropTypes.array,
 };
 
 export default IndexPage;

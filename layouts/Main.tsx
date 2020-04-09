@@ -9,15 +9,7 @@ import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi";
 const SideColorSwitcher = dynamic(() => import("../components/colors/colors"), {
   ssr: false,
 });
-const Navbar = dynamic(() => import("../components/nav"), { ssr: false });
-
-// const links = [
-//     {
-//         name: 'home',
-//         path: '/',
-
-//     }
-// ]
+const Navbar = dynamic(() => import("../components/nav"));
 
 interface Props {
   pathname?: string;

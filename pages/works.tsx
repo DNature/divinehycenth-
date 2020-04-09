@@ -19,26 +19,24 @@ const WorksPage: NextPage = () => (
         }}
       />
       <div className="container py-32 sm:py-40 md:py-56 z-20">
-        <h1 className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">
-          Recent projects
-        </h1>
+        <h1 className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">Recent projects</h1>
       </div>
     </div>
 
     <div className="container -mt-20">
       <div className="xl:px-64 lg:px-48">
         <LargeCard
+          slug="laksdjfl"
           title="Build a progressive web app with Nextjs"
-          image="/images/blog/woman.jpg"
-        >
-          Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui.
-        </LargeCard>
+          imageUrl="/images/blog/woman.jpg"
+          description="Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui."
+        />
         <LargeCard
+          slug="laksdjfl"
           title="Build a progressive web app with Nextjs"
-          image="/images/blog/main.jpg"
-        >
-          Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui.
-        </LargeCard>
+          imageUrl="/images/blog/woman.jpg"
+          description="Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui."
+        />
       </div>
     </div>
   </MainLayout>

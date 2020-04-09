@@ -31,18 +31,10 @@
   --gradient-btn: linear-gradient(97.1deg, #df1bff 1.03%, #6b0ce3 98.29%);
 
   --gradient-bg: linear-gradient(147.62deg, #df1bff -5.26%, #6b0ce3 102.43%);
-  --gradient-bg-inverse: linear-gradient(
-    126.23deg,
-    #e441ff 3.68%,
-    #6b0ce3 102.56%
-  );
+  --gradient-bg-inverse: linear-gradient(126.23deg, #e441ff 3.68%, #6b0ce3 102.56%);
 
   --gradient-dark: linear-gradient(92.96deg, #38323d 1.03%, #242127 98.29%);
-  --gradient-dark-inverse: linear-gradient(
-    276.09deg,
-    #242127 -17.09%,
-    #3d3a41 116.04%
-  );
+  --gradient-dark-inverse: linear-gradient(276.09deg, #242127 -17.09%, #3d3a41 116.04%);
 }
 
 .blue {
@@ -160,6 +152,11 @@ a {
 .btn {
   color: var(--btn-contrast);
   background: var(--btn);
+}
+
+.btn-tag {
+  color: var(--text);
+  background: var(--gray2);
 }
 
 /* Primary Colors */
@@ -420,6 +417,20 @@ a {
 button,
 button:focus {
   outline: none;
+}
+
+pre {
+  scrollbar-width: 0;
+  overflow-x: scroll;
+}
+
+blockquote {
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.3rem;
+  font-family: sans-serif;
+  border-left: 4px solid var(--primary0);
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 pre::-webkit-scrollbar,

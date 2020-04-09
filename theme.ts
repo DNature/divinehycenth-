@@ -8,7 +8,7 @@ export default {
     heading: "inherit",
     monospace: "Menlo, monospace",
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [16, 18, 21, 24, 26, 38, 52, 64, 96],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -19,11 +19,8 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#07c",
-    secondary: "#30c",
-    muted: "#f6f6f6",
+    text: "var(--text)",
+    background: "var(--bg)",
   },
   styles: {
     root: {
@@ -32,24 +29,27 @@ export default {
       fontWeight: "body",
     },
     h1: {
-      color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: 5,
+      marginBottom: "1rem",
+      marginTop: "3rem",
+      fontSize: 6,
     },
     h2: {
-      color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
-      fontWeight: "heading",
-      fontSize: 4,
+      fontWeight: "body",
+      marginBottom: "1rem",
+      marginTop: "2.9rem",
+      fontSize: 5,
     },
     h3: {
-      color: "text",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
+      marginBottom: "1rem",
+      marginTop: "2.5rem",
       fontSize: 3,
     },
     h4: {
@@ -57,6 +57,8 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
+      marginBottom: "1rem",
+      marginTop: "2.4rem",
       fontSize: 2,
     },
     h5: {
@@ -64,6 +66,8 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
+      marginBottom: "1rem",
+      marginTop: "2rem",
       fontSize: 1,
     },
     h6: {
@@ -71,6 +75,8 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
+      marginBottom: "1rem",
+      marginTop: "1rem",
       fontSize: 0,
     },
     p: {
@@ -78,14 +84,13 @@ export default {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
+      margin: "1.5rem 0",
+      fontSize: 2,
       code: {
-        backgroundColor: "#21262d",
+        backgroundColor: "var(--primary2)",
         fontFamily: "monospace",
-        fontSize: "inherit",
-        // backgroundColor: "#2D2A55",
-        padding: "0 5px",
-        borderRadius: "4px",
-        color: "#9EFEFF",
+        color: "var(--gray4)",
+        margin: "0 2px",
       },
     },
     a: {
@@ -95,7 +100,6 @@ export default {
       code: {
         fontFamily: "monospace",
         backgroundColor: "#21262d",
-        // backgroundColor: "#2D2A55",
         padding: "3px 5px",
         borderRadius: "4px",
         fontSize: "16px",
@@ -109,7 +113,6 @@ export default {
     },
     pre: {
       ...nightOwl,
-      // clipPath: "polygon(33% 0, 53% 1%, 72% 0, 100% 1%, 100% 99%, 69% 100%, 37% 99%, 0 100%, 0 0, 18% 1%);",
       backgroundColor: "#21262d",
       padding: "18px",
       borderRadius: "7px",

@@ -16,9 +16,14 @@ export interface Social {
   link: string;
 }
 
-export interface LargeCardProps {
-  image: string;
+export interface IPost {
   title: string;
-  children: React.ReactNode;
-  path: string;
+  imageUrl: string;
+  slug: string;
+  description: string;
+  tags?: string[];
+}
+
+export interface IPosts {
+  allPosts?: IPost[];
 }
