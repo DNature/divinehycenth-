@@ -8,10 +8,12 @@ import SmallCard from "../components/Cards/SmallCard";
 import MainLayout from "../layouts/Main";
 import { getAllPosts } from "../utils/api";
 import { IPosts } from "../interfaces";
+import formatPosts from "../utils/formatPosts";
 
 const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
+  formatPosts(allPosts);
   const heroPost = allPosts && allPosts[0];
-  const morePosts = allPosts?.slice(1);
+  const morePosts = allPosts?.slice(1, 4);
 
   return (
     <MainLayout pathname="/">
@@ -88,7 +90,7 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
                 <div className="flex">
                   <h2 className="text-2xl sm:text-4xl font-bold g100">Article</h2>
                   <div className="ml-12 my-auto ">
-                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">See all</button>
+                    <button className="px-5 font-bold shadow-primary rounded-full py-2 btn outline-none border-none ">See all</button>
                   </div>
                 </div>
               </div>
@@ -104,7 +106,7 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
                 <div className="flex">
                   <h2 className="text-2xl sm:text-4xl font-bold g100">Projects</h2>
                   <div className="ml-12 my-auto ">
-                    <button className="px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 btn outline-none border-none ">See all</button>
+                    <button className="px-5 font-bold shadow-primary rounded-full py-2 btn outline-none border-none ">See all</button>
                   </div>
                 </div>
               </div>

@@ -7,8 +7,10 @@ import MainLayout from "../../layouts/Main";
 import LargeCard from "../../components/Cards/LargeCard";
 import { getAllPosts } from "../../utils/api";
 import { IPosts } from "../../interfaces";
+import formatPosts from "../../utils/formatPosts";
 
 const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
+  formatPosts(allPosts);
   return (
     <MainLayout pathname="/blog">
       <div className="w-full gradient relative -z-10">

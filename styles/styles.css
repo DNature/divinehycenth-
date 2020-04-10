@@ -96,7 +96,7 @@
   --accent3: var(--accent25);
 
   --shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
-  --shadow-primary: 0px 10px 20px rgba(223, 27, 255, 0.25);
+  --shadow-primary: 0px 20px 40px rgba(225, 27, 255, 0.438);
 }
 
 .dark {
@@ -152,6 +152,21 @@ a {
 .btn {
   color: var(--btn-contrast);
   background: var(--btn);
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+
+.btn:hover {
+  animation: btn 0.3s infinite alternate;
+}
+
+@keyframes btn {
+  from {
+    background-position: right bottom;
+  }
+  to {
+    background-position: left top;
+  }
 }
 
 .btn-tag {
