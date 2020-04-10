@@ -1,6 +1,30 @@
 module.exports = {
   theme: {
     extend: {
+      colors: {
+        transparent: "transparent",
+        white: "#fff",
+        black: "#000",
+        p: {
+          100: "var(--primary0)",
+          75: "var(--primary1)",
+          50: "var(--primary2)",
+          25: "var(--primary3)",
+        },
+        a: {
+          100: "var(--accent0)",
+          75: "var(--accent1)",
+          50: "var(--accent2)",
+          25: "var(--accent3)",
+        },
+        g: {
+          100: "var(--gray0)",
+          75: "var(--gray1)",
+          50: "var(--gray2)",
+          25: "var(--gray3)",
+          15: "var(--gray4)",
+        },
+      },
       translate: {
         "1/7": "300px",
         "2/7": "28.5714286%",

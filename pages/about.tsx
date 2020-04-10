@@ -54,249 +54,249 @@ const AboutPage: NextPage = () => {
               </div>
 
               <div className="flex justify-between my-6">
-                <IoLogoGithub className="text-3xl g100" />
-                <DiStackoverflow className="text-3xl a100" />
+                <IoLogoGithub className="text-3xl text-g-100" />
+                <DiStackoverflow className="text-3xl text-a-100" />
                 <IoLogoTwitter className="text-3xl text-blue-600" />
                 <IoLogoLinkedin className="text-3xl text-blue-500" />
-                <IoLogoDribbble className="text-3xl a75" />
+                <IoLogoDribbble className="text-3xl text-a-75" />
               </div>
             </div>
 
             <div className=" lg:w-3/5">
-              <h2 className="text-xl xl:text-2xl  g100">I’m Divine Hycenth.</h2>
-              <p className="text-base g75">
+              <h2 className="text-xl xl:text-2xl  text-g-100">I’m Divine Hycenth.</h2>
+              <p className="text-base text-g-75">
                 I’m a full stack software developer, technical writer, and UI/UX
                 Designer.
               </p>
               <br />
-              <p className="text-base g75">
+              <p className="text-base text-g-75">
                 I currently spend most of my time programming in
                 JavaScript/TypeScript for three (3) years and writing about it.
               </p>
               <br />
-              <p className="text-base g75">
+              <p className="text-base text-g-75">
                 I also do some python, DevOps(Docker) stuffs when the need
                 arise.
               </p>
               <br />
               <br />
 
-              <p className="font-bold text-md g100">
+              <p className="font-bold text-md text-g-100">
                 Below are some skills i poses.
               </p>
 
               {/* Programming languages */}
               <br />
-              <h3 className="text text-xl g100">Programming Languages</h3>
+              <h3 className="text text-xl text-g-100">Programming Languages</h3>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p100" />
-                <p className="ml-4 text-base g75">Javascript</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                <p className="ml-4 text-base text-g-75">Javascript</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p100" />
-                <p className="ml-4 text-base g75">Typescript</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                <p className="ml-4 text-base text-g-75">Typescript</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p100" />
-                <p className="ml-4 text-base g75">Python</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                <p className="ml-4 text-base text-g-75">Python</p>
               </div>
 
               {/* Backend */}
               <br />
-              <h3 className="text text-xl g100">
+              <h3 className="text text-xl text-g-100">
                 Backend Frameworks/Libraries
               </h3>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Node.js</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Node.js</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Express.js</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Express.js</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Graphql</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Graphql</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">PostgreSQL</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">PostgreSQL</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Mongodb</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Mongodb</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Typeorm</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Typeorm</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl p75" />
-                <p className="ml-4 text-base g75">Django</p>
+                <IoMdCheckbox className="my-auto text-xl text-p-75" />
+                <p className="ml-4 text-base text-g-75">Django</p>
               </div>
 
               {/* Frontend */}
               <br />
-              <h3 className="text text-xl g100">
+              <h3 className="text text-xl text-g-100">
                 Frontend Frameworks/Libraries
               </h3>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">React.js</p>
+                <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                <p className="ml-4 text-base text-g-75">React.js</p>
               </div>
               <div className="flex">
-                <IoMdCheckbox className="my-auto text-xl a100" />
-                <p className="ml-4 text-base g75">Next.js</p>
+                <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                <p className="ml-4 text-base text-g-75">Next.js</p>
               </div>
               <div data-open={open} className={`${!open && "hidden"}`}>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Bootstrap</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Bootstrap</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">HTML & CSS</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">HTML & CSS</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">jQuery</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">jQuery</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Redux</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Redux</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Graphql</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Graphql</p>
                 </div>
 
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Apollo Client</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Apollo Client</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Sass</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Sass</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">Material Design</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Material Design</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a100" />
-                  <p className="ml-4 text-base g75">...</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">...</p>
                 </div>
 
                 {/* Mobile Development */}
                 <br />
-                <h3 className="text text-xl g100">Mobile Development</h3>
+                <h3 className="text text-xl text-g-100">Mobile Development</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl a75" />
-                  <p className="ml-4 text-base g75">React-Native</p>
+                  <IoMdCheckbox className="my-auto text-xl text-a-75" />
+                  <p className="ml-4 text-base text-g-75">React-Native</p>
                 </div>
 
                 {/* Testing */}
                 <br />
-                <h3 className="text text-xl g100">Testing</h3>
+                <h3 className="text text-xl text-g-100">Testing</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Jest</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Jest</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Enzyme</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Enzyme</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">React Testing Library</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">React Testing Library</p>
                 </div>
 
                 {/* Devops */}
                 <br />
-                <h3 className="text text-xl g100">Dev Ops</h3>
+                <h3 className="text text-xl text-g-100">Dev Ops</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Docker + Compose</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Docker + Compose</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Nginx</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Nginx</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">PM2</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">PM2</p>
                 </div>
 
                 {/* Build tools */}
                 <br />
-                <h3 className="text text-xl g100">Build tolls</h3>
+                <h3 className="text text-xl text-g-100">Build tolls</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Webpack</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Webpack</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Babel</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Babel</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Eslint</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Eslint</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Gulp</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Gulp</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Git</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Git</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Prettier</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Prettier</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">TSLint</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">TSLint</p>
                 </div>
 
                 {/* UI/UX */}
                 <br />
-                <h3 className="text text-xl g100">UI/UX Design</h3>
+                <h3 className="text text-xl text-g-100">UI/UX Design</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Figma</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Figma</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Photoshop</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Photoshop</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Adobe Illustrator</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Adobe Illustrator</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Coreldraw</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Coreldraw</p>
                 </div>
 
                 {/* Operating systems */}
                 <br />
-                <h3 className="text text-xl g100">Operating systems (OS)</h3>
+                <h3 className="text text-xl text-g-100">Operating systems (OS)</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Linux (UBUNTU)</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Linux (UBUNTU)</p>
                 </div>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">Windows 10</p>
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">Windows 10</p>
                 </div>
 
                 {/* Coding editor */}
                 <br />
-                <h3 className="text text-xl g100">Coding Editor</h3>
+                <h3 className="text text-xl text-g-100">Coding Editor</h3>
                 <div className="flex">
-                  <IoMdCheckbox className="my-auto text-xl p100" />
-                  <p className="ml-4 text-base g75">
+                  <IoMdCheckbox className="my-auto text-xl text-p-100" />
+                  <p className="ml-4 text-base text-g-75">
                     Visual Studio Code (VSCode)
                   </p>
                 </div>
@@ -304,7 +304,7 @@ const AboutPage: NextPage = () => {
               <button
                 onClick={handleOpen}
                 className={`px-5 font-bold shadow-primary hover:opacity-75 rounded-full py-2 mt-8 ${
-                  open ? "bg-g50 text-white" : "btn"
+                  open ? "bg-g-50 text-white" : "btn"
                 }`}
               >
                 {!open ? "See all" : "See less"}

@@ -15,29 +15,34 @@ const getNChars = (val: string): string => {
 
 const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Element => {
   return (
-    <CustomLink href={`/blog/${slug}`}>
       <div className="card-bg rounded-md px-4 py-4 sm:px-5 sm:py-5 shadow flex justify-between mb-6">
         <div className="w-2/6 gradient rounded hidden sm:block ">
+          <CustomLink href={`/blog/${slug}`}>
           <div
-            className="h-full rounded opacity-75"
+            className="h-full rounded opacity-75 hover:opacity-100 transition-all duration-200"
             style={{
               background: `url("${imageUrl}")`,
               backgroundPosition: "center",
               backgroundSize: "cover",
             }}
           />
+          </CustomLink>
         </div>
         <div className="sm:w-4/6 w-full sm:pl-5 my-auto">
-          <h2 className="g100 text-sm sm:text-xl font-bold">{title}</h2>
+        <CustomLink href={`/blog/${slug}`}>
+          <h2 className="g100 text-sm sm:text-xl font-bold hover:text-primary-100 focus:text-accent-100">{title}</h2>
+        </CustomLink>
           <FormatDate dateString={`${slug.split("_")[0]}`} className="text-sm g50 mb-4" />
           <p className="g75 text-sm sm:text-base">{getNChars(description)}</p>
 
+        <CustomLink href={`/blog/${slug}`}>
           <p className="flex text-xs sm:text-sm mt-2 a100 cursor-pointer justify-between w-12 hover:w-16">
             Read
             <span className="my-auto hover:pl-3 ">
               <IoIosArrowRoundForward />
             </span>
           </p>
+          </CustomLink>
           {tags &&
             tags.map((tag, i) => (
               <button key={tag + i} className="bg-g10 hidden sm:inline-block rounded-full px-3 font-bold g75 text-sm hover:opacity cursor-pointer mr-2 mt-4">
@@ -46,7 +51,6 @@ const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Ele
             ))}
         </div>
       </div>
-    </CustomLink>
   );
 };
 
