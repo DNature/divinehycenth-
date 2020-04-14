@@ -27,11 +27,11 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
         <div className="xl:px-64 lg:px-48">
           {/* Search */}
           <div className="container my-16 lg:grid grid-cols-5 mx-auto">
-            <div className="border border-1 border-gray-400 px-4 rounded-full py-4 col-span-2 flex">
-              <IoIosSearch className="text-xl text-gray-400 mr-2" />
-              <input type="text" placeholder="Search" className="outline-none bg-transparent text-gray-500" />
+            <div className="border border-1 border-g-25 px-4 rounded-full py-4 col-span-2 flex">
+              <IoIosSearch className="text-xl text-g-25 mr-2" />
+              <input type="text" placeholder="Search" className="outline-none bg-transparent text-g-50" />
             </div>
-            <div className="col-span-3 my-auto ml-4 bg-gray-400 h-1 rounded hidden lg:block" />
+            <div className="col-span-3 my-auto ml-4 bg-g-25 h-1 rounded hidden lg:block" />
           </div>
 
           <h3 className="text-md font-bold p100">Latest</h3>

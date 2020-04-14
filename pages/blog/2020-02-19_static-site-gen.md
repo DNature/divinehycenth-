@@ -2,7 +2,7 @@
 layout: "bloglayout"
 title: "Static site generation in next.js"
 description: "HEllo senectus et netus et malesuada fames ac turpis. Ridiculus mus mauris vitae"
-imageUrl: "/images/blog/apple.jpg"
+imageUrl: "/images/blog/grass.jpg"
 tags: ["SSG", "Next.js", "React"]
 ---
 

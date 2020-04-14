@@ -27,3 +27,10 @@ export interface IPost {
 export interface IPosts {
   allPosts?: IPost[];
 }
+
+export interface Favourite {
+  title: string;
+  imageUrl: string;
+  type: string;
+  slug: string;
+}

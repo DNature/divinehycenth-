@@ -2,13 +2,12 @@
 layout: "bloglayout"
 title: "Remove all unused CSS Selectors"
 description: "A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time"
-imageUrl: "/images/blog/apple.jpg"
+imageUrl: "/images/blog/woman.jpg"
 tags: ["css", "purgecss", "minify"]
 ---
 
-# Remove all unused CSS Selectors
+## A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time
 
-A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time
 <br/>
 
 ![Minify Css files](/images/blog/remove-unused-css/remove-unused.jpg)
@@ -17,7 +16,11 @@ A reference guide on how to remove unused CSS selectors, Minify CSS files to red
 Sometimes you wonder why your website takes a longer time 😞 to completely load content but takes shorter time on other websites.
 There are different [**factors**](/blog/optimize-your-website-speed) that can cause this issue like Image sizes and or file sizes.
 
-## What are unused CSS?
+## <a href="#what-are-unused-css" id="what-are-unused-css" className="md:-ml-8 opacity-25 hover:opacity-100 text-p-100"># </a> what are unused css?
+
+<!-- <h2 id="what-are-unused-css?" className="hash">
+<a href="#what-are-unused-css?">What are unused CSS?</a>
+</h2> -->
 
 When developing a website/application, we developers tend to use different CSS frameworks with large file sizes and can really mess up our website loading time. For example, frameworks like [Tailwindcss](https://tailwindcss.com) and [Bootstrap](https://getbootstrap.com) come with dozens of CSS styles that you probably do not need.
 

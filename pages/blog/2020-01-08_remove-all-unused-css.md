@@ -6,9 +6,8 @@ imageUrl: "/images/blog/apple.jpg"
 tags: ["css", "purgecss", "minify"]
 ---
 
-# Remove all unused CSS Selectors
+## A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time
 
-A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time
 <br/>
 
 ![Minify Css files](/images/blog/remove-unused-css/remove-unused.jpg)

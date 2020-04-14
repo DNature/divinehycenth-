@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --black: black;
   --white: white;
@@ -244,11 +248,11 @@ a {
 
 /* Border */
 .border-1 {
-  border-width: 2px;
+  border-width: 2px !important;
 }
 
 .h-1 {
-  height: 2px;
+  height: 2px !important;
 }
 
 /* Responsive */
@@ -321,7 +325,7 @@ a {
 
 button,
 button:focus {
-  outline: none;
+  outline: none !important;
 }
 
 pre {
@@ -341,4 +345,19 @@ blockquote {
 pre::-webkit-scrollbar,
 code::-webkit-scrollbar {
   display: none;
+}
+
+.hash {
+  opacity: 0.2;
+}
+
+.hash:hover {
+  opacity: 1;
+}
+.hover-text:hover ~ .hash {
+  opacity: 1;
+}
+
+body:visited {
+  color: var(--primary1);
 }

@@ -14,7 +14,7 @@ interface Props {
 
 const Footer: NextPage<Props> = ({ pathname, routes }) => {
   return (
-    <footer className="bg-g25 mt-16" style={{ justifySelf: "flex-start" }}>
+    <footer className="bg-g-25 mt-16" style={{ justifySelf: "flex-start" }}>
       <div className="container pt-12 pb-20 lg:grid grid-cols-8 gap-6">
         <div className="col-span-2 grid grid-cols-8">
           <img
@@ -23,15 +23,15 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
             className="col-span-2"
           />
           <div className="col-span-6">
-            <h2 className="text-xl font-bold p100">Divine Hycenth</h2>
-            <p className="g75">&copy; Copyright 2020</p>
+            <h2 className="text-xl font-bold text-p-100">Divine Hycenth</h2>
+            <p className="text-g-75">&copy; Copyright 2020</p>
           </div>
         </div>
         <div className="col-span-2  text-center lg:text-left mt-8 lg:mt-0">
-          <h2 className="text-xl font-bold p100">Menu</h2>
+          <h2 className="text-xl font-bold text-p-100">Menu</h2>
           <CustomLink
-            className={`font-bold block hover:text-gray-600 ${
-              pathname ==  "/" && "text-gray-600"
+            className={`font-bold block hover:text-g-75 ${
+              pathname ==  "/" && "text-g-75"
               }`}
             href={'/'}
           >
@@ -40,8 +40,8 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
           {routes.map(({ path, name }) => (
             <CustomLink
               key={name}
-              className={`font-bold block hover:text-gray-600 ${
-                pathname?.split("/")[1] == path.split("/")[1] && "text-gray-600"
+              className={`font-bold block hover:text-g-75 ${
+                pathname?.split("/")[1] == path.split("/")[1] && "text-g-75"
               }`}
               href={path}
             >

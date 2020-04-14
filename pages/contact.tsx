@@ -32,7 +32,7 @@ const ContactPage: NextPage = () => (
             <div className="my-8">
               <input
                 type="text"
-                className="p-6 bg-g10 rounded-sm w-full outline-none"
+                className="p-6 bg-g-15 rounded-sm w-full outline-none"
                 placeholder="Full Name"
                 autoFocus
               />
@@ -40,13 +40,13 @@ const ContactPage: NextPage = () => (
             <div className="my-8">
               <input
                 type="text"
-                className="p-6 bg-g10 rounded-sm w-full outline-none"
+                className="p-6 bg-g-15 rounded-sm w-full outline-none"
                 placeholder="Full Name"
               />
             </div>
             <div className="my-8">
               <textarea
-                className="p-6 bg-g10 rounded-sm w-full h-40 outline-none resize-none"
+                className="p-6 bg-g-15 rounded-sm w-full h-40 outline-none resize-none"
                 placeholder="How can i help?..."
               />
             </div>

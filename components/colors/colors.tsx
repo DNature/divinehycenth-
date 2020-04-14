@@ -47,22 +47,15 @@ const Colors: NextPage = () => {
   return (
     <>
       <div
-        className={`bg-p100 p-4 z-50 fixed flex justify-center items-center rounded-tr rounded-br shadow cursor-pointer ${
+        className={`bg-p-100 p-4 z-50 fixed flex justify-center items-center rounded-tr rounded-br shadow cursor-pointer ${
           open ? "translate" : "translate-0"
         }`}
         style={{ top: "45vh" }}
       >
-        {/* <button className="px-4 py-2 font-bold gradient" onClick={handleDark}>
-          Dark
-        </button>
-        <button className="px-4 py-2 font-bold gradient" onClick={handleLight}>
-          Light
-        </button> */}
-
         <button onClick={handleOpen}>
           <FiSettings
-            className={`text-xl animate-round text ${
-              body.className === "dark" && "g10"
+            className={`text-xl animate-round text-white ${
+              body.className === "dark" && "text-g-15"
             }`}
           />
         </button>
@@ -96,8 +89,8 @@ const Colors: NextPage = () => {
 
         <button onClick={handleClose}>
           <FiSettings
-            className={`text-xl p100 cursor-pointer animate-round ${
-              body.className === "dark" && "g10"
+            className={`text-xl p100 cursor-pointer animate-round text-p-100 ${
+              body.className === "dark" && "text-g-15"
             }`}
           />
         </button>

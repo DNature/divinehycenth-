@@ -47,6 +47,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   const handleClose = () => {
     setIsOpen(!isOpen);
   };
+ 
 
   return (
     <>
@@ -96,7 +97,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
         <hr className="my-6" />
         <span className="flex-1">
           {routes.map(({ path, name, icon }) => (
-            <CustomLink onClick={handleClose} key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={path}>
+            <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={path}>
               <>
                 {icon}
                 {name}
@@ -116,7 +117,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
           ))}
         </div>
         <div className="col-span-6 text-center mt-6">
-          <p className="g50 text-sm">&copy; Copyright 2020. divinehycenth.com</p>
+          <p className="text-g-50 text-sm">&copy; Copyright 2020. divinehycenth.com</p>
         </div>
       </nav>
     </>

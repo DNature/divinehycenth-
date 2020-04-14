@@ -9,7 +9,7 @@ import "../styles/progress.css";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   React.useEffect(() => {
-    NProgress.configure({ easing: "ease-in-out", speed: 200 });
+    // NProgress.configure({ easing: "ease-in-out", speed: 200 });
 
     Router.events.on("routeChangeStart", () => {
       NProgress.inc(0.3);
