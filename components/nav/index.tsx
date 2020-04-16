@@ -8,14 +8,6 @@ import { FiMenu } from "react-icons/fi";
 import { social } from "../../constants/social";
 import { Social } from "../../interfaces";
 
-// const links = [
-//     {
-//         name: 'home',
-//         path: '/',
-
-//     }
-// ]
-
 interface Props {
   pathname?: string;
   routes: {

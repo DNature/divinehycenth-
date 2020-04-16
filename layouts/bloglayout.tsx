@@ -8,6 +8,7 @@ import MainLayout from "./Main";
 import FormatDate from "../components/date";
 
 import theme from "../theme";
+import Tag from '../components/tag';
 
 // This default export is required in a new `pages/_app.js` file.
 const components = {
@@ -42,17 +43,10 @@ const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags }) 
         <div className="container md:pt-56 pt-32">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white lg:w-3/5">{title}</h1>
           <FormatDate dateString={date} className="text-white" />
-          <div className="mt-4 flex pb-64 z-auto">
-            {tags &&
-              tags.map((tag, i) => (
-                <button key={tag + i} className="btn-tag rounded-full px-3 shadow hover:opacity cursor-pointer mr-2">
-                  #{tag}
-                </button>
-              ))}
-          </div>
+          <div className="mt-4 flex pb-64 z-auto">{tags && tags.map((tag, i) => <Tag key={tag + i} tag={tag} />)}</div>
         </div>
       </div>
-      <article className="container -mt-48 card-contact rounded-lg ">
+      <article className="container -mt-48 bg rounded-lg ">
         <ThemeProvider components={components} theme={theme}>
           <div className="max-w-2xl mx-auto py-8">{children}</div>
         </ThemeProvider>

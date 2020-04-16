@@ -93,9 +93,10 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
                 </div>
               </div>
               {morePosts &&
-                morePosts.map(({ title, description, imageUrl, slug, tags }, i) => (
+                morePosts.map(({ title, description, imageUrl, slug, tags }, i) => {
+                  return (
                   <LargeCard key={title + i} tags={tags} slug={slug} title={title} imageUrl={imageUrl} description={description} />
-                ))}
+                )})}
             </div>
             <div className="sm:col-span-3 lg:px-8">
               {/* Latest Project */}

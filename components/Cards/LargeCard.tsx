@@ -3,6 +3,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { IPost } from "../../interfaces";
 import CustomLink from "../CustomLink";
 import FormatDate from "../date";
+import Tag from '../tag';
+// style = {{ backgroundColor: bgColor( tag ), color: color( tag ) }}
 
 const getNChars = (val: string): string => {
   const sortNChars = val.substring(0, 100);
@@ -13,7 +15,10 @@ const getNChars = (val: string): string => {
   return sortNChars + "...";
 };
 
-const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Element => {
+
+const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Element => { 
+  
+ 
   return (
     <div className="card-bg rounded-md px-4 py-4 sm:px-5 sm:py-5 shadow flex justify-between mb-6">
       <div className="w-2/6 gradient rounded hidden sm:block ">
@@ -45,13 +50,11 @@ const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Ele
         </CustomLink>
         {tags &&
           tags.map((tag, i) => (
-            <button key={tag + i} className="bg-g-15 hidden sm:inline-block rounded-full px-3 font-bold text-g-75 text-sm hover:opacity cursor-pointer mr-2 mt-4">
-              #{tag}
-            </button>
+            <Tag key={tag + i} tag={tag} />
           ))}
       </div>
     </div>
   );
 };
 
-export default LargeCard;
+export default LargeCard; 

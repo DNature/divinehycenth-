@@ -34,3 +34,5 @@ export interface Favourite {
   type: string;
   slug: string;
 }
+
+export type IArray = { ext: string; bgColor: string; color: string; icon?: string; language: string };
