@@ -40,7 +40,7 @@ const AboutPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="container -mt-64 before before-1">
+      <div className="container -mt-64">
         <div className="xl:px-32 lg:px-20">
           <div className="card-contact shadow rounded-lg p-6 lg:flex">
             <div className=" lg:w-2/5 lg:mr-6 ">

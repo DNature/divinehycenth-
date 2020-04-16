@@ -27,7 +27,7 @@ interface Props {
 const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags }) => {
   return (
     <MainLayout pathname="/blog">
-      <div className="w-full gradient relative -z-10">
+      <div className="w-full gradient relative -z-10 after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
           <div className="gradient-alt circle absolute" />
         </div>
@@ -46,7 +46,7 @@ const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags }) 
           <div className="mt-4 flex pb-64 z-auto">{tags && tags.map((tag, i) => <Tag key={tag + i} tag={tag} />)}</div>
         </div>
       </div>
-      <article className="container -mt-48 bg rounded-lg ">
+      <article className="container -mt-48 bg rounded-lg">
         <ThemeProvider components={components} theme={theme}>
           <div className="max-w-2xl mx-auto py-8">{children}</div>
         </ThemeProvider>

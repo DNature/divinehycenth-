@@ -7,6 +7,7 @@
     "start": "NODE_ENV=production next start",
     "export": "NODE_ENV=production next export",
     "deploy": "NODE_ENV=production yarn build && yarn export",
+    "gulp:img": "gulp minifyImages --verbose",
     "type-check": "tsc"
   },
   "dependencies": {

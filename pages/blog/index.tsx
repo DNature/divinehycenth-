@@ -13,7 +13,7 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
   return (
     <MainLayout pathname="/blog">
-      <div className="w-full gradient relative -z-10">
+      <div className="w-full gradient relative -z-10 after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0">
           <div className="gradient-alt circle absolute" />
         </div>

@@ -6,7 +6,7 @@ import LargeCard from "../components/Cards/LargeCard";
 
 const WorksPage: NextPage = () => (
   <MainLayout pathname="/works">
-    <div className="w-full gradient relative -z-10">
+    <div className="w-full gradient relative -z-10  after after-2">
       <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
         <div className="gradient-alt -rotate-180  circle absolute" />
       </div>
