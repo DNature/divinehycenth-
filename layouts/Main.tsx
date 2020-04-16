@@ -41,9 +41,9 @@ const routes = [
 
 const MainLayout: NextPage<Props> = ({ pathname, children }) => {
   return (
-    <div className="flex flex-col h-full" style={{ height: "100vh" }}>
+    <div className="relative flex flex-col h-full" style={{ height: "100vh" }}>
       <Navbar pathname={pathname} routes={routes} />
-      <div className="flex-1 z-10">{children}</div>
+      <div className="flex-1 z-10 relative">{children}</div>
 
       <Footer pathname={pathname} routes={routes} />
       <SideColorSwitcher />

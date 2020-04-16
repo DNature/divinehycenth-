@@ -370,6 +370,53 @@ body:visited {
   color: var(--primary1);
 }
 
+.after::after {
+  z-index: 1;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+
+  background-repeat: repeat-x;
+  background-image: url(/images/brush-yellow.png);
+  filter: brightness(100);
+  background-position: 172px 0;
+}
+
+.after-1::after {
+  bottom: -100px;
+}
+.after-2::after {
+  bottom: -35px;
+}
+
+.before::before {
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  pointer-events: none;
+
+  background-repeat: repeat-x;
+  background-image: url(/images/brush-yellow.png);
+  filter: brightness(100);
+  background-position: 172px 0;
+}
+
+.before-1::before {
+  top: 27px;
+}
+
+.before-2::before {
+  z-index: 1;
+  top: -35px;
+}
 /* .brush-after::after {
   z-index: -1;
   content: "";

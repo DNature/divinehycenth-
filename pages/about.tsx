@@ -20,7 +20,7 @@ const AboutPage: NextPage = () => {
 
   return (
     <MainLayout pathname="/about">
-      <div className="w-full gradient relative -z-10">
+      <div className="w-full gradient relative -z-10 after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
           <div className="gradient-alt -rotate-180  circle absolute" />
           <div className="gradient-alt circle-2 absolute" />
@@ -40,7 +40,7 @@ const AboutPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="container -mt-64">
+      <div className="container -mt-64 before before-1">
         <div className="xl:px-32 lg:px-20">
           <div className="card-contact shadow rounded-lg p-6 lg:flex">
             <div className=" lg:w-2/5 lg:mr-6 ">

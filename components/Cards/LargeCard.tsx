@@ -35,7 +35,7 @@ const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Ele
       </div>
       <div className="sm:w-4/6 w-full sm:pl-5 my-auto">
         <CustomLink href={`/blog/${slug}`}>
-          <h2 className="text-g-100 text-sm sm:text-xl font-bold hover:text-p-100">{title}</h2>
+          <h2 className="text-g-100 text-sm sm:text-xl font-bold hover:text-p-100 hover:underline">{title}</h2>
         </CustomLink>
         <FormatDate dateString={`${slug.split("_")[0]}`} className="text-sm text-g-50 mb-4" />
         <p className="text-g-75 text-sm sm:text-base">{getNChars(description)}</p>

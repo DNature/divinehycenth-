@@ -39,7 +39,8 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
           </div>
         </div>
 
-        <section className="container">
+<div className="relative">
+        <section className="container before before-1">
           <div className="-mt-16 lg:grid gap-8 grid-cols-7">
             <div className="sm:col-span-4">
               {heroPost && <LargeCard slug={heroPost.slug} tags={heroPost.tags} title={heroPost.title} imageUrl={heroPost.imageUrl} description={heroPost.description} />}
@@ -127,6 +128,7 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
             </div>
           </div>
         </main>
+        </div>
       </div>
     </MainLayout>
   );

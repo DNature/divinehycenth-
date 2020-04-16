@@ -33,7 +33,7 @@ function switcher(val: string) {
       return { color: "#efefef", backgroundColor: "#000000" };
 
     default:
-      return { color: "var(text)", backgroundColor: "var(--gray4);" };
+      return { color: "var(text)", backgroundColor: "var(--gray4)" };
   }
 }
 
