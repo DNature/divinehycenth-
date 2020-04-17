@@ -17,10 +17,11 @@ const Footer: NextPage<Props> = ({ pathname, routes }) => {
     <footer className="before before-2 mt-16 relative" style={{ justifySelf: "flex-start", backgroundColor: "#4d5254" }}>
       <div className="container pt-12 pb-20 lg:grid grid-cols-8 gap-6">
         <div className="col-span-2 grid grid-cols-8">
-          <img src="/images/logo-footer.svg" alt="Footer logo" className="col-span-2" />
+          <img src="/images/icons/logo.svg" alt="Footer logo" className="col-span-2" />
           <div className="col-span-6">
             <h2 className="text-xl font-bold text-white">Divine Hycenth</h2>
             <p className="text-g-25">&copy; Copyright 2020</p>
+            <blockquote/>
           </div>
         </div>
         <div className="col-span-2  text-center lg:text-left mt-8 lg:mt-0">

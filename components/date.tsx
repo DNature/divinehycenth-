@@ -5,7 +5,7 @@ import moment from "moment";
 // console.log(new Date().toLocaleDateString().split("/").join("-"));
 
 const format = (arg: string): string => {
-  return moment(arg).format("ll");
+  return moment(new Date(arg).toISOString()).format("ll");
 };
 
 export default function FormatDate({ dateString, className }: { dateString: string; className?: string }): JSX.Element {

@@ -38,7 +38,11 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
           <h2 className="text-2xl mb-12 sm:text-4xl font-bold g100">Article</h2>
 
           {allPosts &&
-            allPosts.map(({ title, description, imageUrl, slug }: any) => <LargeCard key={title} title={title} imageUrl={imageUrl} slug={slug} description={description} />)}
+            allPosts.map( ( { title, tags, description, imageUrl, slug }: any, i ) => {
+              return (
+                <LargeCard key={title + i} tags={tags} slug={slug} title={title} imageUrl={imageUrl} description={description} />
+              )
+            })}
         </div>
       </div>
     </MainLayout>
@@ -46,7 +50,7 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = getAllPosts(["slug", "title", "description", "imageUrl"]);
+  const allPosts = getAllPosts(["slug", "title", "description", "imageUrl", "tags"]);
 
   return {
     props: { allPosts },

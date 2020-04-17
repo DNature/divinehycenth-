@@ -1,42 +1,49 @@
 import { IArray } from "../interfaces";
 
 export const lang: IArray[] = [
-  {
-    ext: "js",
-    icon: "/images/icons/JS.svg",
-    bgColor: "yellow",
-    color: "white",
-    language: "javascript",
-  },
-  {
-    ext: "ts",
-    icon: "/images/icons/TS.svg",
-    bgColor: "blue",
-    color: "white",
-    language: "typescript",
-  },
-  {
-    ext: "jsx",
-    icon: "/images/icons/react.svg",
-    bgColor: "skyblue",
-    color: "white",
-    language: "react",
-  },
-  {
-    ext: "css",
-    icon: "/images/icons/css.png",
-    bgColor: "blue",
-    color: "white",
-    language: "css",
-  },
-  {
-    ext: "html",
-    icon: "/images/icons/html.png",
-    bgColor: "red",
-    color: "white",
-    language: "html",
-  },
-];
+         {
+           ext: "js",
+           icon: "/images/icons/JS.svg",
+           bgColor: "yellow",
+           color: "white",
+           language: "javascript",
+         },
+         {
+           ext: "ts",
+           icon: "/images/icons/TS.svg",
+           bgColor: "blue",
+           color: "white",
+           language: "typescript",
+         },
+         {
+           ext: "jsx",
+           icon: "/images/icons/react.svg",
+           bgColor: "skyblue",
+           color: "white",
+           language: "react",
+         },
+         {
+           ext: "css",
+           icon: "/images/icons/css.png",
+           bgColor: "blue",
+           color: "white",
+           language: "css",
+         },
+         {
+           ext: "html",
+           icon: "/images/icons/html.png",
+           bgColor: "red",
+           color: "white",
+           language: "html",
+         },
+         {
+           ext: "gulp",
+           icon: "/images/icons/JS.svg",
+           bgColor: "red",
+           color: "white",
+           language: "gulp",
+         },
+       ];
 
 export const filterColor = (language: string): IArray | undefined => {
   const langArr = language.toLowerCase().split(".");

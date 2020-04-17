@@ -1,20 +1,21 @@
 ---
 layout: "bloglayout"
-title: "Monorepo Typescript setup with Yarn workspaces in 2020"
+title: "Setup Yarn workspaces with typescript."
 description: "A complete guide on how to setup Yarn workspace for React web, and React-Native(expo) with Typescript."
-imageUrl: "/images/blog/apple.jpg"
-tags: ["css", "purgecss", "minify"]
+imageUrl: "/images/blog/yarn-workspace/thumbnail.png"
+tags: ["yarn", "workspace", "typescript"]
 ---
 
-How to setup Yarn workspace for React web, and React-Native(expo) with Typescript
+import CustomLink from "../../components/CustomLink.tsx";
+import CodeWrapper from '../../components/codeWrapper';
+
+![How to setup yarn workspaces](/images/blog/yarn-workspace/thumbnail.png)
+
+## How to setup Yarn workspace for React web, and React-Native(expo) with Typescript
+
 <br/>
 
-![https://www.pexels.com/photo/macbook-pro-on-white-table-3740745/](/images/blog/yarn-workspace/yarn-workspace.jpg)
-<br/>
-
-<div className="text-center text-sm -mt-3 mb-4 opacity-75">Photo credit: <a href="https://www.pexels.com/@bongkarn-thanyakij-683719">Bongkarn thanyakij</a> on <a href="https://www.pexels.com/photo/macbook-pro-on-white-table-3740745/">Pexels</a></div>
-
-## Prerequisites
+### Prerequisites
 
 - You must have **Typescript** installed on your system and some basic knowledge of it.
 

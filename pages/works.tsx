@@ -26,13 +26,14 @@ const WorksPage: NextPage = () => (
     <div className="container -mt-20">
       <div className="xl:px-64 lg:px-48">
         <LargeCard
-          slug="laksdjfl"
+          slug="2020,05,03"
           title="Build a progressive web app with Nextjs"
           imageUrl="/images/blog/woman.jpg"
           description="Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui."
+          
         />
         <LargeCard
-          slug="laksdjfl"
+          slug="2020,05,09"
           title="Build a progressive web app with Nextjs"
           imageUrl="/images/blog/woman.jpg"
           description="Cillum ea cillum veniam ut amet magna dolor incididunt. Nulla qui."

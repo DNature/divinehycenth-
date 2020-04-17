@@ -1,17 +1,17 @@
 ---
 layout: "bloglayout"
 title: "Remove all unused CSS Selectors"
-description: "A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time"
-imageUrl: "/images/blog/apple.jpg"
-tags: ["css", "purgecss", "minify"]
+description: "A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time."
+imageUrl: "/images/blog/remove-unused-css/thumbnail.png"
+tags: ["css", "gulp", "performance"]
 ---
 
+import CodeWrapper from '../../components/codeWrapper';
+import CustomLink from "../../components/CustomLink.tsx";
+
+![Minify Css files](/images/blog/remove-unused-css/thumbnail.png)
+
 ## A reference guide on how to remove unused CSS selectors, Minify CSS files to reduce your website's loading time
-
-<br/>
-
-![Minify Css files](/images/blog/remove-unused-css/remove-unused.jpg)
-<br/>
 
 Sometimes you wonder why your website takes a longer time 😞 to completely load content but takes shorter time on other websites.
 There are different [**factors**](/blog/optimize-your-website-speed) that can cause this issue like Image sizes and or file sizes.
@@ -77,7 +77,3 @@ npm run purgecss --config ./purgecss.config.js
 ## Summary
 
 Now you know why some websites takes longer to load and removing unused css selectors can improve the loading time. You're most likely to notice the changes when using some frameworks like [Tailwindcss](https://tailwindcss.com) and [Bootstrap](https://getbootstrap.com).
-
-<br/>
-
-## Learn more
