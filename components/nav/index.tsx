@@ -46,7 +46,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
       <div className={`py-4 justify-center z-20 fixed top-0 left-0 w-full hidden sm:flex ${navBackground && "gradient shadow"}`}>
         <nav className="flex content-center ">
           <CustomLink href="/" className="my-auto">
-            <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "w-12 h-12" : "w-16 h-16"} mr-10  transition-all duration-200`} />
+            <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "h-12" : "h-16"} mr-10  transition-all duration-200`} />
           </CustomLink>
           {routes.map(({ path, name }) => (
             <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={path}>
@@ -63,7 +63,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
       <div className={`z-20 fixed top-0 left-0 w-full py-0 flex flex-col sm:hidden ${navBackground && "gradient shadow"}`}>
         <div className="flex justify-between p-4">
           <CustomLink href="/">
-            <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "w-8 h-8" : "w-12 h-12"}  transition-all duration-200`} />
+            <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "h-8" : "h-12"}  transition-all duration-200`} />
           </CustomLink>
           <button onClick={() => setIsOpen(true)}>
             <FiMenu className="text-white text-2xl my-auto" />
@@ -80,7 +80,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
       >
         <div className="flex px-4 justify-between">
           <CustomLink href="/">
-            <img src="/images/icons/logo.svg" alt="Logo" className="w-10 h-10" onClick={handleClose} />
+            <img src="/images/icons/logo.svg" alt="Logo" className="h-10" onClick={handleClose} />
           </CustomLink>
           <button onClick={handleClose}>
             <IoMdClose className="text-white text-2xl my-auto" />
