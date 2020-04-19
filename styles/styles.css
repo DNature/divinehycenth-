@@ -39,12 +39,17 @@ html {
 
   --gradient-dark: linear-gradient(103.72deg, #1e2426 1.03%, #12181b 98.29%);
   --gradient-dark-inverse: linear-gradient(285.26deg, #1a2125 -17.09%, #343a3d 116.04%);
+
+  --transparent-primary: rgba(107, 12, 227, 0.6);
+  --transparent-blue: rgba(56, 37, 253, 0.6);
+  --transparent-dark: rgba(18, 24, 27, 0.6);
 }
 
 .blue {
   --bg: var(--white);
   --text: var(--gray100);
   --card: var(--white);
+  --transparent: var(--transparent-blue);
 
   --gradient: linear-gradient(130.49deg, #0fb1d9 1.26%, #3825fd 99.21%);
   --gradient-inverse: linear-gradient(125.82deg, #4bc5e2 1.26%, #3825fd 99.21%);
@@ -77,6 +82,8 @@ html {
   --text: var(--gray100);
   --card: var(--white);
 
+  --transparent: var(--transparent-primary);
+
   --gradient: var(--gradient-bg);
   --gradient-inverse: var(--gradient-bg-inverse);
 
@@ -106,6 +113,8 @@ html {
 .dark {
   --bg: var(--gray100);
   --text: var(--white);
+
+  --transparent: var(--transparent-dark);
 
   --card: var(--gradient-dark-inverse);
 
@@ -217,6 +226,9 @@ a {
   background: var(--gradient-inverse);
 }
 
+.z-100 {
+  z-index: 1000;
+}
 .-z-10 {
   z-index: -10;
 }
@@ -474,4 +486,23 @@ body:visited {
 .btns::after {
   background: #32c146;
   margin-left: 20px;
+}
+
+/* Works page */
+
+.h-60vh {
+  height: 60vh;
+}
+
+.crwn-clothing {
+  background: linear-gradient(126.78deg, #e7d7d6 -32.22%, #d6eff0 121.15%);
+}
+
+.no-scroll {
+  scrollbar-width: 0;
+  overflow-y: scroll;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
 }

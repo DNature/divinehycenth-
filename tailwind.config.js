@@ -3,7 +3,8 @@ module.exports = {
     extend: {
       colors: {
         transparent: "transparent",
-        white: "#fff",
+        bg: "var(--bg)",
+        white: "var(--white)",
         black: "#000",
         p: {
           100: "var(--primary0)",
@@ -24,6 +25,9 @@ module.exports = {
           25: "var(--gray3)",
           15: "var(--gray4)",
         },
+        overlay: {
+          default: "var(--transparent)",
+        },
       },
       translate: {
         "1/7": "300px",
@@ -32,6 +36,17 @@ module.exports = {
         "4/7": "57.1428571%",
         "5/7": "71.4285714%",
         "6/7": "85.7142857%",
+      },
+      boxShadow: {
+        default: "var(--shadow)",
+        primary: "var(--shadow-primary)",
+        gradient: "var(--gradient)",
+        "gradient-alt": "var(--gradient-inverse)",
+      },
+      height: {
+        68: "18rem",
+        70: "20rem",
+        72: "22rem",
       },
     },
     borderRadius: {
@@ -59,7 +74,7 @@ module.exports = {
     },
   },
   corePlugins: {
-    boxShadow: false,
+    // boxShadow: false,
   },
   variants: {
     width: ["responsive", "hover"],
