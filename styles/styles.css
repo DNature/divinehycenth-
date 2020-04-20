@@ -282,6 +282,19 @@ a {
     height: 158px;
   }
 
+  .works {
+    background-size: contain !important;
+  }
+
+  .officepages,
+  .crwn-clothing,
+  .movie-time,
+  .unsplash,
+  .clean-fits,
+  .transferwise {
+    max-height: 40vh;
+  }
+
   .circle {
     width: 400px;
     height: 400px;
@@ -505,4 +518,32 @@ body:visited {
 
 .no-scroll::-webkit-scrollbar {
   display: none;
+}
+
+.officepages {
+  background: radial-gradient(70.26% 618.58% at 23.91% 139.94%, #7b28a2 0%, #43a9f3 91.37%);
+}
+
+.movie-time {
+  background: radial-gradient(31.91% 254.53% at 43.28% 65.42%, #0d1218 0%, #111b29 100%);
+}
+
+.clean-fits {
+  background: radial-gradient(31.91% 254.53% at 43.28% 65.42%, #1a2536 0%, #111b29 100%);
+}
+
+.transferwise {
+  background: radial-gradient(70.26% 618.58% at 23.91% 139.94%, #286ea2 0%, #d3ffef 0.01%, #ade2ff 91.37%);
+}
+
+.unsplash {
+  background: radial-gradient(70.26% 618.58% at 23.91% 139.94%, #a24528 0%, #ffded3 0.01%, #e5adff 91.37%);
+  /* background-size: contain; */
+}
+
+.works {
+  background: url(/images/tiger.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }

@@ -35,8 +35,9 @@ const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags }) 
           className="absolute h-full w-full left-0 top-0 opacity-25 -z-4"
           style={{
             background: `url(${imageUrl})`,
-            backgroundPosition: "center",
+            backgroundPosition: "center 30%",
             backgroundSize: "cover",
+            // backgroundAttachment: 'fixed'
           }}
         />
 

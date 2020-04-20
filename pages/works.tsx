@@ -2,7 +2,12 @@ import React from "react";
 import { NextPage } from "next";
 
 import MainLayout from "../layouts/Main";
-import LeftDialog from "../components/dialogs/leftDialog";
+import CrwnClothing from "../components/works/CrwnClothing";
+import OfficePages from '../components/works/OfficePages';
+import MovieTime from '../components/works/MovieTime';
+import Transferwise from '../components/works/Transferwise';
+import Cleanfits from '../components/works/Cleanfits';
+import Unsplash from '../components/works/Unsplash';
 
 const WorksPage: NextPage = () => {
   return (
@@ -12,24 +17,26 @@ const WorksPage: NextPage = () => {
           <div className="gradient-alt -rotate-180  circle absolute" />
         </div>
         <div
-          className="absolute h-full w-full left-0 top-0 opacity-25 -z-4"
-          style={{
-            background: 'url("/images/blog/woman.jpg")',
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-          }}
+          className="absolute h-full w-full left-0 top-0 opacity-50 -z-4 works"
         />
         <div className="container py-32 sm:py-40 md:py-56 z-20">
           <h1 className="text-center text-2xl sm:text-4xl lg:text-5xl font-bold text-white">Recent projects</h1>
         </div>
       </div>
 
-      <div className="-mt-20">
-        <div className="lg:px-8 px-4">
+      <div className="-mt-24">
+        <div className="lg:px-8 px-4 mb-12">
           {/* CRWN CLOTHING */}
-          <LeftDialog />
+          <CrwnClothing />
+          <OfficePages />
+          <MovieTime />
+          <Transferwise />
+          <Cleanfits />
+          <Unsplash />
           {/*  */}
         </div>
+
+          
       </div>
     </MainLayout>
   );

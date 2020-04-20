@@ -5,6 +5,7 @@ module.exports = {
         transparent: "transparent",
         bg: "var(--bg)",
         white: "var(--white)",
+        text: "var(--text)",
         black: "#000",
         p: {
           100: "var(--primary0)",

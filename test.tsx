@@ -1,5 +1,9 @@
 // @ts-nocheck
 import * as React from 'react';
+import NProgress from "nprogress";
+NProgress.inc( 0.3 );
+NProgress.start();
+
 
 
 const Test =  () => (

@@ -10,7 +10,7 @@ import CustomLink from "../../components/CustomLink.tsx";
 import CodeWrapper from '../../components/codeWrapper';
 
 
-![https://www.pexels.com/photo/photo-of-man-pushing-hay-bale-2600312/](/images/blog/deploy-to-netlify/thumbnail.jpg.jpg)
+![deploy nextjs project to netlify](/images/blog/deploy-to-netlify/thumbnail.jpg)
 
 
 ## What is Netlify
