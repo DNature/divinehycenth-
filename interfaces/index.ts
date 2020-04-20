@@ -35,4 +35,12 @@ export interface Favourite {
   slug: string;
 }
 
+export interface IWorksData {
+  title: string;
+  url: string;
+  github: string;
+  description: string;
+  images: string[];
+}
+
 export type IArray = { ext: string; bgColor: string; color: string; icon?: string; language: string };

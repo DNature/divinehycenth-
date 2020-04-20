@@ -26,10 +26,7 @@ Now you know what and why we should remove unused css so **Lets hit the ground r
 
 ## [Purge CSS](https://purgecss.com/)
 
-<br/>
-
 ![Purge CSS](/images/blog/remove-unused-css/purgecss.webp)
-<br/>
 
 This is one of the best tool i've come across while trying to remove _Unused CSS_ and its very easy to implement into your existing application.
 

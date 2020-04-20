@@ -11,7 +11,6 @@ import CodeWrapper from '../../components/codeWrapper';
 
 ![Handling file uploads with apollo server 2.0](/images/blog/file-uploads-with-apolloserver-2/thumbnail.png)
 
-
 ## A comprehensive guide on how to upload files with Apollo-server 2.0 and Mongodb.
 
 ### Prerequisites
@@ -36,8 +35,6 @@ Depending on your problem domain and your use case, the way you set up file uplo
 
 One of the simplest ways of achieving file uploads in a single request is to base64-encode a file and send as a string variable in a mutation.
 
-<br/>
-
 ## How it works
 
 The upload functionality follows the GraphQL multipart form requests specification. Two parts are needed to make the upload work correctly. The server and the client:
@@ -45,8 +42,6 @@ The upload functionality follows the GraphQL multipart form requests specificati
 - **The Client:** On the client, file objects are mapped into a mutation and sent to the server in a multipart request.
 
 - **The Server:** The multipart request is received. The server processes it and provides an upload argument to a resolver. In the resolver function, the upload promise resolves an object.
-
-<br/>
 
 ## Our project structure
 
@@ -99,7 +94,7 @@ export default (async function connect() {
   try {
     await mongoose.connect(MONGO_CONNECTION, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
   } catch (err) {
     console.error(err);
@@ -123,7 +118,7 @@ import resolvers from "./resolvers";
 // Import your database configuration
 import connect from "./db";
 
-export default (async function() {
+export default (async function () {
   try {
     await connect.then(() => {
       console.log("Connected 🚀 To MongoDB Successfully");
@@ -131,7 +126,7 @@ export default (async function() {
 
     const server = new ApolloServer({
       typeDefs,
-      resolvers
+      resolvers,
     });
 
     server.listen(4000, () => {
@@ -166,8 +161,8 @@ export default gql`
 ```js
 export default {
   Query: {
-    hello: () => "Hello world"
-  }
+    hello: () => "Hello world",
+  },
 };
 ```
 
@@ -299,7 +294,7 @@ const storeUpload = async ({ stream, filename, mimetype }) => {
   );
 };
 
-const processUpload = async upload => {
+const processUpload = async (upload) => {
   const { createReadStream, filename, mimetype } = await upload;
   const stream = createReadStream();
   const file = await storeUpload({ stream, filename, mimetype });
@@ -308,19 +303,19 @@ const processUpload = async upload => {
 
 export default {
   Query: {
-    hello: () => "Hello world"
+    hello: () => "Hello world",
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
       // Creates an images folder in the root directory
-      mkdir("images", { recursive: true }, err => {
+      mkdir("images", { recursive: true }, (err) => {
         if (err) throw err;
       });
       // Process upload
       const upload = await processUpload(file);
       return upload;
-    }
-  }
+    },
+  },
 };
 ```
 
@@ -363,7 +358,7 @@ import { Schema, model } from "mongoose";
 const fileSchema = new Schema({
   filename: String,
   mimetype: String,
-  path: String
+  path: String,
 });
 
 export default model("File", fileSchema);
@@ -396,7 +391,7 @@ const storeUpload = async ({ stream, filename, mimetype }) => {
   );
 };
 
-const processUpload = async upload => {
+const processUpload = async (upload) => {
   const { createReadStream, filename, mimetype } = await upload;
   const stream = createReadStream();
   const file = await storeUpload({ stream, filename, mimetype });
@@ -405,11 +400,11 @@ const processUpload = async upload => {
 
 export default {
   Query: {
-    hello: () => "Hello world"
+    hello: () => "Hello world",
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
-      mkdir("images", { recursive: true }, err => {
+      mkdir("images", { recursive: true }, (err) => {
         if (err) throw err;
       });
 
@@ -417,8 +412,8 @@ export default {
       // save our file to the mongodb
       await File.create(upload);
       return upload;
-    }
-  }
+    },
+  },
 };
 ```
 

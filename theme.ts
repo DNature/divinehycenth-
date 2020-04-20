@@ -3,8 +3,7 @@ const nightOwl = require("@theme-ui/prism/presets/shades-of-purple.json");
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body:
-      'system-ui, "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "inherit",
     monospace: "Menlo, monospace",
   },
@@ -94,7 +93,10 @@ export default {
       },
     },
     a: {
-      color: "primary",
+      color: "var(--primary0)",
+      "&:hover": {
+        textDecoration: "underline",
+      },
     },
     li: {
       code: {

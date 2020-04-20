@@ -1,6 +1,5 @@
 import React from "react";
 import { NextPage, GetStaticProps } from "next";
-import { IoIosSearch } from "react-icons/io";
 import PropTypes from "prop-types";
 
 import MainLayout from "../../layouts/Main";
@@ -8,6 +7,7 @@ import LargeCard from "../../components/Cards/LargeCard";
 import { getAllPosts } from "../../utils/api";
 import { IPosts } from "../../interfaces";
 import formatPosts from "../../utils/formatPosts";
+import Search from '../../components/search';
 
 const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
@@ -26,22 +26,14 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
       <div className="container">
         <div className="xl:px-64 lg:px-48">
           {/* Search */}
-          <div className="container my-16 lg:grid grid-cols-5 mx-auto">
-            <div className="border border-1 border-g-25 px-4 rounded-full py-4 col-span-2 flex">
-              <IoIosSearch className="text-xl text-g-25 mr-2" />
-              <input type="text" placeholder="Search" className="outline-none bg-transparent text-g-50" />
-            </div>
-            <div className="col-span-3 my-auto ml-4 bg-g-25 h-1 rounded hidden lg:block" />
-          </div>
+          <Search data={allPosts}/>
 
           <h3 className="text-md font-bold p100">Latest</h3>
           <h2 className="text-2xl mb-12 sm:text-4xl font-bold g100">Article</h2>
 
           {allPosts &&
-            allPosts.map( ( { title, tags, description, imageUrl, slug }: any, i ) => {
-              return (
-                <LargeCard key={title + i} tags={tags} slug={slug} title={title} imageUrl={imageUrl} description={description} />
-              )
+            allPosts.map(({ title, tags, description, imageUrl, slug }: any, i) => {
+              return <LargeCard key={title + i} tags={tags} slug={slug} title={title} imageUrl={imageUrl} description={description} />;
             })}
         </div>
       </div>

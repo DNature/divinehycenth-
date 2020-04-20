@@ -4,17 +4,8 @@ import { IPost } from "../../interfaces";
 import CustomLink from "../CustomLink";
 import FormatDate from "../date";
 import Tag from '../tag';
+import { filterNChars } from '../../utils/filterChars';
 // style = {{ backgroundColor: bgColor( tag ), color: color( tag ) }}
-
-const getNChars = (val: string): string => {
-  const sortNChars = val.substring(0, 100);
-  if (val.length <= sortNChars.length) {
-    return val;
-  }
-
-  return sortNChars + "...";
-};
-
 
 const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Element => { 
   
@@ -38,7 +29,7 @@ const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Ele
           <h2 className="text-g-100 text-sm sm:text-xl font-bold hover:text-p-100 hover:underline">{title}</h2>
         </CustomLink>
         <FormatDate dateString={`${slug.split("_")[0]}`} className="text-sm text-g-50 mb-4" />
-        <p className="text-g-75 text-sm sm:text-base">{getNChars(description)}</p>
+        <p className="text-g-75 text-sm sm:text-base">{filterNChars(description, 100)}</p>
 
         <CustomLink href={`/blog/${slug}`}>
           <p className="flex text-xs sm:text-sm mt-2 text-a-100 cursor-pointer justify-between w-12 hover:w-16">

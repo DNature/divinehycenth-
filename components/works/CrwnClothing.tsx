@@ -31,7 +31,7 @@ const CrwnClothing: React.FC<Props> = () => {
       <div className="w-full my-8 crwn-clothing shadow-md rounded h-60vh lg:grid grid-cols-2 gap-6">
         <div className="text-center px-4 md:px-20 pt-8 md:pt-0 md:flex flex-col items-center justify-center h-full xl:px-40 z-10">
           <h2 className="text-2xl text-black font-black">CRWN Clothing</h2>
-          <p className="text-black text-lg">The ultimate ecommerce store.</p>
+          <p className="text-black text-lg">The ultimate wears store.</p>
           <button className="rounded-full px-3 py-2 bg-p-50 text-white my-6 hover:shadow" onClick={handleOpen}>
             Learn more
             <span className="pl-2">
