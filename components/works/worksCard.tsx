@@ -9,14 +9,12 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
 
-  const stepperImages = ["/images/works/crwn/crwn-clothing.png", "/images/works/crwn/1.png", "/images/works/crwn/2.png"];
-
-  const lastStep = step === stepperImages.length - 1;
+  const lastStep = step === data.images.length - 1;
   const nextStep = (): void => {
     lastStep ? setStep(0) : setStep(step + 1);
   };
   const prevStep = (): void => {
-    step > 0 ? setStep(step - 1) : setStep(stepperImages.length - 1);
+    step > 0 ? setStep(step - 1) : setStep(data.images.length - 1);
   };
 
   const handleOpen = (): void => setIsOpen(true);
@@ -48,7 +46,7 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
                 </button>
               </div>
               <div className="w-full">
-                <img src={stepperImages[step]} className="w-full mx-auto" alt="" />
+                <img src={data.images[step]} className="w-full mx-auto" alt="" />
               </div>
 
               <div className="absolute right-0 mr-4 flex content-center justify-center h-full">
