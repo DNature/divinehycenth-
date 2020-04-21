@@ -3,18 +3,16 @@ layout: "bloglayout"
 title: "How to Reduce file sizes with Gulpjs"
 description: "Learn how to publish you Next.js app to netlify in minutes."
 imageUrl: "/images/blog/how-to-reduce-file-sizes-with-gulpjs/thumbnail.png"
-tags: ["deploy", "netlify", "nextjs"]
+tags: ["gulp", "javascript"]
 ---
 
 import CustomLink from "../../components/CustomLink.tsx";
 import CodeWrapper from '../../components/codeWrapper';
 
-Learn how to automatically minify your files with gulpjs?.
-
 ![How to minify file sizes with gulpjs](/images/blog/how-to-reduce-file-sizes-with-gulpjs/thumbnail.png)
 <br/>
 
-Learn how to automatically minify your files with gulpjs?.
+## Learn how to automatically minify your files with gulpjs?.
 
 ## Prerequisites
 

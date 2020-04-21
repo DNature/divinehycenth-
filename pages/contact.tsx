@@ -4,6 +4,7 @@ import { IoIosMail, IoMdCall, IoMdPin } from "react-icons/io";
 import { useRouter } from 'next/router';
 
 import MainLayout from "../layouts/Main";
+import NextHead from '../components/meta';
 
 const encode = (data: any): string => {
   return Object.keys(data)
@@ -46,6 +47,7 @@ const ContactPage: NextPage = () => {
 
   return (
     <MainLayout pathname="/contact">
+      <NextHead pageTitle="Divine Hycenth - Contact me" path="/contact" description="Contact me using the form bellow and i’ll get back to you right away" />
       <div className="w-full gradient relative -z-10  after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
           <div className="gradient-alt -rotate-180  circle absolute" />
@@ -70,7 +72,13 @@ const ContactPage: NextPage = () => {
                 <input type="text" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Email" value={values.email} />
               </div>
               <div className="my-8">
-                <textarea onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full h-40 outline-none resize-none" required placeholder="How can i help?..." value={values.message} />
+                <textarea
+                  onChange={handleChange}
+                  className="p-6 bg-g-15 rounded-sm w-full h-40 outline-none resize-none"
+                  required
+                  placeholder="How can i help?..."
+                  value={values.message}
+                />
               </div>
 
               <button type="submit" className="btn py-3 w-full shadow-primary font-bold rounded-full hover:opacity-75 mb-8 mt-10">

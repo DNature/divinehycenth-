@@ -3,8 +3,7 @@ import { AppProps } from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
 
-import "../styles/styles.css";
-import "../styles/tailwind.css";
+process.env.NODE_ENV === "development" ? require("../styles/bundle.css") : require("../styles/styles.css");
 import "../styles/progress.css";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {

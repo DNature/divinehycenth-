@@ -1,5 +1,8 @@
-const { src, dest } = require("gulp");
+const { src, dest, task, series } = require("gulp");
 const imagemin = require("gulp-imagemin");
+const concatCss = require("gulp-concat-css");
+const cleancss = require("gulp-clean-css");
+
 // const fs = require("fs");
 // const path = require("path");
 
@@ -56,4 +59,15 @@ function minifyImages() {
     )
     .pipe(dest("public/images"));
 }
+
+function mergerCss() {
+  return src(["./styles/styles.css"]).pipe(concatCss("./styles/bundle.css")).pipe(dest("./"));
+}
+
+function minifyCss() {
+  return src(["./styles/bundle.css"]).pipe(cleancss()).pipe(dest("./styles"));
+}
+
+task("start", series(mergerCss, minifyCss));
+
 exports.minifyImages = minifyImages;

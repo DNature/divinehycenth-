@@ -8,11 +8,13 @@ import { getAllPosts } from "../../utils/api";
 import { IPosts } from "../../interfaces";
 import formatPosts from "../../utils/formatPosts";
 import Search from '../../components/search';
+import NextHead from '../../components/meta';
 
 const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
   return (
     <MainLayout pathname="/blog">
+      <NextHead pageTitle="Divine Hycenth  - Blog" path="/blog" description="Divine Hycenth  - Blog" imageUrl="/images/card.png" />
       <div className="w-full gradient relative -z-10 after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0">
           <div className="gradient-alt circle absolute" />
@@ -26,7 +28,7 @@ const BlogPage: NextPage<IPosts> = ({ allPosts }) => {
       <div className="container">
         <div className="xl:px-64 lg:px-48">
           {/* Search */}
-          <Search data={allPosts}/>
+          <Search data={allPosts} />
 
           <h3 className="text-md font-bold p100">Latest</h3>
           <h2 className="text-2xl mb-12 sm:text-4xl font-bold g100">Article</h2>

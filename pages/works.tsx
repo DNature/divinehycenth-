@@ -8,10 +8,13 @@ import MovieTime from '../components/works/MovieTime';
 import Transferwise from '../components/works/Transferwise';
 import Cleanfits from '../components/works/Cleanfits';
 import Unsplash from '../components/works/Unsplash';
+import NextHead from '../components/meta';
 
 const WorksPage: NextPage = () => {
   return (
     <MainLayout pathname="/works">
+      <NextHead pageTitle="Divine Hycenth - Recent projects" path="/works" imageUrl="/images/tiger.jpg" description="Here you can find some of my recent projects including open source projects" />
+      
       <div className="w-full gradient relative -z-10  after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
           <div className="gradient-alt -rotate-180  circle absolute" />

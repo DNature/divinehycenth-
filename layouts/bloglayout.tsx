@@ -9,8 +9,8 @@ import FormatDate from "../components/date";
 
 import theme from "../theme";
 import Tag from '../components/tag';
+import NextHead from '../components/meta';
 
-// This default export is required in a new `pages/_app.js` file.
 const components = {
   pre: ({ children }: any): JSX.Element => (<>{children}</>) as JSX.Element,
   code: Prism,
@@ -22,11 +22,17 @@ interface Props {
   title: string;
   date: string;
   tags?: string[];
+  __filename?: string;
+  description?: string;
 }
 
-const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags }) => {
+const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags, __filename, description, }) => {
+  
+
+  const path = `/blog/${__filename?.replace(".md", "")}`;
   return (
     <MainLayout pathname="/blog">
+      <NextHead path={path} description={description} imageUrl={imageUrl} pageTitle={title} />
       <div className="w-full gradient relative -z-10 after after-2">
         <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
           <div className="gradient-alt circle absolute" />
@@ -62,6 +68,8 @@ BlogLayout.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   tags: PropTypes.array,
+  __filename: PropTypes.string,
+  description: PropTypes.string,
 };
 
 export default BlogLayout;

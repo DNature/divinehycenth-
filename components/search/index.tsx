@@ -48,7 +48,7 @@ const Search: React.FC<Props> = ({ data }) => {
       >
         <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
-        <div className="max-w-lg w-full z-50 mt-24 absolute top-0 overflow-scroll no-scroll mb-20">
+        <div className="max-w-lg w-full z-50 mt-24 absolute top-0 overflow-scroll no-scroll mb-20 rounded-md h-85">
           {/* Searchbox */}
           <div className="container mb-6 mx-auto">
             <div className="border border-1 border-white px-4 rounded-full py-4 col-span-2 flex">
@@ -58,7 +58,7 @@ const Search: React.FC<Props> = ({ data }) => {
           </div>
           {/* Content */}
           {result.length > 0 && (
-            <div className="pb-6 w-full bg-bg rounded-md border-1 border-white">
+            <div className="pb-6 w-full bg-bg rounded-md border-1 border-white h-full" >
               {result.map((val: any, i: number) => (
                 <span key={val.slug + i}>
                   <CustomLink href={`/blog/${val.slug}`}>

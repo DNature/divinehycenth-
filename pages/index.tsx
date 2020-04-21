@@ -1,6 +1,5 @@
 import * as React from "react";
 import { NextPage, GetStaticProps } from "next";
-import { IoIosPlay } from "react-icons/io";
 import PropTypes from "prop-types";
 
 import LargeCard from "../components/Cards/LargeCard";
@@ -14,6 +13,10 @@ import CustomLink from "../components/CustomLink";
 import Search from "../components/search";
 import WorksCard from "../components/works/worksCard";
 import workData from "../data/workData";
+import VideoDialog from "../components/video";
+import NextHead from "../components/meta";
+
+const description = "I'm a full stack software developer & UI/UX designer. I love writing about things i've learnt and creating or participating in open source projects.";
 
 const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
@@ -22,6 +25,7 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
 
   return (
     <MainLayout pathname="/">
+      <NextHead path="/" description={description} imageUrl="/images/card.png" />
       <div className="relative">
         <div className="w-full gradient relative -z-5">
           <div className="w-full h-full overflow-hidden absolute top-0 left-0 -z-5">
@@ -30,10 +34,8 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
           <div className="container flex justify-between pt-32 z-10 pb-32 lg:pb-0">
             <div className="lg:flex items-center lg:w-4/6 lg:mr-12">
               <div className="z-50">
-                <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-white">
-                  Hi, I’m <span className="hero">Divine Hycenth</span>{" "}
-                </h1>
-                <p className="text-xl lg:mr-40 text-white">I'm a full stack software developer & UI/UX designer. I love writing and creating open source projects.</p>
+                <h1 className="text-xl sm:text-2xl lg:text-4xl font-bold text-white">Hi, I’m Divine Hycenth</h1>
+                <p className="text-md md:text-xl lg:mr-40 text-white">{description}</p>
               </div>
             </div>
             <div className="w-3/6 hidden lg:grid">
@@ -59,17 +61,7 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
           </section>
 
           {/* Video */}
-          <div className="container my-16 mx-auto">
-            <div className="lg:grid gap-6 grid-cols-7 w-full h-32">
-              <div className="col-span-3 ml-auto w-4/6 my-auto bg-g-25 h-1 ml-10 ml-auto rounded hidden lg:block"></div>
-              <div className="col-span-1 mx-auto  my-auto">
-                <div className="rounded-full border-1 w-24 mx-auto h-24 border-g-25 grid justify-center items-center">
-                  <IoIosPlay className="text-3xl text-g-25 hover:text-g-50 cursor-pointer" />
-                </div>
-              </div>
-              <div className="col-span-3 w-4/6 my-auto mr-auto bg-g-25 h-1 rounded hidden lg:block"></div>
-            </div>
-          </div>
+          <VideoDialog />
 
           {/* Search */}
 

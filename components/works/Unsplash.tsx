@@ -51,7 +51,7 @@ const Unsplash: React.FC<Props> = () => {
       >
         <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
-        <div className="max-w-2xl w-full bg-bg z-50 mt-20 pb-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded">
+        <div className="max-w-2xl w-full bg-bg z-50 mt-20 pb-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded h-85">
           <div className="w-full h-56 sm:h-70 md:h-72 overflow-hidden flex justify-center content-center relative">
             <div className="absolute left-0 ml-4 flex content-center justify-center h-full">
               <button className="p-3  my-auto rounded-full bg-overlay" onClick={prevStep}>
