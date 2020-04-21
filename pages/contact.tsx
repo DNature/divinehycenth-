@@ -88,11 +88,11 @@ const ContactPage: NextPage = () => {
           </div>
           <div className="col-span-3 row-end-3 mt-20 lg:mt-0">
             <div className="gradient shadow-primary shadow rounded-lg mt-auto h-full p-6">
-              <img src="/images/logo.svg" alt="Logo" className="mb-8" />
+              <img src="/images/icons/logo.svg" alt="Logo" className="mb-8 h-20" />
 
               <div className="text-white flex">
                 <IoIosMail className="text-white text-xl lg:text-2xl lg:mr-7" />
-                <span className="ml-6 lg:text-lg">divinehycenth@outlook.com</span>
+                <a href="malto:divinehycenth@outlook.com" className="ml-6 lg:text-lg">divinehycenth@outlook.com</a>
               </div>
               <div className="text-white flex  my-6">
                 <IoMdCall className="text-white text-xl lg:text-2xl lg:mr-7" />

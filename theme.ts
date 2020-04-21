@@ -86,10 +86,16 @@ export default {
       margin: "1.5rem 0",
       fontSize: 2,
       code: {
-        backgroundColor: "var(--primary2)",
+        backgroundColor: "var(--accent1)",
         fontFamily: "monospace",
         color: "var(--gray4)",
         margin: "0 2px",
+      },
+    },
+    em: {
+      backgroundColor: "var(--accent3)",
+      "&:hover": {
+        backgroundColor: "var(--accent2)",
       },
     },
     a: {

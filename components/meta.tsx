@@ -17,7 +17,10 @@ const NextHead: NextPage<Props> = ({
   imageUrl = "/images/thumbnail.png",
   path = "",
   theme = "#6b0ce3",
-}) => (
+}) => {
+  
+  const pathWithSlash = path[path.length -1] === '/' ? path : path+'/'
+  return(
   <Head>
     <meta charSet="utf-8" />
     <title>{pageTitle}</title>
@@ -36,7 +39,7 @@ const NextHead: NextPage<Props> = ({
     <meta property="og:locale" content="en_US" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://divinehycenth.com${path}`} />
+    <meta property="og:url" content={`https://divinehycenth.com${pathWithSlash}`} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta name="og:site_name" content="Divine Hycenth - Blog Website" />
@@ -45,7 +48,7 @@ const NextHead: NextPage<Props> = ({
     <meta property="og:image" content={`https://divinehycenth.com${imageUrl}`} />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={`https://divinehycenth.com${path}`} />
+    <meta property="twitter:url" content={`https://divinehycenth.com${pathWithSlash}`} />
     <meta property="twitter:title" content={pageTitle} />
     <meta property="twitter:description" content={description} />
 
@@ -66,7 +69,7 @@ const NextHead: NextPage<Props> = ({
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicons/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
   </Head>
-);
+)};
 
 NextHead.propTypes = {
   pageTitle: PropTypes.string,

@@ -17,7 +17,7 @@ A guide on creating or converting your react application into a progressive web 
 
 ## What is a Progressive Web Application (PWA)
 
-> A progressive web app (PWA) is the set of mobile web application development techniques that entails building apps that feel and look like native ones. Using a web stack (JS, HTML, and CSS), progressive web apps combine a rich functionality and smooth user experience associated with native apps. Simply put, PWA is the web app with the native-app flavor: After the installation, a user clicks on its icon on a device home screen and gets straight to the website.
+> _A progressive web app (PWA) is the set of mobile web application development techniques that entails building apps that feel and look like native ones._ Using a web stack (JS, HTML, and CSS), progressive web apps combine a rich functionality and smooth user experience associated with native apps. Simply put, PWA is the web app with the native-app flavor: After the installation, a user clicks on its icon on a device home screen and gets straight to the website.
 
 <br/>
 

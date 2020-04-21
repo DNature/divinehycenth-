@@ -18,6 +18,8 @@ import NextHead from "../components/meta";
 
 const description = "I'm a full stack software developer & UI/UX designer. I love writing about things i've learnt and creating or participating in open source projects.";
 
+console.log(process.env.DIVINE)
+
 const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
   const heroPost = allPosts && allPosts[0];

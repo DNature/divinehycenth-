@@ -10,6 +10,7 @@ import FormatDate from "../components/date";
 import theme from "../theme";
 import Tag from '../components/tag';
 import NextHead from '../components/meta';
+import pathConfig from '../utils/pathConfig';
 
 const components = {
   pre: ({ children }: any): JSX.Element => (<>{children}</>) as JSX.Element,
@@ -22,14 +23,14 @@ interface Props {
   title: string;
   date: string;
   tags?: string[];
-  __filename?: string;
+  __filename: string;
   description?: string;
 }
 
 const BlogLayout: NextPage<Props> = ({ children, imageUrl, title, date, tags, __filename, description, }) => {
   
+  const path = pathConfig( __filename, __filename)
 
-  const path = `/blog/${__filename?.replace(".md", "")}`;
   return (
     <MainLayout pathname="/blog">
       <NextHead path={path} description={description} imageUrl={imageUrl} pageTitle={title} />
@@ -68,7 +69,7 @@ BlogLayout.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   tags: PropTypes.array,
-  __filename: PropTypes.string,
+  __filename: PropTypes.string.isRequired,
   description: PropTypes.string,
 };
 

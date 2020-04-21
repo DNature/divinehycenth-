@@ -563,3 +563,10 @@ body:visited {
   background-size: cover;
   background-attachment: fixed;
 }
+
+::selection {
+  background: var(--accent3); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--accent3); /* Gecko Browsers */
+}

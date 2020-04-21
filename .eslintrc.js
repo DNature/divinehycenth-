@@ -25,5 +25,6 @@ module.exports = {
     "react/no-unescaped-entities": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "no-debugger": "off",
+    "no-useless-escape": 0,
   },
 };
