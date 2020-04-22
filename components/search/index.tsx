@@ -65,7 +65,7 @@ const Search: React.FC<Props> = ({ data }) => {
                     <div className="px-6 pt-6">
                       <h2 className="font-semibold text-md text-g-100 hover:underline hover:text-p-100">{val.title}</h2>
                       <p className="text-g-75">{filterNChars(val.description, 100)}</p>
-                      {val.tags && val.tags.map((tag: string, i: number) => <Tag key={tag + i} tag={tag} />)}
+                      {val.tags && val.tags.map((tag: string, i: number) => <Tag hidden key={tag + i} tag={tag} />)}
                     </div>
                   </CustomLink>
 
@@ -76,7 +76,7 @@ const Search: React.FC<Props> = ({ data }) => {
           )}
         </div>
         <div className=" my-auto fixed bottom-0 mb-10 right-0 mr-6 z-50">
-          <button className="p-3 rounded-full bg-bg shadow 100" onClick={handleClose}>
+          <button className="p-3 rounded-full bg-bg shadow 100 border border-solid border-g-50" onClick={handleClose}>
             <IoIosClose className="text-text text-2xl" />
           </button>
         </div>

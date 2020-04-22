@@ -37,12 +37,12 @@ function switcher(val: string) {
   }
 }
 
-const Tag = ({ tag, ...other }: { tag: string }): JSX.Element => {
+const Tag = ({ tag, hidden,...other }: { tag: string; hidden?: boolean }): JSX.Element => {
   const splTag = tag.toLowerCase().split(/\.|#|-|_/g);
   const ext = splTag[splTag.length - 1];
   return (
     <>
-      <button className="bg-g-15 hidden sm:inline-block rounded-full px-3 font-bold text-g-75 text-sm hover:opacity cursor-pointer mr-2 mt-4" style={switcher(ext)} {...other}>
+      <button className={`bg-g-15 sm:inline-block rounded-full px-3 font-bold text-g-75 text-sm hover:opacity cursor-pointer mr-2 mt-4 ${hidden ? "" : "hidden"}`} style={switcher(ext)} {...other}>
         #{tag}
       </button>
     </>

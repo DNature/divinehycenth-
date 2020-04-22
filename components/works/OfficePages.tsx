@@ -86,7 +86,7 @@ const OfficePages: React.FC<Props> = () => {
           </div>
         </div>
         <div className=" my-auto fixed bottom-0 mb-10 right-0 mr-6 z-50">
-          <button className="p-3 rounded-full bg-bg shadow 100" onClick={handleClose}>
+          <button className="p-3 rounded-full bg-bg shadow 100 border border-solid border-g-50" onClick={handleClose}>
             <IoIosClose className="text-text text-2xl" />
           </button>
         </div>

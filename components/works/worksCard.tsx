@@ -23,7 +23,7 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
   return (
     <>
       <div key={data.title}>
-        <div className="rounded overflow-hidden">
+        <div className="rounded border border-g-50 border-solid p-4 my-4 overflow-hidden">
           <div className="cursor-pointer" onClick={handleOpen}>
             <div className="overflow-hidden" style={{ height: "235px" }}>
               <img src={data.images[0]} alt="Woman" className="w-full" />
@@ -71,7 +71,7 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
             </div>
           </div>
           <div className=" my-auto fixed bottom-0 mb-10 right-0 mr-6 z-50">
-            <button className="p-3 rounded-full bg-bg shadow 100" onClick={handleClose}>
+            <button className="p-3 rounded-full bg-bg shadow 100 border border-solid border-g-50" onClick={handleClose}>
               <IoIosClose className="text-text text-2xl" />
             </button>
           </div>

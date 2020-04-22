@@ -7,7 +7,7 @@
 export interface ILinkProps {
   children: React.ReactNode;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   target?: string;
 }
 

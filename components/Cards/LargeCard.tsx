@@ -6,6 +6,7 @@ import FormatDate from "../date";
 import Tag from '../tag';
 import { filterNChars } from '../../utils/filterChars';
 import pathConfig from '../../utils/pathConfig';
+
 // style = {{ backgroundColor: bgColor( tag ), color: color( tag ) }}
 
 const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Element => {   
@@ -27,7 +28,7 @@ const LargeCard = ({ imageUrl, title, description, slug, tags }: IPost): JSX.Ele
         </CustomLink>
       </div>
       <div className="sm:w-4/6 w-full sm:pl-5 my-auto">
-        <CustomLink href={path}>
+        <CustomLink href={path} as={path}>
           <h2 className="text-g-100 text-sm sm:text-xl font-bold hover:text-p-100 hover:underline">{title}</h2>
         </CustomLink>
         <FormatDate dateString={`${slug.split("_")[0]}`} className="text-sm text-g-50 mb-4" />
