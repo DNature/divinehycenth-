@@ -66,14 +66,17 @@ const ContactPage: NextPage = () => {
 
             <form name="Contact form for divinehycenth.com" onSubmit={handleSubmit}>
               <div className="my-8">
-                <input type="text" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Full Name" autoFocus value={values.name} />
+                <input type="text"
+                 name="name" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Full Name" autoFocus value={values.name} />
               </div>
               <div className="my-8">
-                <input type="text" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Email" value={values.email} />
+                <input type="text"
+                 name="email" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Email" value={values.email} />
               </div>
               <div className="my-8">
                 <textarea
-                  onChange={handleChange}
+                  onChange={handleChange
+                  } name="message"
                   className="p-6 bg-g-15 rounded-sm w-full h-40 outline-none resize-none"
                   required
                   placeholder="How can i help?..."
