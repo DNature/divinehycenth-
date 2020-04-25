@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 import MainLayout from "../layouts/Main";
 import NextHead from '../components/meta';
 
-const encode = (data: any): string => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
+// const encode = (data: any): string => {
+//   return Object.keys(data)
+//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+//     .join("&");
+// };
 
 
 const ContactPage: NextPage = () => {
@@ -26,24 +26,24 @@ const ContactPage: NextPage = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any): void => {
-    e.preventDefault();
-    console.log(values);
+  // const handleSubmit = (e: any): void => {
+  //   e.preventDefault();
+  //   console.log(values);
 
-    fetch("/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "Contact from divinehycenth.com", ...values }),
-    })
-      .then(() => {
-        console.log("message sent");
-        return setTimeout(() => {
-          return router.push("/sent");
-        }, 1000);
-      })
-      .catch((e) => console.log(e));
-    // TODO: Create a success redirect page
-  };
+  //   fetch("/contact", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: encode({ "form-name": "Contact from divinehycenth.com", ...values }),
+  //   })
+  //     .then(() => {
+  //       console.log("message sent");
+  //       return setTimeout(() => {
+  //         return router.push("/sent");
+  //       }, 1000);
+  //     })
+  //     .catch((e) => console.log(e));
+
+  // };
 
   return (
     <MainLayout pathname="/contact">
@@ -64,7 +64,9 @@ const ContactPage: NextPage = () => {
           <div className="card-contact shadow rounded-lg col-span-3 row-span-6 p-5 row-span-1 row-end-3">
             <h2 className="text-xl xl:text-2xl  g100 font-bold">Fill out the form and i’ll be in touch as soon as possible.</h2>
 
-            <form name="Contact form for divinehycenth.com" onSubmit={handleSubmit}>
+            <form name="Contact form for divinehycenth.com" data-netlify="true" method="POST" 
+            // onSubmit={handleSubmit}
+            >
               <div className="my-8">
                 <input type="text"
                  name="name" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Full Name" autoFocus value={values.name} />

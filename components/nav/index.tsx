@@ -25,6 +25,7 @@ const contactPage = {
 };
 
 const domain = process.env.DOMAIN
+const newDomain = "//divinehycenth.com"
 const isProd = process.env.NODE_ENV === "production";
 const host = window.location.host === domain
 
@@ -42,12 +43,12 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
       }
     };
     document.addEventListener("scroll", handleScroll);
-    return () => {
+    return (): void => {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setIsOpen(!isOpen);
   }; 
 
@@ -60,7 +61,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
           </CustomLink>
           <>
             {routes.map(({ path, name }) => (
-              <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={isProd && host ? path : isProd && !host ? domain+ path : path }>
+              <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={isProd && host ? path : isProd && !host ? newDomain + path : path }>
                 <>
                   {name}
 
