@@ -15,6 +15,8 @@ const encode = (data: any): string => {
 const ContactPage: NextPage = () => {
   
   const router = useRouter();
+
+  console.log(router)
   
   const [values, setValues] = React.useState({
     name: "",
