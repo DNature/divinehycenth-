@@ -156,6 +156,7 @@ body {
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   max-width: 100vw;
   font-family: system-ui, "Montserrat", sans-serif;
+  cursor: none;
 }
 @supports (-webkit-text-stroke: 2.2px white) {
   .hero {
@@ -179,6 +180,10 @@ body {
 a {
   color: currentColor;
   text-decoration: none;
+}
+
+* {
+  cursor: none !important;
 }
 
 /* Gradient button */
@@ -239,7 +244,7 @@ a {
 }
 
 .z-100 {
-  z-index: 1000;
+  z-index: 100;
 }
 .-z-10 {
   z-index: -10;
@@ -569,4 +574,32 @@ body:visited {
 }
 ::-moz-selection {
   background: var(--accent3); /* Gecko Browsers */
+}
+
+.link-grow {
+  animation: 0.5s grow infinite alternate;
+  background: var(--primary0);
+  /* transition: 0.3s all ease; */
+}
+
+* a {
+}
+
+#cursor {
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  /* filter: grayscale(); */
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+  }
+  to {
+    transform: scale(1.2);
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+  }
 }
