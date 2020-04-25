@@ -33,10 +33,10 @@ const ContactPage: NextPage = () => {
     fetch("/contact", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "Contact from divinehycenth.com", ...values }),
+      body: encode({ "form-name": "Contact form for divinehycenth.com", ...values }),
     })
       .then(() => {
-        console.log("message sent");
+        console.log("message sent", e);
         return setTimeout(() => {
           return router.push("/sent");
         }, 1000);
@@ -71,7 +71,7 @@ const ContactPage: NextPage = () => {
               // data-netlify="true" method="POST"
               onSubmit={handleSubmit}
             >
-              <div className="my-8">
+              <p className="my-8">
                 <input
                   type="text"
                   name="name"
@@ -82,11 +82,11 @@ const ContactPage: NextPage = () => {
                   autoFocus
                   value={values.name}
                 />
-              </div>
-              <div className="my-8">
+              </p>
+              <p className="my-8">
                 <input type="text" name="email" onChange={handleChange} className="p-6 bg-g-15 rounded-sm w-full outline-none" required placeholder="Email" value={values.email} />
-              </div>
-              <div className="my-8">
+              </p>
+              <p className="my-8">
                 <textarea
                   onChange={handleChange}
                   name="message"
@@ -95,7 +95,7 @@ const ContactPage: NextPage = () => {
                   placeholder="How can i help?..."
                   value={values.message}
                 />
-              </div>
+              </p>
 
               <button type="submit" className="btn py-3 w-full shadow-primary font-bold rounded-full hover:opacity-75 mb-8 mt-10">
                 Send
