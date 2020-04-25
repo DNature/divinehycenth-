@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
 import { IoIosMail, IoMdCall, IoMdPin } from "react-icons/io";
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 import MainLayout from "../layouts/Main";
 import NextHead from '../components/meta';
@@ -15,7 +15,7 @@ import NextHead from '../components/meta';
 
 const ContactPage: NextPage = () => {
   
-  const router = useRouter();
+  // const router = useRouter();
   const [values, setValues] = React.useState({
     name: "",
     email: "",

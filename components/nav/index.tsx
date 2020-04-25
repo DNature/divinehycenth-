@@ -29,6 +29,8 @@ const newDomain = "//divinehycenth.com"
 const isProd = process.env.NODE_ENV === "production";
 const host = window.location.host === domain
 
+console.log(host)
+
 const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navBackground, setNavBackground] = useState(false);
