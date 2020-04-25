@@ -4,7 +4,7 @@ import CustomLink from "../CustomLink";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";
 import { IoMdClose } from "react-icons/io";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiMail } from "react-icons/fi";
 import { social } from "../../constants/social";
 import { Social } from "../../interfaces";
 
@@ -16,6 +16,17 @@ interface Props {
     icon?: React.ReactNode;
   }[];
 }
+
+const contactPage = {
+  name: "Contact",
+  location: "//contact-divine.netlify.app/contact",
+  pathname: "contact",
+  icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
+};
+
+const domain = process.env.DOMAIN
+const isProd = process.env.NODE_ENV === "production";
+const host = window.location.host === domain
 
 const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +49,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
 
   const handleClose = () => {
     setIsOpen(!isOpen);
-  };
- 
+  }; 
 
   return (
     <>
@@ -48,15 +58,24 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
           <CustomLink href="/" className="my-auto">
             <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "h-12" : "h-16"} mr-10  transition-all duration-200`} />
           </CustomLink>
-          {routes.map(({ path, name }) => (
-            <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={path}>
-              <>
-                {name}
+          <>
+            {routes.map(({ path, name }) => (
+              <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={isProd && host ? path : isProd && !host ? domain+ path : path }>
+                <>
+                  {name}
 
-                {pathname?.split("/")[1] == path.split("/")[1] && <span className="block mt-3 w-5 h-1 mx-auto text-center bg-white rounded"></span>}
+                  {pathname?.split("/")[1] == path.split("/")[1] && <span className="block mt-3 w-5 h-1 mx-auto text-center bg-white rounded"></span>}
+                </>
+              </CustomLink>
+            ))}
+            <CustomLink className="py-2 mr-6 text-white font-semibold block" href={contactPage.location}>
+              <>
+                {contactPage.name}
+
+                {window.location.pathname.split("/")[1] == contactPage.pathname && <span className="block mt-3 w-5 h-1 mx-auto text-center bg-white rounded"></span>}
               </>
             </CustomLink>
-          ))}
+          </>
         </nav>
       </div>
 
@@ -88,16 +107,27 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
         </div>
         <hr className="my-6" />
         <span className="flex-1">
-          {routes.map(({ path, name, icon }) => (
-            <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={path}>
-              <>
-                {icon}
-                {name}
+          <>
+            {routes.map(({ path, name, icon }) => (
+              <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={path}>
+                <>
+                  {icon}
+                  {name}
 
-                {pathname?.split("/")[1] == path.split("/")[1] && <span className="block mt-3 w-full h-1 mx-auto text-center bg-white rounded bg-gray-400"></span>}
+                  {pathname?.split("/")[1] == path.split("/")[1] && <span className="block mt-3 w-full h-1 mx-auto text-center bg-white rounded bg-gray-400"></span>}
+                </>
+              </CustomLink>
+            ))}
+
+            <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={contactPage.location}>
+              <>
+                {contactPage.icon}
+                {contactPage.name}
+
+                {window.location.pathname.split("/")[1] == contactPage.pathname && <span className="block mt-3 w-full h-1 mx-auto text-center bg-white rounded bg-gray-400"></span>}
               </>
             </CustomLink>
-          ))}
+          </>
         </span>
 
         <hr className="my-6" />

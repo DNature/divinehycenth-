@@ -4,7 +4,7 @@ import { FiSettings } from "react-icons/fi";
 const body = document.body;
 
 const Colors: NextPage = () => {
-  const theme = localStorage.getItem("theme");
+  const theme = localStorage.getItem(process.env.DOMAIN as string);
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -13,24 +13,24 @@ const Colors: NextPage = () => {
     }
   }, []);
   const handleDark = (): void => {
-    localStorage.setItem("theme", "dark");
-    const newTheme = localStorage.getItem("theme");
+    localStorage.setItem(process.env.DOMAIN as string, "dark");
+    const newTheme = localStorage.getItem(process.env.DOMAIN as string);
     if (newTheme) {
       body.classList.replace(body.className, newTheme);
     }
   };
 
   const handleLight = (): void => {
-    localStorage.setItem("theme", "light");
-    const newTheme = localStorage.getItem("theme");
+    localStorage.setItem(process.env.DOMAIN as string, "light");
+    const newTheme = localStorage.getItem(process.env.DOMAIN as string);
     if (newTheme) {
       body.classList.replace(body.className, newTheme);
     }
   };
 
   const handleBlue = (): void => {
-    localStorage.setItem("theme", "blue");
-    const newTheme = localStorage.getItem("theme");
+    localStorage.setItem(process.env.DOMAIN as string, "blue");
+    const newTheme = localStorage.getItem(process.env.DOMAIN as string);
     if (newTheme) {
       body.classList.replace(body.className, newTheme);
     }

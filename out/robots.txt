@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://www.divinehycenth.com/sitemap.xml
-Sitemap: https://divinehycenth.com/sitemap.xml

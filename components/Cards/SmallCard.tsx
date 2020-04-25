@@ -3,11 +3,9 @@ import PropTypes from 'prop-types'
 
 import CustomLink from "../CustomLink";
 import { Favourite } from "../../interfaces";
-import pathConfig from '../../utils/pathConfig';
 
 
 const SmallCard: React.FC<Favourite> = ({ imageUrl = "/images/blog/woman.jpg", type = "Article", title, slug }): JSX.Element => {
-  const path = pathConfig( title, slug )
 
   return (
     <>
@@ -21,7 +19,7 @@ const SmallCard: React.FC<Favourite> = ({ imageUrl = "/images/blog/woman.jpg", t
       ></span>
       <span className="col-span-4 my-auto">
         <span className="text-sm font-semibold text-a-75">{type}</span>
-        <CustomLink href={path}>
+        <CustomLink href={`/blog/${slug}`}>
           <h2 className="g100 text-base font-bold hover:underline">{title}</h2>
         </CustomLink>
       </span>

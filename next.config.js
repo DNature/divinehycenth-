@@ -13,19 +13,7 @@ module.exports = {
   env: {
     DOMAIN: "https://divinehycenth.com",
   },
-  exportTrailingSlash: true,
+  // exportTrailingSlash: true,
   // assetPrefix: isProd ? "https://divinehycenth.com" : "",
   target: "serverless",
 };
-
-/*
-
-exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
-    return {
-      "/": { page: "/" },
-      "/about": { page: "/about" },
-      "/blog/2019-11-09_remove-all-unused-css.js": { page: "/blog/2019-11-09_remove-all-unused-css" },
-    };
-  },
-
-  */

@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/dist/client/router";
 import PropTypes from "prop-types";
 import Footer from "../components/Footer";
-import { FiFeather, FiBookOpen, FiMonitor, FiMail } from "react-icons/fi";
+import { FiFeather, FiBookOpen, FiMonitor } from "react-icons/fi";
 
 const SideColorSwitcher = dynamic(() => import("../components/colors/colors"), {
   ssr: false,
 });
-const Navbar = dynamic(() => import("../components/nav"));
+const Navbar = dynamic(() => import("../components/nav"), {ssr: false});
 
 interface Props {
   pathname?: string;
@@ -31,11 +31,6 @@ const routes = [
     name: "Works",
     path: "/works",
     icon: <FiMonitor className="mr-2 inline-block text-xl text-white" />,
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-    icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
   },
 ];
 
