@@ -24,12 +24,12 @@ const contactPage = {
   icon: <FiMail className="mr-2 inline-block text-xl text-white" />,
 };
 
-const domain = process.env.DOMAIN
-const newDomain = "//divinehycenth.com"
-const isProd = process.env.NODE_ENV === "production";
-const host = window.location.host === domain
+// const domain = process.env.DOMAIN
+// const newDomain = "//divinehycenth.com"
+// const isProd = process.env.NODE_ENV === "production";
+// const host = window.location.host === domain
 
-console.log(host)
+// console.log(host)
 
 const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +63,8 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
           </CustomLink>
           <>
             {routes.map(({ path, name }) => (
-              <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={isProd && host ? path : isProd && !host ? newDomain + path : path }>
+              // isProd && host ? path : isProd && !host ? newDomain + path :
+              <CustomLink key={name} className="py-2 mr-6 text-white font-semibold block" href={path}>
                 <>
                   {name}
 
