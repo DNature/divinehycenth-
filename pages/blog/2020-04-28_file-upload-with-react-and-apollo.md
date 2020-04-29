@@ -9,7 +9,7 @@ tags: ["react", "apollo", "upload"]
 import CustomLink from "../../components/CustomLink.tsx";
 import CodeWrapper from '../../components/codeWrapper';
 
-![File uploads with React and apollo (Part 2)](/images/blog/file-uploads-with-apolloserver-2/thumbnail.png)
+![File uploads with React and apollo (Part 2)](/images/blog/file-upload-with-react-and-apollo/thumbnail.png)
 
 ## A complete guide on how to upload files to graphql server with react and apollo-upload-client.
 
@@ -235,7 +235,6 @@ const UploadMutation = gql`
     }
   }
 `;
-
 
 // pass in the UploadMutation mutation we created earlier.
 
