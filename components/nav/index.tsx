@@ -39,31 +39,6 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   navRef.current = navBackground;
   useEffect(() => {
     
-
-    const mouseCursor = document.getElementById("cursor")
-    const links = document.querySelectorAll("a");
-    // const links = document.querySelectorAll("button");
-    function cursor(e: any){
-      if(mouseCursor){
-        mouseCursor.style.top = `${e.pageY}px`;
-        mouseCursor.style.left = `${e.pageX}px`;
-
-        if(links){
-        links.forEach(link => {
-          link.addEventListener('mouseover', () =>{
-            mouseCursor.classList.add('link-grow')
-            link.classList.add("hovered");
-          })
-          link.addEventListener("mouseleave", () => {
-            mouseCursor.classList.remove("link-grow");
-            link.classList.remove("hovered");
-          });
-        })
-      }
-      }
-
-      
-    }
     
     const handleScroll = () => {
       const show = window.scrollY > 30;
@@ -72,7 +47,6 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
       }
     };
     document.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", cursor)
     return (): void => {
       document.removeEventListener("scroll", handleScroll);
     };
@@ -84,7 +58,6 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
 
   return (
     <>
-      <div className="w-8 h-8 rounded-full border-2 border-solid border-p-100 absolute pointer-events-none" id="cursor" />
       <div className={`py-4 justify-center z-20 fixed top-0 left-0 w-full hidden sm:flex ${navBackground && "gradient shadow"}`}>
         <nav className="flex content-center ">
           <CustomLink href="/" className="my-auto">

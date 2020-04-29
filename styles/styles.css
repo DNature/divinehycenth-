@@ -156,7 +156,6 @@ body {
   transition: background 500ms ease-in-out, color 1000ms ease-in-out;
   max-width: 100vw;
   font-family: system-ui, "Montserrat", sans-serif;
-  cursor: none;
 }
 @supports (-webkit-text-stroke: 2.2px white) {
   .hero {
@@ -180,10 +179,6 @@ body {
 a {
   color: currentColor;
   text-decoration: none;
-}
-
-* {
-  cursor: none !important;
 }
 
 /* Gradient button */
