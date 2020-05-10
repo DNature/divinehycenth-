@@ -1,5 +1,6 @@
 import * as React from "react";
 import { NextPage, GetStaticProps } from "next";
+import dynamic from 'next/dynamic'
 import PropTypes from "prop-types";
 
 import LargeCard from "../components/Cards/LargeCard";
@@ -10,15 +11,15 @@ import { IPosts } from "../interfaces";
 import formatPosts from "../utils/formatPosts";
 import favourite from "../data/favourite";
 import CustomLink from "../components/CustomLink";
-import Search from "../components/search";
 import WorksCard from "../components/works/worksCard";
 import workData from "../data/workData";
 import VideoDialog from "../components/video";
 import NextHead from "../components/meta";
+import CombatCovid from '../components/works/open-source/CombatCovid';
 
 const description = "I'm a full stack software developer & UI/UX designer. I love writing about things i've learnt and creating or participating in open source projects.";
 
-console.log(process.env.DIVINE)
+const Search = dynamic(() => import("../components/search"), {ssr: false});
 
 const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
   formatPosts(allPosts);
@@ -106,6 +107,13 @@ const IndexPage: NextPage<IPosts> = ({ allPosts }) => {
                 <div className="">{workData && workData.map((data) => <WorksCard key={data.github} data={data} />)}</div>
               </div>
             </div>
+          <div className="py-20">
+            {/* Open source */}
+            <h2 className="text-2xl font-bold">Open source projects</h2>
+            <hr className="w-20 h-2 rounded-full border-none mt-4 mb-12 btn"/>
+            
+            <CombatCovid />
+          </div>
           </main>
         </div>
       </div>

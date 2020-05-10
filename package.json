@@ -6,8 +6,9 @@
     "prod": "NODE_ENV=production next dev",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",
+    "gulp:css": "gulp start --verbose",
     "export": "NODE_ENV=production next export",
-    "deploy": "NODE_ENV=production yarn build && yarn export",
+    "deploy": "NODE_ENV=production yarn gulp:css && yarn build && yarn export",
     "gulp:img": "gulp minifyImages --verbose",
     "type-check": "tsc"
   },

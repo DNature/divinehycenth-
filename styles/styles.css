@@ -287,8 +287,8 @@ a {
   height: 2px !important;
 }
 
-.h-85 {
-  max-height: 85vh;
+.h-95 {
+  max-height: 95vh;
 }
 
 /* Responsive */
@@ -525,6 +525,9 @@ body:visited {
 
 .crwn-clothing {
   background: linear-gradient(126.78deg, #e7d7d6 -32.22%, #d6eff0 121.15%);
+}
+.combat-covid {
+  background: radial-gradient(39.9% 319% at 36.68% 54.79%, #418f75 0%, #1d648a 100%);
 }
 
 .no-scroll {

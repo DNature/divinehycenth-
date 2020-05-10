@@ -146,7 +146,15 @@ const AboutPage: NextPage = () => {
                 <IoMdCheckbox className="my-auto text-xl text-a-100" />
                 <p className="ml-4 text-base text-g-75">Next.js</p>
               </div>
+              <div className="flex">
+                <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                <p className="ml-4 text-base text-g-75">Vuejs</p>
+              </div>
               <div data-open={open} className={`${!open && "hidden"}`}>
+                <div className="flex">
+                  <IoMdCheckbox className="my-auto text-xl text-a-100" />
+                  <p className="ml-4 text-base text-g-75">Gridsome</p>
+                </div>
                 <div className="flex">
                   <IoMdCheckbox className="my-auto text-xl text-a-100" />
                   <p className="ml-4 text-base text-g-75">Bootstrap</p>
