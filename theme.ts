@@ -28,6 +28,7 @@ export default {
       fontWeight: "body",
     },
     h1: {
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -36,6 +37,7 @@ export default {
       fontSize: 6,
     },
     h2: {
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "body",
@@ -44,6 +46,7 @@ export default {
       fontSize: 5,
     },
     h3: {
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -52,7 +55,7 @@ export default {
       fontSize: 3,
     },
     h4: {
-      color: "text",
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -61,7 +64,7 @@ export default {
       fontSize: 2,
     },
     h5: {
-      color: "text",
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -70,7 +73,7 @@ export default {
       fontSize: 1,
     },
     h6: {
-      color: "text",
+      color: "var(--gray0)",
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
@@ -86,10 +89,10 @@ export default {
       margin: "1.5rem 0",
       fontSize: 2,
       code: {
-        backgroundColor: "var(--accent1)",
         fontFamily: "monospace",
-        color: "var(--gray4)",
+        color: "var(--gray0)",
         margin: "0 2px",
+        backgroundColor: "var(--gray4)",
       },
     },
     em: {

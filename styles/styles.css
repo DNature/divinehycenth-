@@ -53,7 +53,7 @@ html {
 
 .blue {
   --bg: var(--white);
-  --text: var(--gray100);
+  --text: var(--gray75);
   --card: var(--white);
   --transparent: var(--transparent-blue);
 
@@ -85,7 +85,7 @@ html {
 
 .light {
   --bg: var(--white);
-  --text: var(--gray100);
+  --text: var(--gray75);
   --card: var(--white);
 
   --transparent: var(--transparent-primary);
