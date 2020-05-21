@@ -50,25 +50,27 @@ const CombatCovid: React.FC<Props> = () => {
         <div className="max-w-2xl w-full bg-bg z-50 mt-20 pb-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded h-85">
           <div className="w-full h-56 sm:h-70 md:h-72 overflow-hidden flex justify-center content-center relative">
             <div className="absolute left-0 ml-4 flex content-center justify-center h-full">
-              <button className="p-3  my-auto rounded-full bg-overlay" onClick={prevStep}>
+              {stepperImages.length > 1 && <button className="p-3  my-auto rounded-full bg-overlay" onClick={prevStep}>
                 <IoIosArrowBack className="text-white text-xl" />
-              </button>
+              </button>}
             </div>
             <div className="w-full">
               <img src={stepperImages[step]} className="w-full mx-auto" alt="" />
             </div>
 
             <div className="absolute right-0 mr-4 flex content-center justify-center h-full">
-              <button className="p-3 rounded-full bg-overlay my-auto" onClick={nextStep}>
-                <IoIosArrowForward className="text-white text-xl" />
-              </button>
+              {
+                stepperImages.length > 1 && <button className="p-3 rounded-full bg-overlay my-auto" onClick={nextStep}>
+                  <IoIosArrowForward className="text-white text-xl" />
+                </button>
+              }
             </div>
           </div>
 
           <div className="p-6 text-center">
-            <h2 className="font-bold text-2xl text-g-100">Cleanfits</h2>
+            <h2 className="font-bold text-2xl text-g-100">CombatCovid</h2>
             <p className="text-md text-g-75">
-              Cleanfits is a demo website for a laundry and dry cleaning agency. It lets users book cleaning appointments, track delivery and pay online.!
+              CombatCovid is an open source registry for well documented medical equipments. This project was developed to help engineers replicate medical equipments and it was inspired by the Covid-19 pandemic in 2020. 
             </p>
 
             <div className="mx-auto w-full mt-6">
