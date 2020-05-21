@@ -275,7 +275,7 @@ export default FileUpload;
 
 ![/images/blog/file-upload-with-react-and-apollo/upload.gif](/images/blog/file-upload-with-react-and-apollo/upload.gif)
 
-And thats all you need to upload files with apollo-upload-client and react. However, You are going to run into issues when trying to display files like images on the client side of your application but don't worry because that's what we are going to work on now.
+And thats all you need to upload files with apollo-upload-client and react. However, You are going to run into issues when trying to display files like images on the client side of your application but don't worry because that's what we are going to work on next.
 
 <div className="font-bold text-xl text-center">. . .</div>
 
@@ -542,6 +542,8 @@ export default function WithPreviews(props) {
   );
 }
 ```
+
+**Congratulations if you made it to this pont 👏**
 
 ![/images/blog/file-upload-with-react-and-apollo/completed.gif](/images/blog/file-upload-with-react-and-apollo/completed.gif)
 

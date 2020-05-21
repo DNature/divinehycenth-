@@ -28,10 +28,10 @@ const CombatCovid: React.FC<Props> = () => {
 
   return (
     <>
-      <div className="w-full my-8 combat-covid shadow-md rounded lg:grid grid-cols-2 gap-6" style={{height:"40vh"}}>
+      <div className="w-full my-8 combat-covid shadow-md rounded lg:grid grid-cols-2 gap-6" style={{ height: "40vh" }}>
         <div className="text-center px-4 md:px-20 pt-8 md:pt-0 md:flex flex-col items-center justify-center h-full xl:px-40 z-10">
           <h2 className="text-2xl text-white font-black">CombatCovid</h2>
-          <p className="text-white text-lg">High Quality dry cleaning services.</p>
+          <p className="text-white text-lg">Combat covid with hardware Search for well documented designs 🔍 and document new solutions</p>
           <button className="rounded-full px-3 py-2 bg-p-50 text-white my-6 hover:shadow" onClick={handleOpen}>
             Learn more
             <span className="pl-2">
@@ -44,9 +44,7 @@ const CombatCovid: React.FC<Props> = () => {
         </div>
       </div>
 
-      <div
-        className={`h-screen w-screen fixed top-0 eft-0 bottom-0 right-0 z-100 flex align-center justify-center overflow-hidden ${isOpen ? "block" : "hidden"}`}
-      >
+      <div className={`h-screen w-screen fixed top-0 eft-0 bottom-0 right-0 z-100 flex align-center justify-center overflow-hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
         <div className="max-w-2xl w-full bg-bg z-50 mt-20 pb-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded h-85">
@@ -74,10 +72,10 @@ const CombatCovid: React.FC<Props> = () => {
             </p>
 
             <div className="mx-auto w-full mt-6">
-              <CustomLink target="_blank" href="//cleanfits.herokuapp.com/" className="px-3 py-2 gradient rounded-full text-white border-2 hover:shadow">
+              <CustomLink target="_blank" href="//combatcovid.equipment/" className="px-3 py-2 gradient rounded-full text-white border-2 hover:shadow">
                 Visit site
               </CustomLink>
-              <CustomLink target="_blank" href="//github.com/DNature/cleanfits_original">
+              <CustomLink target="_blank" href="//github.com/CombatCovid/SPA-website">
                 <button className="px-2 py-1 rounded-full ml-4 border-gradient-main border-2 bg-bg hover:shadow">View source</button>
               </CustomLink>
             </div>
