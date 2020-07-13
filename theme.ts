@@ -108,13 +108,19 @@ export default {
       },
     },
     li: {
+      // code: {
+      //   fontFamily: "monospace",
+      //   backgroundColor: "#21262d",
+      //   padding: "3px 5px",
+      //   borderRadius: "4px",
+      //   fontSize: "16px",
+      //   color: "#9EFEFF",
+      // },
       code: {
         fontFamily: "monospace",
-        backgroundColor: "#21262d",
-        padding: "3px 5px",
-        borderRadius: "4px",
-        fontSize: "16px",
-        color: "#9EFEFF",
+        color: "var(--gray0)",
+        margin: "0 2px",
+        backgroundColor: "var(--gray4)",
       },
     },
     code: {
