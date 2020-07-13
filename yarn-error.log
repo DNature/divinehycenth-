@@ -1,21 +1,21 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add dot-env
+  /home/divine/.nvm/versions/node/v12.18.2/bin/node /home/divine/.yarn/bin/yarn.js
 
 PATH: 
-  /home/divine/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-13-oracle/bin:/usr/lib/jvm/java-13-oracle/db/bin
+  /home/divine/.nvm/versions/node/v12.18.2/bin:/home/divine/.yarn/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
-  1.22.0
+  1.22.4
 
 Node version: 
-  12.16.1
+  12.18.2
 
 Platform: 
   linux x64
 
 Trace: 
   Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
 
 npm manifest: 
   {
@@ -26,8 +26,9 @@ npm manifest:
       "prod": "NODE_ENV=production next dev",
       "build": "NODE_ENV=production next build",
       "start": "NODE_ENV=production next start",
+      "gulp:css": "gulp start --verbose",
       "export": "NODE_ENV=production next export",
-      "deploy": "NODE_ENV=production yarn build && yarn export",
+      "deploy": "NODE_ENV=production yarn gulp:css && yarn build && yarn export",
       "gulp:img": "gulp minifyImages --verbose",
       "type-check": "tsc"
     },
@@ -48,7 +49,8 @@ npm manifest:
       "react-dom": "^16.12.0",
       "react-icons": "^3.9.0",
       "tailwindcss": "^1.2.0",
-      "theme-ui": "^0.3.1"
+      "theme-ui": "^0.3.1",
+      "vanilla-lazyload": "^15.1.1"
     },
     "devDependencies": {
       "@fullhuman/postcss-purgecss": "^2.1.0",
@@ -10975,6 +10977,11 @@ Lockfile:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/value-or-function/-/value-or-function-3.0.0.tgz#1c243a50b595c1be54a754bfece8563b9ff8d813"
     integrity sha1-HCQ6ULWVwb5Up1S/7OhWO5/42BM=
+  
+  vanilla-lazyload@^15.1.1:
+    version "15.1.1"
+    resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-15.1.1.tgz#8b465f8f5af602a6058bc10403cea939ae3e7073"
+    integrity sha512-psVgA+X9bp/VsSbxx5VMxg9VJOV1MwFYqig47d55pDBGVs5rBDy9O5CXF3uCZPEEMy7fa6J40AGfkuNNOy6zBg==
   
   vary@~1.1.2:
     version "1.1.2"

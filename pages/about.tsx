@@ -1,6 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
-import { IoLogoGithub, IoLogoTwitter, IoLogoLinkedin, IoMdCheckbox } from "react-icons/io";
+import { IoLogoGithub, IoLogoTwitter, IoMdCheckbox } from "react-icons/io";
+import { FaDev, FaMedium } from "react-icons/fa";
 import { DiStackoverflow } from "react-icons/di";
 
 import MainLayout from "../layouts/Main";
@@ -57,11 +58,14 @@ const AboutPage: NextPage = () => {
                 <CustomLink href="//stackoverflow.com/users/11624868/divine-hycenth" target="_blank">
                   <DiStackoverflow className="text-2xl text-a-100" />
                 </CustomLink>
+                <CustomLink href="//dev.to/dnature" target="_blank">
+                  <FaMedium className="text-2xl text-black" />
+                </CustomLink>
                 <CustomLink href="//twitter.com/DivineHycenth" target="_blank">
                   <IoLogoTwitter className="text-2xl text-blue-600" />
                 </CustomLink>
-                <CustomLink href="//linkedin.com/in/dnature" target="_blank">
-                  <IoLogoLinkedin className="text-2xl text-blue-500" />
+                <CustomLink href="//dev.to/dnature" target="_blank">
+                  <FaDev className="text-2xl text-black" />
                 </CustomLink>
               </div>
             </div>
