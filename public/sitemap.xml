@@ -9,28 +9,78 @@
 
 <url>
   <loc>https://divinehycenth.com/</loc>
-  <lastmod>2020-04-21T07:05:07+00:00</lastmod>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://divinehycenth.com/about</loc>
-  <lastmod>2020-04-21T07:05:07+00:00</lastmod>
+  <loc>https://divinehycenth.com/blog/2020-07-13_graphql-crud-operations-with-couchdb-and-typescript</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2020-02-02_file-uploads-with-apolloserver-2</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2019-11-09_remove-all-unused-css</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://divinehycenth.com/blog</loc>
-  <lastmod>2020-04-21T07:05:07+00:00</lastmod>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2020-05-21_deploy-gatsby-site-to-netlify</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2020-04-28_file-upload-with-react-and-apollo</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://divinehycenth.com/works</loc>
-  <lastmod>2020-04-21T07:05:07+00:00</lastmod>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://divinehycenth.com/contact</loc>
-  <lastmod>2020-04-21T07:05:07+00:00</lastmod>
+  <loc>https://divinehycenth.com/about</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2020-01-20_deploy-nextjs-project-to-netlify</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2020-01-02_yarn-workspace-monorepo</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2019-12-16_how-to-reduce-file-sizes-with-gulpjs</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2019-12-03_how-to-setup-tailwind-purgecss-and-nextjs</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/2019-11-20_Build%20a%20Progressive%20Web%20App%20with%20React.js</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://divinehycenth.com/blog/how-to-reduce-file-sizes-with-gulpjs</loc>
+  <lastmod>2020-07-13T16:46:40+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
