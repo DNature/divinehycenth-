@@ -295,7 +295,8 @@ a {
 
 @media (max-width: 640px) {
   .card-bg {
-    height: 158px;
+    max-height: 180px;
+    min-height: 158px;
   }
 
   .works {
