@@ -6,4 +6,4 @@ Built with:
 - Typescript
 - Nextjs
 
-https://api.vercel.com/v1/integrations/deploy/QmZB5RnH6eVFxjuZEcvUuhbXHhNwzWwBudFftR6BssQZx8/8OBh30bqaS
+[![Deploy with ZEIT Now](https://api.vercel.com/v1/integrations/deploy/QmZB5RnH6eVFxjuZEcvUuhbXHhNwzWwBudFftR6BssQZx8/8OBh30bqaS)
