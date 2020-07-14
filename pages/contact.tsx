@@ -1,9 +1,9 @@
 import React from "react";
 import { NextPage } from "next";
 import { IoIosMail, IoMdCall, IoMdPin, IoMdArrowBack } from "react-icons/io";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
-import NextHead from '../components/meta';
+import NextHead from "../components/meta";
 
 const encode = (data: any): string => {
   return Object.keys(data)
@@ -11,13 +11,11 @@ const encode = (data: any): string => {
     .join("&");
 };
 
-
 const ContactPage: NextPage = () => {
-  
   const router = useRouter();
 
-  console.log(router)
-  
+  console.log(router);
+
   const [values, setValues] = React.useState({
     name: "",
     email: "",
@@ -44,7 +42,6 @@ const ContactPage: NextPage = () => {
         }, 1000);
       })
       .catch((e) => console.log(e));
-
   };
 
   return (
@@ -68,11 +65,7 @@ const ContactPage: NextPage = () => {
           <div className="card-contact mb-16 md:mb-0 shadow rounded-lg p-5 md:mr-5">
             <h2 className="text-xl xl:text-2xl  g100 font-bold">Fill out the form and i’ll be in touch as soon as possible.</h2>
 
-            <form
-              name="Contact form for divinehycenth.com"
-              // data-netlify="true" method="POST"
-              onSubmit={handleSubmit}
-            >
+            <form name="Contact form for divinehycenth.com" data-netlify="true" method="POST" onSubmit={handleSubmit}>
               <p className="my-8">
                 <input
                   type="text"
@@ -139,6 +132,7 @@ const ContactPage: NextPage = () => {
         </div>
       </footer>
     </>
-  );};
+  );
+};
 
 export default ContactPage;
