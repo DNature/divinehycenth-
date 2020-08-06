@@ -26,9 +26,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
   return (
     <>
-      {/* <ThemeProvider components={components} theme={theme}> */}
       <Component {...pageProps} />
-      {/* </ThemeProvider> */}
     </>
   );
 }
