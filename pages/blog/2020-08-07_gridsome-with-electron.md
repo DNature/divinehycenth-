@@ -296,7 +296,7 @@ fi
 
 What the above code does is that it would prompt you to enter your environment and if it matches `prod` or `production` then it would execute the first if block else it would execute the else block.
 
-Now add this script to your `package.json` and you're all set :
+Now add these scripts to your `package.json` and you're all set :
 
 <CodeWrapper lang="json" />
 
