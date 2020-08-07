@@ -324,7 +324,15 @@ I'll focus on the `develop`, `prod`, `wait`, `grant` and `start` commands.
 4. `grant`: makes `startServer.sh` executable.
 5. `start` command executes `startServer.sh` file.
 
-You can now startup your project smoothly with:
+make `startServer.sh` executable by running:
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn grant
+```
+
+then startup your project smoothly with:
 
 <CodeWrapper lang="bash" />
 
