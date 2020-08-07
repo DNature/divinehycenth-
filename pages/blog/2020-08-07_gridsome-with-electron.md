@@ -3,7 +3,7 @@ layout: "bloglayout"
 title: "Build a Desktop app with Gridsome and Electron."
 description: "Learn how to combine your knowledge of Gridsome for SPA and Electron for desktop apps to build a desktop App."
 imageUrl: "/images/blog/gridsome-with-electron/thumbnail.png"
-tags: ["grapphql", "nodejs", "couchdb"]
+tags: ["gridsome", "electron", "desktop"]
 ---
 
 import CustomLink from "../../components/CustomLink.tsx";
