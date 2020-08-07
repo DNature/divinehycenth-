@@ -264,7 +264,7 @@ We can now run yarn start our electron app by running:
 yarn electron
 ```
 
-However, you might run into issues when your `live-server` fails to start before the electron app so we need some extra help to handle that part and also setup a proper environment.
+However, you might run into issues when your `live-server` fails to start before the electron app so we need some extra help to handle that part and also setup a proper development experience.
 
 <CodeWrapper lang="bash" />
 
