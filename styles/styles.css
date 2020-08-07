@@ -572,7 +572,7 @@ body:visited {
   background: var(--gray10); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: var(--accent3); /* Gecko Browsers */
+  background: var(--gray10); /* Gecko Browsers */
 }
 
 .link-grow {
