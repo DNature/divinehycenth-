@@ -3,14 +3,14 @@ const nightOwl = require("@theme-ui/prism/presets/shades-of-purple.json");
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: 'system-ui, "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
+    body: 'system-ui,"Roboto Slab", "Montserrat", -apple-system, BlinkMacSystemFont, Roboto, sans-serif',
+    heading: "Roboto Slab",
     monospace: "Menlo, monospace",
   },
-  fontSizes: [16, 18, 21, 24, 26, 38, 52, 64, 96],
+  fontSizes: [16, 18, 21, 22, 36, 40, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 500,
     bold: 700,
   },
   lineHeights: {
@@ -52,7 +52,7 @@ export default {
       fontWeight: "heading",
       marginBottom: "1rem",
       marginTop: "2.5rem",
-      fontSize: 3,
+      fontSize: 4,
     },
     h4: {
       color: "var(--gray0)",
@@ -61,7 +61,7 @@ export default {
       fontWeight: "heading",
       marginBottom: "1rem",
       marginTop: "2.4rem",
-      fontSize: 2,
+      fontSize: 3,
     },
     h5: {
       color: "var(--gray0)",
@@ -70,16 +70,7 @@ export default {
       fontWeight: "heading",
       marginBottom: "1rem",
       marginTop: "2rem",
-      fontSize: 1,
-    },
-    h6: {
-      color: "var(--gray0)",
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
-      marginBottom: "1rem",
-      marginTop: "1rem",
-      fontSize: 0,
+      fontSize: 2,
     },
     p: {
       color: "text",
@@ -108,14 +99,8 @@ export default {
       },
     },
     li: {
-      // code: {
-      //   fontFamily: "monospace",
-      //   backgroundColor: "#21262d",
-      //   padding: "3px 5px",
-      //   borderRadius: "4px",
-      //   fontSize: "16px",
-      //   color: "#9EFEFF",
-      // },
+      fontSize: 1,
+
       code: {
         fontFamily: "monospace",
         color: "var(--gray0)",
@@ -153,6 +138,16 @@ export default {
     },
     img: {
       maxWidth: "100%",
+    },
+    blockquote: {
+      padding: "0.5rem 0.7rem",
+      // borderRadius: "0.3rem",
+      background: "var(--trans)",
+
+      p: {
+        fontFamily: '"Roboto Slab", serif',
+        margin: 0,
+      },
     },
   },
 };

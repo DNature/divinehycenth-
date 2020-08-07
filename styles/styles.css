@@ -11,6 +11,7 @@ html {
 :root {
   --black: black;
   --white: white;
+  --trans: rgba(153, 153, 153, 0.11);
 
   --gray100: #12181b;
   --gray75: #4d5254;
@@ -384,12 +385,11 @@ pre {
 }
 
 blockquote {
-  padding: 0.2rem 0.7rem;
-  border-radius: 0.3rem;
-  font-family: sans-serif;
   border-left: 4px solid var(--primary0);
-  font-size: 0.9rem;
-  font-style: italic;
+}
+
+blockquote {
+  margin: 1rem 0 !important;
 }
 
 pre::-webkit-scrollbar,
@@ -569,7 +569,7 @@ body:visited {
 }
 
 ::selection {
-  background: var(--accent3); /* WebKit/Blink Browsers */
+  background: var(--gray10); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   background: var(--accent3); /* Gecko Browsers */
@@ -579,9 +579,6 @@ body:visited {
   animation: 0.5s grow infinite alternate;
   background: var(--primary0);
   /* transition: 0.3s all ease; */
-}
-
-* a {
 }
 
 #cursor {

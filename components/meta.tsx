@@ -58,9 +58,10 @@ const NextHead: NextPage<Props> = ({
     <meta name="fb:admins" content="https://facebook.com/divine.hycenth.7" />
     <meta name="fb:app_id" content="https://facebook.com/divine.hycenth.7" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    {/* <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet" /> */}
+    {/* <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" /> */}
 
     <link rel="shortcut icon" href="/images/icons/favicons/favicon.ico" />
     <link rel="icon" type="image/ico" href="/images/icons/favicons/favicon.ico" />
