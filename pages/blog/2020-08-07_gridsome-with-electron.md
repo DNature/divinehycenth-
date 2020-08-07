@@ -182,7 +182,7 @@ const liveServer = require("live-server");
 
 const distDir = path.join(__dirname, "..", "dist"); // require build directory
 const host = "localhost"; // host: localhost or 0.0.0.0
-const port = 8081;
+const port = 4000;
 const url = "http://" + host + ":" + port; // => http://localhost:8081
 const params = {
   port: port,
@@ -190,7 +190,6 @@ const params = {
   root: distDir,
   open: false, // prevents auto-open in browser
   file: "index.html",
-  wait: 100,
 };
 
 function createWindow() {
@@ -198,12 +197,12 @@ function createWindow() {
     width: 800,
     height: 600,
   });
-  if (process.env.NODE_ENV === "prod") {
+  if (process.env.NODE_ENV === "prod" || process.env.NODE_ENV === "production") {
     // Here we check if we're in production env
     liveServer.start(params); // startup live-server
     mainWindow.loadURL(url); // load the url in gridsome
   } else {
-    mainWindow.loadURL("http://localhost:8080");
+    mainWindow.loadURL("http://localhost:8000");
   }
 }
 
@@ -270,38 +269,32 @@ However, you might run into issues when your `live-server` fails to start before
 <CodeWrapper lang="bash" />
 
 ```bash
-yarn add foreman wait-on
+yarn add wait-on
 ```
-
-1. [foreman](https://www.npmjs.com/package/foreman): Foreman is a manager for Procfile-based applications. Its aim is to abstract away the details of the Procfile format, and allow you to either run your application directly or export it to some other process management format.
 
 2. [wait-on](https://www.npmjs.com/package/wait-on): wait-on - wait for files, ports, sockets, http(s) resources.
 
-## Procfile.
+Finally, we need to do some shell scripting.
 
-Profile is used to specify commands that are executed by the app on startup.
-You can use a Procfile to declare a variety of process types, including:
-
-- Your app’s web server
-- Multiple types of worker processes etc.
-
-The first step is to install foreman globally on your computer:
+Create a `startServer.sh` file in your root directory and add the following lines of code:
 
 <CodeWrapper lang="bash" />
 
 ```bash
-yarn global add foreman
+#!/bin/bash
+read -p "Enter your environment: " NODE_ENV
+
+if [ "$NODE_ENV" = "production" ] || [ "$NODE_ENV" = "prod" ]
+then
+    echo $NODE_ENV;
+    exec yarn prod;
+else
+    echo $NODE_ENV;
+    exec yarn develop & yarn wait
+fi
 ```
 
-Next step is to create a `Procfile` in your root directory and add the following lines of code:
-
-<CodeWrapper lang="procfile" />
-
-```bash
-gridsome: yarn develop # comment this line when you're in production mode
-electron: wait-on http://localhost:8081 && yarn electron # waits for website
-# to load before starting up electron.
-```
+What the above code does is that it would prompt you to enter your environment and if it matches `prod` or `production` then it would execute the first if block else it would execute the else block.
 
 Now add this script to your `package.json` and you're all set :
 
@@ -311,17 +304,25 @@ Now add this script to your `package.json` and you're all set :
 {
     ...
     "scripts": {
-    "build": "gridsome build",
-    "develop": "NODE_ENV=dev gridsome develop",
-    "electron": "electron .",
-    "start": "NODE_ENV=prod nf start"
+      "build": "gridsome build",
+      "develop": "gridsome develop -p 8000",
+      "explore": "gridsome explore",
+      "prod": "NODE_ENV=production electron .",
+      "wait": "wait-on http://localhost:8000 && electron .",
+      "grant": "chmod +x ./startServer.sh",
+      "start": "./startServer.sh"
   },
   ...
 }
 ```
 
-Your can toggle between development and production mode simply by changing
-`NODE_ENV=prod` to `NODE_ENV=dev`.
+I'll focus on the `develop`, `prod`, `wait`, `grant` and `start` commands.
+
+1. `develop`: I specified a port 8000 for the development mode of the gridsome server.
+2. `prod`: assigns the NODE_ENV to `production`
+3. `wait`: uses the `wait-on` package we installed earlier to wait for port 8000 to be ready before executing the `electron .` command
+4. `grant`: makes `startServer.sh` executable.
+5. `start` command executes `startServer.sh` file.
 
 You can now startup your project smoothly with:
 
@@ -340,7 +341,7 @@ To conclude, we were able to:
 1. Setup gridsome
 2. Setup electron
 3. Work with electron and gridsome in development mode
-4. Overcome some challenges that usually occur when gridsome is in production mode.
+4. Overcome some challenges that usually occur when gridsome is in production mode with the help of `wait-on` package and some shell scripts.
 
 If you have any questions let me know in the comments or contact me: [contact@divinehycenth.com](https://contact-divine.netlify.app/contact)
 
