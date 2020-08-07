@@ -1,7 +1,7 @@
 ---
 layout: "bloglayout"
 title: "Build a Desktop app with Gridsome and Electron."
-description: "Learn how to combine your knowledge of Gridsome for SPA and Electron for desktop apps to build a desktops."
+description: "Learn how to combine your knowledge of Gridsome for SPA and Electron for desktop apps to build a desktop App."
 imageUrl: "/images/blog/gridsome-with-electron/thumbnail.png"
 tags: ["grapphql", "nodejs", "couchdb"]
 ---
@@ -11,433 +11,76 @@ import CodeWrapper from '../../components/codeWrapper';
 
 ![Graphql CRUD operations on a CouchDB database with nodejs.](/images/blog/gridsome-with-electron/thumbnail.png)
 
-## Learn how to combine your knowledge of Gridsome for SPA and Electron for desktop apps to build a desktops.
+## Learn how to combine your knowledge of Gridsome for SPA and Electron for desktop apps to build a desktop app.
+
+Electron and Gridsome was the basic requirement for an application i and my team were working on so i started to make some research on how to use gridsome in electron both in development and production with a smooth developer experience but i couldn't find any article or video on building desktop applications with electron and gridsome that is why i'm writing this article because I'm sure someone might run into some issues i faced setting it up :).
 
 ### Prerequisites
 
-- Basic knowledge of typescript & javascriptt
-- Basic knowledge of graphql
-- Good understanding of Nodejs
-- Knowledge of couchdb is an advantage
-- You must have Nodejs installed on your computer
-- You must have couchdb installed on your computer [https://couchdb.apache.org/](https://couchdb.apache.org/)
+1. Basic knowledge of Javascript
+2. Must have Node installed on your machine.
+3. Basic knowledge of Electron
 
-### CouchDB
+### Project structure
 
-CouchDB falls under the document-oriented database in the NoSQL landscape and it is known for its ease of use and scalable architecture. It is highly available and partition tolerant but is also eventually consistent. Thus, it is an AP based system according to CAP (Consistency, Availability, and Partition Tolerance) theorem for distribute database systems.
+![Project structure](/images/blog/gridsome-with-electron/project-structure.png)
 
-> **Note**: This write-up doesn’t discuss the suitability of the CouchDB to various use-cases, rather emphasizes on connecting to the database and interacting with it by performing CRUD operations through a Graphql API.
+## What is Gridsome?
 
-### Architecture
+Gridsome is a Vue-powered static site generator for building blazing fast static websites. It is data-driven meaning it uses a GraphQL layer to get data from different sources in order to dynamically generate pages from it. Gridsome is the Vue alternative to Gatsby for React.js.
 
-CouchDB organizes data into multiple databases. A database is a collection of documents, and each document is a **JSON object**. As CouchDB stores data in the form of JSON documents, it is schema-less and highly flexible.
+As this tutorial is not a beginners guide for gridsome, I'll not go into full details of gridsome.
 
-Each document in a database contains a bare minimum of two fields: **\_id** which represents unique identity of the document, and **\_rev** which represents the revision number of the document. If the document posted while document creation doesn’t have **\_id** attribute, CouchDB generates one and saves the document. On the other hand, **\_rev** is used to resolve document update conflict. If two clients tries to update the same document, the first update wins and the second one has to get the update from first client before it’s update.
+### Setting up Gridsome.
 
-### Creating a database
+#### Installation.
 
-CouchDB installation come up with a web administration console and can be accessible from [http://localhost:5984/\_utils](http://localhost:5984/_utils). This page lists all the databases available in the running CouchDB instance.
-
-![Couchdb database](/images/blog/couchdb-graphql-typescript/couchdb.png).
-
-Click of the **Create Database** to manually create a database.
-
-**Nano** is a greate tool for communicating with our CouchDB database, However, It has one of the most terrible documentaions expecially when it commes to **Typescript**.
-
-Without further ado, Lets get into the coding part 🚀.
-
-The first step is to install all the necessary dependencies. I'll be using [Yarn](https://yarnpkg.com/getting-started/install) throughout this tutorial.
+Run the following command to install Gridsome globally in your computer:
 
 <CodeWrapper lang="bash" />
 
 ```bash
-yarn add graphql-yoga nano dotenv;
+yarn global add @gridsome/cli
+ # or
+npm install -g @gridsome/cli
 ```
 
-- graphql-yoga: Fully-featured GraphQL Server with focus on easy setup, performance & great developer experience
-- dotenv: Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
-- nano: Official Apache CouchDB library for Node.js.
-
-**Dev Dependencies**
+Next step is to create a new project using the CLI we just installed:
 
 <CodeWrapper lang="bash" />
 
 ```bash
-yarn add -D typescript ts-node @types/node nodemon
+gridsome create gridsome-electron-boilerplate
 ```
 
-### Our project structure
+This command will bootstrap a new gridsome site for you and install all the necessary dependencies.
 
-```
-└── src
-    └── dbConnection
-        └── couch.ts
-    ├── index.js
-    ├── resolvers.js
-    └── typeDefs.js
-├── package.json
-└── .env
+Once that is done installing we can run the Gridsome site with this command:
+
+<CodeWrapper lang="bash" />
+
+```bash
+cd gridsome-electron-boilerplate && gridsome develop
 ```
 
-### Code walkthrough
+## Electron
 
-This section describes the application code in a bottom-up fashion.
+Electron, managed by Github, is used in a myriad of [projects + companies](https://electronjs.org/apps). Making your web apps available for desktop makes them that much more versatile. So it makes sense to have a fundamental understanding of Electron, and how to integrate it into current projects.
 
-### 1: Setting up Graphql Server
+### What is Electron?
 
-Your `src/index.ts` should look like:
+Electron allows you to build cross-platform desktop applications, using a Node.js backend and a Chromium front-end. It might seem like a challenge to turn your Gridsome web-app into a full fledged, downloadable desktop app — but Electron’s objective is to make this process seamless. I was intimidated at first, but the learning curve wasn’t nearly what I thought it would be.
 
-<CodeWrapper lang="ts"/>
+Basic structure of an electron app:
 
-```ts
-require("dotenv").config(); // For environment variables
-import { GraphQLServer } from "graphql-yoga";
-import { Server } from "http";
-import { Server as HTTPSServer } from "https";
+<img src="/images/blog/gridsome-with-electron/electron-structure.png" alt="Electron basic structure" style={{width: "100%"}} />
 
-import typeDefs from "./typeDefs"; // we are going to create this in a minute
-import resolvers from "./resolvers"; // we are going to create this in a minute
+Install electron in your project by running:
 
-export default (async (): Promise<Server | HTTPSServer> => {
-  const server = new GraphQLServer({
-    typeDefs,
-    resolvers,
-  });
+<CodeWrapper lang="bash" />
 
-  const port = process.env.PORT || 4000;
-  return await server.start(
-    {
-      port,
-    },
-    () => console.log(`server is running on http://localhost:${port}`)
-  );
-})();
-```
-
-#### 2: Creating an instance of Nano
-
-Add the following snippet to your `./dbConnection/couch.ts` file:
-
-<CodeWrapper lang="ts"/>
-
-```ts
-import * as Nano from "nano";
-
-export default (async () => {
-  const dbName = "hello";
-  const nano = Nano(process.env.DB_HOST_AUTH); // I'll be storing the database connection uri
-  // in an environment variable since it contains vital credentials.
-
-  const dbList = await nano.db.list(); // Returns a list of database
-
-  try {
-    if (!dbList.includes(dbName)) {
-      // create a new DB if database doesn't exist.
-      await nano.db.create(dbName);
-      const db = nano.use(dbName);
-      console.log("database created successfully");
-      return db;
-    } else {
-      const db = nano.use(dbName);
-      console.log("connected to database successfully");
-      return db;
-    }
-  } catch (err) {
-    throw new Error(err);
-  }
-})();
-```
-
-The above code snippet first retrieves all the database names in our couchDB then checks if it includes a the database we want to use and then uses it with the `nano.use(dbName)` function. If it doesn't include the our database name we want to use then it will automatically create a new database with the given name.
-
-`Nano(process.env.DB_HOST_AUTH)` receives a connection string which varies depending on wether we require authentication or not.
-
-- `http://username:password@localhost:5984` includes credentials thus stored in the `.env` file as `DB_HOST_AUTH=http://username:password@localhost:5984`
-- `http://localhost:5984` does not include any credentials and can be used directly.
-
-#### 3: Graphql Type Definitions
-
-Add the following code to your `src/typeDefs.ts` file:
-
-<CodeWrapper lang="ts" />
-
-```ts
-export default `
-  type Doc {
-    name: String!
-    email: String!
-    age: Int!
-    nice: Boolean!
-    updated: Boolean
-  }
-
-   type Mutation {
-    createRecord(name: String!, email: String!, age: Int!, nice: Boolean!): Boolean!
-    delete(id: String, rev: String): Boolean!
-    update(id: String, rev: String, updated: Boolean): Boolean!
-  }
-  
-  type Query {
-    findAll: [Doc!]
-    findSingle(id: String!): Doc!
-  }
-`;
-```
-
-> I won't go in detail on how graphql works like in Mutations and Queries as this is not a Beginners Graphql guide.
-
-#### 4: Resolvers.
-
-Resolvers are per field functions that are given a parent object, arguments, and the execution context, and are responsible for returning a result for that field. Resolvers cannot be included in the GraphQL schema language, so they must be added separately. The collection of resolvers is called the "resolver map". It mostly consist of Queries and Mutations.
-
-#### Mutations -
-
-**4a: Creating a record** - `nano.insert()`.
-
-The first operation in CRUD is Create. `nano.insert()` is used to both insert and update the document. This function takes either an object or a string as an argument and inserts/updates the document given.
-
-<CodeWrapper lang="ts" />
-
-```ts
-import { MaybeDocument } from "nano";
-import couch from "./dbConnection/couch";
-
-// Lets define the interfaces for each resolver.
-interface User extends MaybeDocument {
-  name: string;
-  email: string;
-  age: number;
-  nice: boolean;
-}
-
-interface Update extends MaybeDocument {
-  updated: boolean;
-  id: string;
-  rev: string;
-}
-
-export default {
-  Mutation: {
-    createRecord: async (_parent: any, args: User) => {
-      try {
-        const record = await (await couch).insert(args);
-
-        console.log(record);
-        return true;
-      } catch (err) {
-        console.log(err);
-        return false;
-      }
-    },
-  },
-};
-```
-
-![Creating a record](/images/blog/couchdb-graphql-typescript/create.png)
-
-<br/>
-
-**4b: Update a record** - `nano.insert(id, rev)`.
-
-As stated earlier, `nano.insert()` is used to both insert and update the document. When this function has given a document with both `_id` and `_rev,` this function performs an update. If the `_rev` given in the document is obsolete, update fails and the client is expected to get the latest revision of the document before performing any further updates
-
-Below code demonstrates retrieving a blog by it’s id.
-
-<CodeWrapper lang="ts" />
-
-```ts
-...
-
-export default {
-  Mutation: {
-    update: async (_: any, { id, rev, ...args }: Update) => {
-        const findFile = await (await couch).get(id);
-        if (findFile) {
-            const file = await (await couch).insert({
-                _id: id,
-                _rev: rev,
-                ...findFile,
-                ...args,
-            });
-            console.log(file);
-            return true;
-        }
-        return false;
-    },
-    ...
-  },
-};
-```
-
-![Update a record](/images/blog/couchdb-graphql-typescript/update.png)
-
-<br/>
-
-**4c: Delete record** - `nano.destroy(id, rev).
-
-`nano.destroy(id, rev, [callback])` is used delete a document from database. Underneath method deletes a blog entry given it’s `_id` and `_rev`
-
-The **Nano** delete function requires a document **\_id** and a **\_rev**
-
-Below code demonstrates deletion of a record by its id and rev.
-
-<CodeWrapper lang="ts" />
-
-```ts
-...
-
-export default {
-  Mutation: {
-    delete: async (_: any, { id, rev }: { id: string; rev: string }) => {
-        const record = await (await couch).destroy(id, rev);
-        console.log(record);
-        return true;
-    },
-    ...
-  },
-};
-
-```
-
-![Delete a record](/images/blog/couchdb-graphql-typescript/delete.png)
-
-<br/>
-
-**4d 1: Retrieve a record by id** - `nano.get(id).
-
-`nano.get(id, [params], [callback])` is used to get the document by its id. Underneath method in BlogService class gets the blog given its id.
-
-Below code demonstrates retrieving a document by it’s id.
-
-<CodeWrapper lang="ts" />
-
-```ts
-...
-
-export default {
-  Query: {
-    findSingle: async (_: any, { id }: { id: string }) => {
-        const file = await (await couch).get(id);
-        console.log(file);
-        return file;
-    },
-    ...
-  },
-};
-
-```
-
-![Retrieve a record](/images/blog/couchdb-graphql-typescript/findSingle.png)
-
-<br/>
-
-**4d 2: Retrieve multiple files** - `nano.find(selector).
-
-`nano.find(selector, [callback])` performs a _"Mango" query_ by supplying a JavaScript object containing a selector:
-the `fields` option can be used to retrieve specific fields.
-
-Below code demonstrates how to retrieve documents from couchdb.
-
-<CodeWrapper lang="ts" />
-
-```ts
-...
-
-export default {
-  Query: {
-    findAll: async () => {
-        const files = await (await couch).find({
-            selector: {}, // parameters can be added to query specific documents.
-            fields: ['name', 'email', 'age', 'nice', 'updated'],
-        });
-        console.log(files.docs);
-        return files.docs;
-    },
-    ...
-  },
-};
-
-```
-
-![Retrieve multiple records](/images/blog/couchdb-graphql-typescript/findAll.png)
-
-<br/>
-<br />
-
-Your final `resolvers.ts` file should not be different from the below code:
-
-<CodeWrapper lang="ts" />
-
-```ts
-import { MaybeDocument } from "nano";
-
-import couch from "./dbConnection/couch";
-
-interface User extends MaybeDocument {
-  name: string;
-  email: string;
-  age: number;
-  nice: boolean;
-}
-
-interface Update extends MaybeDocument {
-  updated: boolean;
-  id: string;
-  rev: string;
-}
-
-export default {
-  Mutation: {
-    createRecord: async (_parent: any, args: User) => {
-      try {
-        const record = await (await couch).insert(args);
-
-        console.log(record);
-        return true;
-      } catch (err) {
-        console.log(err);
-        return false;
-      }
-    },
-
-    delete: async (_: any, { id, rev }: { id: string; rev: string }) => {
-      const record = await (await couch).destroy(id, rev);
-      console.log(record);
-      return true;
-    },
-
-    update: async (_: any, { id, rev, ...args }: Update) => {
-      const findFile = await (await couch).get(id);
-      if (findFile) {
-        const file = await (await couch).insert({
-          _id: id,
-          _rev: rev,
-          ...findFile,
-          ...args,
-        });
-        console.log(file);
-        return true;
-      }
-      return false;
-    },
-  },
-  Query: {
-    findAll: async () => {
-      const files = await (await couch).find({
-        selector: {},
-        fields: ["name", "email", "age", "nice", "updated"],
-      });
-      console.log(files.docs);
-      return files.docs;
-    },
-
-    findSingle: async (_: any, { id }: { id: string }) => {
-      const file = await (await couch).get(id);
-      console.log(file);
-      return file;
-    },
-  },
-};
+```bash
+yarn add -D electron@latest
 ```
 
 You can find the entire code for this article on my github repo [https://github.com/DNature/couchdb-graphql](https://github.com/DNature/couchdb-graphql)
