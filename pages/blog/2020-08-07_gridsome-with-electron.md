@@ -332,7 +332,9 @@ You can now startup your project smoothly with:
 yarn start
 ```
 
-You can find the entire code for this article on my github repo [https://github.com/DNature/gridsome-electron-boilerplate](https://github.com/DNature/gridsome-electron-boilerplate)
+You can find the entire code for this article on my github repo [https://github.com/DNature/gridsome-electron-boilerplate](https://github.com/DNature/gridsome-electron-boilerplate).
+
+It's open source so feel free to contribute.
 
 ### Conclusion:
 
