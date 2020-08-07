@@ -23,7 +23,7 @@ Electron and Gridsome was the basic requirement for an application i and my team
 
 ### Project structure
 
-![Project structure](/images/blog/gridsome-with-electron/project-structure.png)
+<img src="/images/blog/gridsome-with-electron/project-structure.png" alt="Project structure" style={{width: "100%"}} />
 
 ## What is Gridsome?
 
@@ -83,12 +83,267 @@ Install electron in your project by running:
 yarn add -D electron@latest
 ```
 
-You can find the entire code for this article on my github repo [https://github.com/DNature/couchdb-graphql](https://github.com/DNature/couchdb-graphql)
+You might have noticed that our base electron files are situated in a folder called `electron` and I'm emphasizing on this because electron is not going to work without making few changes to our `package.json` file.
+You need to point the `main` in your `package.json` file to point to your electron `main.js` fille.
+
+After that, your package.json should look like this:
+
+<CodeWrapper lang="json" />
+
+```json
+{
+	"name": "hardocs-electron-gridsome",
+	"private": true,
+	"main": "electron/main.js", // pointing to the main.js in electron folder
+	"dependencies": {
+		"@gridsome/source-filesystem": "^0.6.2",
+		"gridsome": "^0.7.0",
+	},
+	"devDependencies": {
+		"electron": "^9.1.0",
+        ...
+    },
+    ...
+}
+```
+
+You can simply run the following commands to startup your electron app:
+
+<CodeWrapper lang="bash"/>
+
+```bash
+npx electron .
+```
+
+Now we need to load gridsome contents in our electron app.
+Add the following lines of code to load gridsome url in your electron app:
+
+<CodeWrapper lang="js"/>
+
+```js
+const { app, BrowserWindow } = require("electron");
+
+function createWindow() {
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+  });
+
+  mainWindow.loadURL("http://localhost:8080");
+}
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on("activate", function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") app.quit();
+});
+```
+
+Before you start up your electron app you need to make sure your gridsome website is running on `http://localhost:8080` then you can proceed to run this command in your terminal:
+
+<CodeWrapper lang="bash"/>
+
+```bash
+npx electron .
+```
+
+![Electron with gridsome working perfectly](/images/blog/gridsome-with-electron/gridsome-electron.png)
+
+Bravo 😁. Gridsome is working perfectly in electron.
+
+It's clear that electron is loading gridsome pretty fine in development mode. However, It's totally different in production mode because in production, gridsome generates just `html, css and javascript` files.
+
+Now lets get everything working in both development and production environments.
+
+To do this, we need the help of this packages:
+
+<CodeWrap lang="bash" />
+
+```bash
+yarn add live-server
+```
+
+1. [Live-server](http://npmjs.com/package/live-server): Live server helps us to serve `html, css and javascript` files including folders with LIVE RELOAD.
+
+Basically, what we're going to do is to conditionally load the `build index.html` file from gridsome or load gridsome development server url.
+
+<CodeWrapper lang="js" />
+
+```js
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
+const liveServer = require("live-server");
+
+const distDir = path.join(__dirname, "..", "dist"); // require build directory
+const host = "localhost"; // host: localhost or 0.0.0.0
+const port = 8081;
+const url = "http://" + host + ":" + port; // => http://localhost:8081
+const params = {
+  port: port,
+  host: host,
+  root: distDir,
+  open: false, // prevents auto-open in browser
+  file: "index.html",
+  wait: 100,
+};
+
+function createWindow() {
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+  });
+  if (process.env.NODE_ENV === "prod") {
+    // Here we check if we're in production env
+    liveServer.start(params); // startup live-server
+    mainWindow.loadURL(url); // load the url in gridsome
+  } else {
+    mainWindow.loadURL("http://localhost:8080");
+  }
+}
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on("activate", function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on("window-all-closed", function () {
+  if (process.platform !== "darwin") app.quit();
+});
+```
+
+From the code above, you can see that we're either loading the url we get from live-server or the gridsome dev server url.
+
+However, we need to build our gridsome application into static `html, css and js` files and to do that we have to tweak our `package.json` a little bit.
+
+your final `package.json` file should look exactly like this:
+
+<CodeWrapper lang="json" />
+
+```json
+{
+  "name": "hardocs-electron-gridsome",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "NODE_ENV=dev gridsome develop",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "gridsome": "^0.7.0",
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {
+    "electron": "^9.1.0"
+  }
+}
+```
+
+Now, run the build command to generate a `build` directory:
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn build
+```
+
+We can now run yarn start our electron app by running:
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn electron
+```
+
+However, you might run into issues when your `live-server` fails to start before the electron app so we need some extra help to handle that part and also setup a proper environment.
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn add foreman wait-on
+```
+
+1. [foreman](https://www.npmjs.com/package/foreman): Foreman is a manager for Procfile-based applications. Its aim is to abstract away the details of the Procfile format, and allow you to either run your application directly or export it to some other process management format.
+
+2. [wait-on](https://www.npmjs.com/package/wait-on): wait-on - wait for files, ports, sockets, http(s) resources.
+
+## Procfile.
+
+Profile is used to specify commands that are executed by the app on startup.
+You can use a Procfile to declare a variety of process types, including:
+
+- Your app’s web server
+- Multiple types of worker processes etc.
+
+The first step is to install foreman globally on your computer:
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn global add foreman
+```
+
+Next step is to create a `Procfile` in your root directory and add the following lines of code:
+
+<CodeWrapper lang="procfile" />
+
+```bash
+gridsome: yarn develop # comment this line when you're in production mode
+electron: wait-on http://localhost:8081 && yarn electron # waits for website
+# to load before starting up electron.
+```
+
+Now add this script to your `package.json` and you're all set :
+
+<CodeWrapper lang="json" />
+
+```json
+{
+    ...
+    "scripts": {
+    "build": "gridsome build",
+    "develop": "NODE_ENV=dev gridsome develop",
+    "electron": "electron .",
+    "start": "NODE_ENV=prod nf start"
+  },
+  ...
+}
+```
+
+Your can toggle between development and production mode simply by changing
+`NODE_ENV=prod` to `NODE_ENV=dev`.
+
+You can now startup your project smoothly with:
+
+<CodeWrapper lang="bash" />
+
+```bash
+yarn start
+```
+
+You can find the entire code for this article on my github repo [https://github.com/DNature/gridsome-electron-boilerplate](https://github.com/DNature/gridsome-electron-boilerplate)
 
 ### Conclusion:
 
-To conclude, the blog has discussed CouchDB basics, and explained how to perfrom CRUD operations on a CouchDB database using Node, Graphql and Nano.
-<br/>
+To conclude, we were able to:
+
+1. Setup gridsome
+2. Setup electron
+3. Work with electron and gridsome in development mode
+4. Overcome some challenges that usually occur when gridsome is in production mode.
+
+If you have any questions let me know in the comments or contact me: [contact@divinehycenth.com](https://contact-divine.netlify.app/contact)
+
 <br/>
 
 I hope you find this helpful.
