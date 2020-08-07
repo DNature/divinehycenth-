@@ -163,7 +163,7 @@ Now lets get everything working in both development and production environments.
 
 To do this, we need the help of this packages:
 
-<CodeWrap lang="bash" />
+<CodeWrapper lang="bash" />
 
 ```bash
 yarn add live-server
