@@ -13,7 +13,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.8",
+    "@mdx-js/loader": "^1.6.17",
     "@saschazar/next-mdx-extended": "^2.0.0",
     "@theme-ui/prism": "^0.3.0",
     "autoprefixer": "^9.7.5",
