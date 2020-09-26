@@ -21,7 +21,7 @@
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
     "match-sorter": "^4.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.0",
     "next": "latest",
     "nprogress": "^0.2.0",
     "postcss-preset-env": "^6.7.0",
