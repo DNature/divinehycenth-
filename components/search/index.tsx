@@ -4,7 +4,7 @@ import CustomLink from "../CustomLink";
 import { IoIosSearch, IoIosClose } from "react-icons/io";
 import PropTypes from "prop-types";
 
-import matchSorter from "match-sorter";
+import {matchSorter} from "match-sorter";
 import Tag from "../tag";
 import { filterNChars } from "../../utils/filterChars";
 import Portal from "../Portal";

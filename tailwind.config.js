@@ -80,5 +80,9 @@ module.exports = {
   variants: {
     width: ["responsive", "hover"],
   },
-  plugins: [],
+  plugins: ["./pages/**/*.{js,jsx,ts,tsx}",
+  "./components/**/*.{js,jsx,ts,tsx}",
+  "./layouts/**/*.{js,jsx,ts,tsx}",
+  "./test.tsx",
+  "./node_modules/nprogress/**/*.{js,jsx,ts,tsx}",],
 };

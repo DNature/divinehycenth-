@@ -125,7 +125,7 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
               </CustomLink>
             ))}
 
-            <CustomLink key={name} className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={contactPage.location}>
+            <CustomLink className={`py-2 mr-6 text-white font-semibold block p-2 hover mx-4`} href={contactPage.location}>
               <>
                 {contactPage.icon}
                 {contactPage.name}
