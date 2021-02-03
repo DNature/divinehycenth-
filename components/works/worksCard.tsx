@@ -36,12 +36,12 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
           className={`h-screen w-screen fixed top-0 eft-0 bottom-0 right-0 z-100 flex align-center justify-center overflow-hidden ${isOpen ? "block" : "hidden"}`}
           data-open={isOpen}
         >
-          <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
+          <div className="h-screen w-screen relative bg-overlay-default top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
           <div className="max-w-2xl w-full bg-bg z-50 mt-20 pb-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded">
             <div className="w-full h-56 sm:h-70 md:h-72 overflow-hidden flex justify-center content-center relative">
               <div className="absolute left-0 ml-4 flex content-center justify-center h-full">
-                <button className="p-3  my-auto rounded-full bg-overlay" onClick={prevStep}>
+                <button className="p-3  my-auto rounded-full bg-overlay-default" onClick={prevStep}>
                   <IoIosArrowBack className="text-white text-xl" />
                 </button>
               </div>
@@ -50,7 +50,7 @@ const WorksCard: React.FC<{ data: IWorksData }> = ({ data }) => {
               </div>
 
               <div className="absolute right-0 mr-4 flex content-center justify-center h-full">
-                <button className="p-3 rounded-full bg-overlay my-auto" onClick={nextStep}>
+                <button className="p-3 rounded-full bg-overlay-default my-auto" onClick={nextStep}>
                   <IoIosArrowForward className="text-white text-xl" />
                 </button>
               </div>

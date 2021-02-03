@@ -4,7 +4,7 @@ import CustomLink from "../CustomLink";
 import { IoIosSearch, IoIosClose } from "react-icons/io";
 import PropTypes from "prop-types";
 
-import {matchSorter} from "match-sorter";
+import { matchSorter } from "match-sorter";
 import Tag from "../tag";
 import { filterNChars } from "../../utils/filterChars";
 import Portal from "../Portal";
@@ -47,7 +47,7 @@ const Search: React.FC<Props> = ({ data }) => {
       {isOpen && (
         <Portal>
           <div className={`h-screen w-screen fixed top-0 eft-0 bottom-0 right-0 z-100 flex align-center justify-center overflow-hidden ${isOpen ? "block" : "hidden"}`}>
-            <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
+            <div className="h-screen w-screen relative bg-overlay-default top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
             <div className="max-w-lg w-full z-50 mt-6 absolute top-0 overflow-scroll no-scroll mb-20 rounded-md h-95">
               {/* Searchbox */}

@@ -73,6 +73,15 @@ module.exports = {
       "4xl": "52px",
       "5xl": "72px",
     },
+    zIndex: {
+      100: "100",
+      50: "50",
+      "-10": "-10",
+      "-5": "-5",
+      "-4": "-4",
+      "-3": "-3",
+      "-2": "-2",
+    },
   },
   corePlugins: {
     // boxShadow: false,
@@ -80,9 +89,5 @@ module.exports = {
   variants: {
     width: ["responsive", "hover"],
   },
-  plugins: ["./pages/**/*.{js,jsx,ts,tsx}",
-  "./components/**/*.{js,jsx,ts,tsx}",
-  "./layouts/**/*.{js,jsx,ts,tsx}",
-  "./test.tsx",
-  "./node_modules/nprogress/**/*.{js,jsx,ts,tsx}",],
+  plugins: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}", "./layouts/**/*.{js,jsx,ts,tsx}", "./test.tsx", "./node_modules/nprogress/**/*.{js,jsx,ts,tsx}"],
 };

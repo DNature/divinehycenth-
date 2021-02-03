@@ -38,8 +38,6 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
   const navRef: any = useRef();
   navRef.current = navBackground;
   useEffect(() => {
-    
-    
     const handleScroll = () => {
       const show = window.scrollY > 30;
       if (navRef.current !== show) {
@@ -54,11 +52,11 @@ const Navbar: NextPage<Props> = ({ pathname, routes }) => {
 
   const handleClose = (): void => {
     setIsOpen(!isOpen);
-  }; 
+  };
 
   return (
     <>
-      <div className={`py-4 justify-center z-20 fixed top-0 left-0 w-full hidden sm:flex ${navBackground && "gradient shadow"}`}>
+      <div className={`py-4 justify-center z-50 fixed top-0 left-0 w-full hidden sm:flex ${navBackground && "gradient shadow"}`}>
         <nav className="flex content-center ">
           <CustomLink href="/" className="my-auto">
             <img src="/images/icons/logo.svg" alt="Logo" className={`${navBackground ? "h-12" : "h-16"} mr-10  transition-all duration-200`} />

@@ -39,7 +39,7 @@ const VideoDialog: React.FC<Props> = () => {
         className={`h-screen w-screen fixed top-0 eft-0 bottom-0 right-0 z-100 flex align-center justify-center content-center overflow-hidden ${isOpen ? "block" : "hidden"}`}
         data-open={isOpen}
       >
-        <div className="h-screen w-screen relative bg-overlay top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
+        <div className="h-screen w-screen relative bg-overlay-default top-0 left-0 bottom-0 overflow-hidden z-10" onClick={handleClose}></div>
 
         <div className="max-w-2xl w-full h-full z-50 mt-20 absolute top-0 overflow-scroll no-scroll mb-20 rounded h-85 flex content-center justify-center">
           <div className="w-full bg-black h-72 my-auto  flex content-center items-center justify-center">
